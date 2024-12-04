@@ -122,7 +122,7 @@ const Navbar = () => {
         <div className="flex w-full flex-wrap md-lg:gap-8">
           <div className="w-3/12 md-lg:w-full">
             <div className="bg-white relative">
-              <div className="h-[50px] bg-[#fc433d] text-black flex justify-center md-lg:justify-between md-lg:px-6 items-center gap-3 font-bold text-md cursor-pointer">
+              <div className="h-[50px] bg-primaryRed text-black flex justify-center md-lg:justify-between md-lg:px-6 items-center gap-3 font-bold text-md cursor-pointer">
                 <div className="flex justify-center items-center gap-3">
                   <span>
                     <FaListCheck />
