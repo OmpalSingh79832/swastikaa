@@ -1,0 +1,34 @@
+.Section_top{
+  background-image: url("../../assets/image.jpg");
+}
+
+.content a:hover{
+  background: #034e88;
+  color: #fff;
+}
+@keyframes change{
+  0%
+  {
+      background-image: url("../../assets/img1.jpg");
+  }
+  20%
+  {
+      background-image: url("../../assets/img2.jpg");
+  }
+  40%
+  {
+      background-image: url("../../assets/img1.jpg");
+  }
+  60%
+  {
+      background-image: url("../../assets/img4.jpg");
+  }
+  80%
+  {
+      background-image: url("../../assets/img5.jpg");
+  }
+  100%
+  {
+      background-image: url("../../assets/image.jpg");
+  }
+}
