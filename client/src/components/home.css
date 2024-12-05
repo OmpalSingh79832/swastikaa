@@ -1,7 +1,7 @@
 .Section_top{
-  background-image: url("../../assets/image.jpg");
+  background-image: url("../../assets/sl1.webp");
+  animation: change 10s infinite ease-in-out;
 }
-
 .content a:hover{
   background: #034e88;
   color: #fff;
@@ -9,26 +9,34 @@
 @keyframes change{
   0%
   {
-      background-image: url("../assets/img1.jpg");
+      background-image: url("../assets/sl2.jpg");
   }
   20%
   {
-      background-image: url("../assets/img2.jpg");
+      background-image: url("../assets/sl1.webp");
   }
   40%
   {
-      background-image: url("../assets/img1.jpg");
+      background-image: url("../assets/sl3.jpg");
   }
   60%
   {
-      background-image: url("../assets/img4.jpg");
+      background-image: url("../assets/sl4.jpg");
   }
   80%
   {
-      background-image: url("../assets/img5.jpg");
+      background-image: url("../assets/sl5.jpg");
   }
   100%
   {
-      background-image: url("../assets/image.jpg");
+      background-image: url("../assets/sl6.jpg");
   }
 }
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px !important;
+}
+.box-shadow-custo{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
