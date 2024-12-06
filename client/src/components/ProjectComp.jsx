@@ -85,14 +85,14 @@ const ProjectComp = () => {
                 </div>
 
                 {/* Top Section */}
-                <div className="grid grid-cols-3 gap-4 py-6 text-center">
+                <div className="grid grid-cols-3 w-[70%] mx-auto gap-4 py-6 text-center">
                     {Object.keys(contentData).map((tab) => (
                         <div
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`p-4 border rounded-lg cursor-pointer ${activeTab === tab
-                                    ? "bg-blue-100 text-blue-600 font-bold"
-                                    : ""
+                                ? "bg-blue-100 text-blue-600 font-bold"
+                                : ""
                                 }`}
                         >
                             <h3 className="text-xl font-bold">{contentData[tab].title}</h3>
@@ -101,7 +101,7 @@ const ProjectComp = () => {
                 </div>
 
                 {/* Divider Section */}
-                <div className="w-11/12 mx-auto flex py-8">
+                <div className="w-11/11 mx-auto flex py-8">
                     {/* Left Side */}
                     <div className="w-[25%] border-r pr-4 mt-20">
                         <h2 className="text-2xl font-bold">{contentData[activeTab].title}</h2>
@@ -109,19 +109,21 @@ const ProjectComp = () => {
                     </div>
 
                     {/* Right Side - Slick Slider with Dynamic Content */}
-                    <div className="container mx-auto px-4 w-[70%] pl-4">
+                    <div className="container mx-4 px-4 w-[70%] pl-4">
                         <Slider {...sliderSettings}>
                             {contentData[activeTab].members.map((member) => (
                                 <div
                                     key={member.id}
-                                    className="bg-white rounded-lg shadow-md p-6 my-6 text-center border-[1px] border-stone-950"
+                                    className="bg-white text-center border-[10px] border-white"
                                 >
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-[100px] mx-auto h-[100px] rounded-full mb-4"
-                                    />
-                                    <h3 className="text-md font-semibold mb-2">{member.name}</h3>
+                                    <div className="border border-black p-6 my-6 rounded-lg shadow-md">
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-[100px] mx-auto h-[100px] rounded-full mb-4"
+                                        />
+                                        <h3 className="text-md font-semibold mb-2">{member.name}</h3>
+                                    </div>
                                 </div>
                             ))}
                         </Slider>
