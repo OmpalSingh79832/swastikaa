@@ -2,15 +2,30 @@ import jwt from "jsonwebtoken";
 import userModel from "../models/userModel.js";
 
 // Register User
-export const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
-  try {
-    const existingUser = await userModel.findOne({ email });
-    if (existingUser)
-      return res.status(400).json({ message: "User already exists" });
 
-    const user = new userModel({ name, email, password });
+export const registerUser = async (req, res) => {
+  const { name, phone, email, password, userRole, sector } = req.body;
+
+  try {
+    // Check if user with the provided email already exists
+    const existingUser = await userModel.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    // Create a new user instance
+    const user = new userModel({
+      name,
+      phone,
+      email,
+      password,
+      userRole,
+      sector,
+    });
+
+    // Save the new user to the database
     await user.save();
+
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
