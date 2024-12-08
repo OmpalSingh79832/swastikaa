@@ -51,7 +51,7 @@ const Slider = () => {
     }, [sliderContent.length]);
 
     return (
-        <div className="slider-container relative w-full h-screen overflow-hidden">
+        <div className="slider-container relative w-full h-[35em] overflow-hidden rounded-2xl">
             {/* Background Image */}
             <div
                 className="slider-image w-full h-full bg-cover bg-center absolute top-0 left-0"
@@ -61,7 +61,7 @@ const Slider = () => {
             ></div>
 
             {/* Text Content */}
-            <div className="absolute top-1/2 left-[30%] transform -translate-x-1/2 -translate-y-1/2 uppercase w-[40%]">
+            <div className="absolute top-[76%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 uppercase w-[40%]">
                 <h1 className="text-start rounded-3xl p-10 bg-white text-[40px] font-extrabold">
                     {sliderContent[currentIndex].heading}{" "}
                     <span className="text-primaryRed">Manufacturer</span> <br />
