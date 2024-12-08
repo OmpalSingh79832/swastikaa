@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa6";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
@@ -11,7 +11,6 @@ import { IoIosCall } from "react-icons/io";
 import logo from "../assets/logo.png";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { CiCircleChevDown } from "react-icons/ci";
-
 import { FaListCheck } from "react-icons/fa6";
 
 const Navbar = () => {
@@ -20,12 +19,16 @@ const Navbar = () => {
       setCategoryShow(true);
       setShowSearchMenu(false);
     };
+    // const navigate = useNavigate();
+
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const navigate = useNavigate();
   return (
     <div className="w-full bg-white">
       <div className="header-top bg-[#2e2d2d] md-lg:hidden">
@@ -60,7 +63,7 @@ const Navbar = () => {
                   <span>
                     <FaLock />
                   </span>
-                  <span>Login</span>
+                  <button onClick={() => navigate("/login")}>Login</button>
                 </div>
               </div>
             </div>
@@ -88,22 +91,22 @@ const Navbar = () => {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link to="/shops">About Us</Link>
+                    <Link to="/">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/racipe">Blog</Link>
+                    <Link to="/">Blog</Link>
                   </li>
                   <li>
-                    <Link to="/community-post">Our Services</Link>
+                    <Link to="/">Our Services</Link>
                   </li>
                   <li>
-                    <Link to="/blog">Pricing</Link>
+                    <Link to="/">Pricing</Link>
                   </li>
                   <li>
-                    <Link to="/about">For Manufacturers</Link>
+                    <Link to="/">For Manufacturers</Link>
                   </li>
                   <li>
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact-us">Contact</Link>
                   </li>
                   <li>
                     <div className="block md-lg:hidden pl-2 md-lg:w-full">
