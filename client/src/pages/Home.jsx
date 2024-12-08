@@ -19,58 +19,88 @@ const Home = () => {
       <ProjectComp />
       <Service />
       <div>
-        <section className="bg-white dark:bg-gray-900">
-          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-            <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-              <div className="pb-10">
-                <div className="flex gap-2">
-                  <IoStarSharp className="text-primaryRed text-3xl" />
-                  <IoStarSharp className="text-yellow-500 text-3xl" />
-                  <p className="text-[40px] text-black font-bold">About Us</p>
-                  <IoStarSharp className="text-yellow-500 text-3xl" />
-                  <IoStarSharp className="text-primaryRed text-3xl" />
+
+
+        <section class="py-24 relative xl:mr-0 lg:mr-5 mr-0">
+          <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+            <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
+              <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
+                <div class="w-full flex-col justify-center items-start gap-8 flex">
+                  <div class="flex-col justify-start lg:items-start items-center gap-4 flex">
+                    <div className="pb-2">
+                      <div className="flex gap-2">
+                        <IoStarSharp className="text-primaryRed text-3xl" />
+                        <IoStarSharp className="text-yellow-500 text-3xl" />
+                        <p className="text-[40px] text-black font-bold">About Us</p>
+                        <IoStarSharp className="text-yellow-500 text-3xl" />
+                        <IoStarSharp className="text-primaryRed text-3xl" />
+                      </div>
+                    </div>
+                    <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
+
+                      <p
+                        class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                        Our achievement story is a testament to teamwork and perseverance. Together, we've
+                        overcome challenges, celebrated victories, and created a narrative of progress and
+                        success.</p>
+                    </div>
+                  </div>
+                  <div class="w-full flex-col justify-center items-start gap-6 flex">
+                    <div class="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
+                      <div
+                        class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">33+ Years</h4>
+                        <p class="text-gray-500 text-base font-normal leading-relaxed">Influencing Digital
+                          Landscapes Together</p>
+                      </div>
+                      <div
+                        class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">125+ Projects
+                        </h4>
+                        <p class="text-gray-500 text-base font-normal leading-relaxed">Excellence Achieved
+                          Through Success</p>
+                      </div>
+                    </div>
+                    <div class="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
+                      <div
+                        class="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">26+ Awards</h4>
+                        <p class="text-gray-500 text-base font-normal leading-relaxed">Our Dedication to
+                          Innovation Wins Understanding</p>
+                      </div>
+                      <div
+                        class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                        <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">99% Happy
+                          Clients</h4>
+                        <p class="text-gray-500 text-base font-normal leading-relaxed">Mirrors our Focus on
+                          Client Satisfaction.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="sm:w-fit w-full group px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
+                  <span
+                    class="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">Read
+                    More</span>
+                  <svg class="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="w-full lg:justify-start justify-center items-start flex">
+                <div
+                  class="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
+                  <img class="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
+                    src="https://pagedone.io/asset/uploads/1717742431.png" alt="about Us image" />
                 </div>
               </div>
-              <p className="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-              {/* <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p> */}
-              <div>
-                <ul className="font-normal text-sm">
-                  <div className="flex mb-3">
-                    <span className="text-xl text-yellow-500"><LuCircleArrowRight /></span>
-                    <li className="ml-2">Swastikaa provides machinery for new business setups, partnering with top suppliers. </li>
-                  </div>
-                  <div className="flex mb-3">
-                    <span className="text-xl text-yellow-500"><LuCircleArrowRight /></span>
-                    <li className="ml-2">Swastikaa provides machinery for new business setups, partnering with top suppliers. </li>
-                  </div>
-                  <div className="flex mb-3">
-                    <span className="text-xl text-yellow-500"><LuCircleArrowRight /></span>
-                    <li className="ml-2">Swastikaa provides machinery for new business setups, partnering with top suppliers. </li>
-                  </div>
-                  <div className="flex mb-3">
-                    <span className="text-xl text-yellow-500"><LuCircleArrowRight /></span>
-                    <li className="ml-2">Swastikaa provides machinery for new business setups, partnering with top suppliers. </li>
-                  </div>
-                  <div className="flex mb-3">
-                    <span className="text-xl text-yellow-500"><LuCircleArrowRight /></span>
-                    <li className="ml-2">Swastikaa provides machinery for new business setups, partnering with top suppliers. </li>
-                  </div>
-                  <div className="flex mb-3">
-                    <span className="text-xl text-yellow-500"><LuCircleArrowRight /></span>
-                    <li className="ml-2">Swastikaa provides machinery for new business setups, partnering with top suppliers. </li>
-                  </div>
-                </ul>
-              </div>
-              <div className="mt-10">
-                <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-3 px-8 border border-blue-500 hover:border-transparent rounded">Get More</button>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-              <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
             </div>
           </div>
         </section>
+
       </div>
       <ChooseUs />
       <ContactForm />
