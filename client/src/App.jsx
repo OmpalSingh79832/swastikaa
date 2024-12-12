@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
+import OurServices from "./pages/OurServices";
+import PricingPage from "./pages/PricingPage";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/contact-us" element={<ContactPage />} />
         {/* <Route path="/blog/blog-details" element={<BlogDetails />} /> */}
         <Route path="/blog-details/:id" element={<BlogDetails />} />
+        <Route path="/our-services" element={<OurServices />} />
+        <Route path="/pricing-details" element={<PricingPage />} />
       </Routes>
       <Footer />
     </>
