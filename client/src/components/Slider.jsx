@@ -5,6 +5,7 @@ import Sl3 from "../assets/sl3.jpg";
 import Sl4 from "../assets/sl4.jpg";
 import Sl5 from "../assets/sl5.jpg";
 import Sl6 from "../assets/sl6.jpg";
+import "./home.css"
 
 const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,11 +62,11 @@ const Slider = () => {
             ></div>
 
             {/* Text Content */}
-            <div className="absolute top-[76%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 uppercase w-[40%]">
+            <div className="absolute top-[70%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 uppercase w-[50%]">
                 <h1 className="text-start rounded-3xl p-10 bg-white text-[40px] font-extrabold">
                     {sliderContent[currentIndex].heading}{" "}
                     <span className="text-primaryRed">Manufacturer</span> <br />
-                    <button className="bg-softYellow px-6 py-2.5 text-[18px] rounded-md hover:bg-black hover:text-white">
+                    <button className="all-btn">
                         {sliderContent[currentIndex].button}
                     </button>
                 </h1>
