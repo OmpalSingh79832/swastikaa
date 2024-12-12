@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import userModel from "../models/userModel.js";
+import createToken from "../config/tokenCreate.js";
 
 // Register User
 
@@ -14,7 +15,7 @@ export const registerUser = async (req, res) => {
     }
 
     // Create a new user instance
-    const user = new userModel({
+    const user = await userModel.create({
       name,
       phone,
       email,
@@ -24,7 +25,19 @@ export const registerUser = async (req, res) => {
     });
 
     // Save the new user to the database
-    await user.save();
+    //  const user =  await user.save();
+
+    // Generate JWT token
+    const token = await createToken({
+      id: user._id,
+      phone: user.phone,
+      email: user.email,
+      userRole: user.userRole,
+      sectoe: user.sector,
+    });
+    res.cookie("customerToken", token, {
+      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    });
 
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
@@ -35,18 +48,33 @@ export const registerUser = async (req, res) => {
 // Login User
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
+
   try {
+    // Find user by email
     const user = await userModel.findOne({ email });
-    if (!user) return res.status(400).json({ message: "Invalid credentials" });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid Username and password" });
+    }
 
-    const isMatch = await userModel.comparePassword(password);
-    if (!isMatch)
+    // Check if the password matches
+    const isMatch = await user.comparePassword(password); // Call the instance method
+    if (!isMatch) {
       return res.status(400).json({ message: "Invalid credentials" });
+    }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+    // Generate JWT token
+    const token = await createToken({
+      id: user._id,
+      phone: user.phone,
+      email: user.email,
+      userRole: user.userRole,
+      sectoe: user.sector,
     });
-    res.status(200).json({ token });
+    res.cookie("customerToken", token, {
+      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    });
+
+    res.status(200).json({ message: "Login Sucessfully", token });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
   }
@@ -54,6 +82,7 @@ export const loginUser = async (req, res) => {
 
 // Get Current User
 export const getCurrentUser = async (req, res) => {
+  // console.log("req", req.user);
   try {
     const user = await userModel.findById(req.user.id).select("-password");
     res.status(200).json(user);

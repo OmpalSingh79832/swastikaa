@@ -1,11 +1,12 @@
 import express from "express";
+// import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 import {
   registerUser,
   loginUser,
   getCurrentUser,
 } from "../controllers/userController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
