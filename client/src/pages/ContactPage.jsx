@@ -15,7 +15,7 @@ const ContactPage = () => {
                                 <h2 className="text-black font-manrope text-4xl font-semibold leading-10 mb-5 md:text-left text-center">Get In Touch</h2>
                                 <p className="text-gray-600 text-lg font-normal leading-7 mb-7 md:text-left text-center">Whether you have a concern or simply want to say hello, We are here to facilitate communication with you.</p>
                                 <div className="flex md:items-center md:justify-start justify-center">
-                                    <button className="w-36 h-12 rounded-full bg-indigo-600 transition-all duration-700 hover:bg-indigo-800 shadow text-white text-center text-base font-semibold leading-6">Contact Us</button>
+                                    <button className="w-36 h-12 shadow all-btn">Contact Us</button>
                                 </div>
                             </div>
                             <div className="border-l-2 md:border-indigo-600 border-white px-10 py-6">
@@ -29,40 +29,59 @@ const ContactPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
-                            <div className="h-96 relative flex justify-center">
-                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50" />
-                                <img src="https://pagedone.io/asset/uploads/1696246502.png" alt="United Kingdom image" className="w-full h-full object-cover" />
+                        <div>
+                            <p className='text-black font-manrope text-4xl font-semibold leading-10 mb-5 md:text-left text-center'>Our Presence</p>
+                            <ul className='text-base mb-10 ml-4'>
+                                <li>At Swastikaa, we take our consultancy services seriously..</li>
+                                <li>At Swastikaa, we take our consultancy services seriously...</li>
+                                <li>At Swastikaa, we take our consultancy services seriously......</li>
+                            </ul>
+                        </div>
+                        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 w-[90%] mx-auto mb-10">
+                            <div className="h-96 relative flex justify-center ">
+                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50 rounded-xl" />
+                                <img src="https://pagedone.io/asset/uploads/1696246502.png" alt="United Kingdom image" className="w-full h-full object-cover rounded-xl" />
                                 <div className="absolute bottom-0 mb-6 text-center px-6">
                                     <h5 className="text-white text-lg font-semibold leading-7 mb-2">United Kingdom</h5>
                                     <p className="text-white text-base font-medium leading-6">123 High Street, Westminster, London</p>
                                 </div>
                             </div>
                             <div className="h-96 relative flex justify-center">
-                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50" />
-                                <img src="https://pagedone.io/asset/uploads/1696246522.png" alt="Germany image" className="w-full h-full  object-cover" />
+                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50 rounded-xl" />
+                                <img src="https://pagedone.io/asset/uploads/1696246522.png" alt="Germany image" className="w-full rounded-xl h-full  object-cover" />
                                 <div className="absolute bottom-0 mb-6 text-center px-6">
                                     <h5 className="text-white text-lg font-semibold leading-7 mb-2">Germany</h5>
                                     <p className="text-white text-base font-medium leading-6">101 Unter den Linden, Mitte <br />District, Berlin</p>
                                 </div>
                             </div>
                             <div className="h-96 relative flex justify-center">
-                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50" />
-                                <img src="https://pagedone.io/asset/uploads/1696246551.png" alt="France image" className="w-full h-full  object-cover" />
+                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50 rounded-xl" />
+                                <img src="https://pagedone.io/asset/uploads/1696246551.png" alt="France image" className="w-full h-full rounded-xl object-cover" />
                                 <div className="absolute bottom-0 mb-6 text-center px-6">
                                     <h5 className="text-white text-lg font-semibold leading-7 mb-2">France</h5>
                                     <p className="text-white text-base font-medium leading-6">456 Rue de la Paix, 8th Arrondissement, Paris</p>
                                 </div>
                             </div>
-                            <div className="h-96 relative flex justify-center">
-                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50" />
-                                <img src="https://pagedone.io/asset/uploads/1696246565.png" alt="Switzerland image" className="w-full h-full  object-cover" />
+                           
+                        </div>
+                        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-8 w-[90%] mx-auto">
+                        <div className="h-96 relative flex justify-center">
+                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50 rounded-xl" />
+                                <img src="https://pagedone.io/asset/uploads/1696246565.png" alt="Switzerland image" className="w-full h-full rounded-xl object-cover" />
                                 <div className="absolute bottom-0 mb-6 text-center px-6">
                                     <h5 className="text-white text-lg font-semibold leading-7 mb-2">Switzerland</h5>
                                     <p className="text-white text-base font-medium leading-6">987 Bahnhofstrasse, Zurich <br /> City Center, Zurich</p>
                                 </div>
                             </div>
-                        </div>
+                            <div className="h-96 relative flex justify-center">
+                                <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50 rounded-xl" />
+                                <img src="https://pagedone.io/asset/uploads/1696246551.png" alt="France image" className="w-full h-full rounded-xl object-cover" />
+                                <div className="absolute bottom-0 mb-6 text-center px-6">
+                                    <h5 className="text-white text-lg font-semibold leading-7 mb-2">France</h5>
+                                    <p className="text-white text-base font-medium leading-6">456 Rue de la Paix, 8th Arrondissement, Paris</p>
+                                </div>
+                            </div>
+                            </div>
                     </div>
                 </section>
             </div>
@@ -114,7 +133,7 @@ const ContactPage = () => {
                                 <textarea placeholder='Message' rows="6"
                                     class="w-full bg-gray-100 rounded-lg px-6 text-sm pt-3 outline-none"></textarea>
                                 <button type='button'
-                                    class="text-gray-800 w-full relative bg-yellow-400 hover:bg-yellow-500 font-semibold rounded-lg text-sm px-6 py-3 !mt-6">
+                                    class="text-gray-800 w-full relative bg-softYellow hover:bg-black hover:text-white font-semibold rounded-lg text-sm px-6 py-3 !mt-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='currentColor' class="mr-2 inline" viewBox="0 0 548.244 548.244">
                                         <path fill-rule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clip-rule="evenodd" data-original="#000000" />
                                     </svg>

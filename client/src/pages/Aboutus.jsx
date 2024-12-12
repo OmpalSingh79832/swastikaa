@@ -5,22 +5,22 @@ const Aboutus = () => {
     <>
       <div>
         {/* hero seciton */}
-        <div className="relative w-full h-[320px]" id="home">
+        <div className="relative w-full h-[500px]" id="home">
           <div className="absolute inset-0 opacity-70">
             <img src={AboutImg1} alt="Background Image" className="object-cover object-center w-full h-full" />
           </div>
           <div className="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-4 md:mb-0">
-              <h1 className="text-grey-700 font-medium text-4xl md:text-5xl leading-tight mb-2 ">Swastikaa Manufacturing <br />Sector Consultant</h1>
-              <p className="font-regular text-xl mb-8 mt-4">One stop solution for flour grinding services</p>
-              <a href="#contactUs" className="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200">Contact
+              <h1 className="text-grey-700 font-medium text-7xl md:text-7xl leading-tight mb-2 ">Swastikaa Manufacturing <br />Sector Consultant</h1>
+              <p className="font-regular font-bold text-2xl mb-8 mt-4">One stop solution for flour grinding services</p>
+              <a href="#contactUs" className="all-btn">Contact
                 Us</a>
             </div>
           </div>
         </div>
         {/* our services section */}
-        <section className="py-10" id="services">
-          <div className="container mx-auto px-4">
+        <section className="py-20" id="services">
+          <div className="container mx-auto w-[90%] px-4">
             <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -106,8 +106,8 @@ const Aboutus = () => {
           </div>
         </section>
         {/* about us */}
-        <section className="bg-gray-100" id="aboutus">
-          <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gray-100 " id="aboutus">
+          <div className="container mx-auto w-[90%] py-16 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               <div className="max-w-lg">
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
@@ -172,7 +172,7 @@ const Aboutus = () => {
         {/* gallery */}
         <section className="text-gray-700 body-font" id="gallery">
           <div className="flex justify-center text-3xl font-bold text-gray-800 text-center py-10">
-            Gallery
+            Our Team
           </div>
           <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
             <div className="group relative">
@@ -207,7 +207,7 @@ const Aboutus = () => {
                         123456789</a></p>
                       <a className="flex m-1" href="tel:+919823331842">
                         <div className="flex-shrink-0">
-                          <div className="flex items-center justify-between h-10 w-30 rounded-md bg-indigo-500 text-white p-2">
+                          <div className="flex items-center justify-between h-10 w-30 all-btn my-3">
                             {/* Heroicon name: phone */}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

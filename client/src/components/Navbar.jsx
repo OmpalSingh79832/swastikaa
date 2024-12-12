@@ -4,31 +4,17 @@ import { BsTwitter } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-import Logo from "../assets/logo.png";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { GrMail } from "react-icons/gr";
 import { IoIosCall } from "react-icons/io";
 import logo from "../assets/logo.png";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { CiCircleChevDown } from "react-icons/ci";
-import { FaListCheck } from "react-icons/fa6";
+
 
 const Navbar = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      setCategoryShow(true);
-      setShowSearchMenu(false);
-    };
-    // const navigate = useNavigate();
-
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const navigate = useNavigate();
+
+  
   return (
     <div className="w-full bg-white">
       <div className="header-top bg-[#2e2d2d] md-lg:hidden">
@@ -71,44 +57,45 @@ const Navbar = () => {
         </div>
       </div>
       <div className="w-white">
-        <div className="w-[95%] lg:w-[95%] mx-auto">
-          <div className="h-[100px] md-lg:h-[100px] flex justify-between items-center flex-wrap">
-            <div className="md-lg:w-full w-fit md-lg:pt-4">
-              <div className="flex justify-between items-center w-[100%]">
+        <div className="w-[95%] mx-auto">
+          <div className="h-[80px] flex justify-between items-center flex-wrap">
+            <div className="w-[10%] mx-aut">
                 <Link to="/">
                   <img
-                    className="w-[50%]  h-full mt-[1px]"
+                    className="w-[100%] h-full mt-4"
                     src={logo}
                     alt="logo"
                   />
                 </Link>
-              </div>
             </div>
             <div className="md-lg:w-full w-9/12">
               <div className="flex justify-between md-lg:justify-center items-center flex-wrap ">
-                <ul className="flex justify-start items-start gap-8 text-sm font-bold uppercase md-lg:hidden">
-                  <li>
+                <ul className="flex justify-start items-start gap-6 text-base font-semibold md-lg:hidden mt-[-70px]">
+                  <li className="hover:text-primaryRed">
                     <Link to="/">Home</Link>
                   </li>
-                  <li>
-                    <Link to="/about-us">About Us</Link>
-                  </li>
-                  <li>
-                    <Link to="/blog">Blog</Link>
-                  </li>
-                  <li>
+                  <li className="hover:text-primaryRed">
                     <Link to="/">Our Services</Link>
                   </li>
-                  <li>
+                  <li className="hover:text-primaryRed">
+                    <Link to="/">Consulting Services</Link>
+                  </li>
+                  <li className="hover:text-primaryRed">
+                    <Link to="/">Apply Project</Link>
+                  </li>
+                  <li className="hover:text-primaryRed">
                     <Link to="/">Pricing</Link>
                   </li>
-                  <li>
-                    <Link to="/">For Manufacturers</Link>
+                  <li className="hover:text-primaryRed">
+                    <Link to="/blog">Blog</Link>
                   </li>
-                  <li>
+                  <li className="hover:text-primaryRed">
+                    <Link to="/about-us">About Us</Link>
+                  </li>
+                  <li className="hover:text-primaryRed">
                     <Link to="/contact-us">Contact</Link>
                   </li>
-                  <li>
+                  </ul>
                     <div className="block md-lg:hidden pl-2 md-lg:w-full">
                       <div className="w-full flex justify-end md-lg:justify-start gap-3 items-center">
                         <div className="w-[48px] h-[48px] rounded-full flex bg-[#f5f5f5] justify-center items-center">
@@ -123,12 +110,7 @@ const Navbar = () => {
                           <span className="text-sm">support 24x7 time</span>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-
-
-
+                    </div>              
               </div>
             </div>
           </div>
@@ -136,18 +118,18 @@ const Navbar = () => {
       </div>
       <div className="w-[95%] mx-auto mb-4">
         <div className="w-9/12 mx-auto md-lg:w-full">
-          <div className="w-8/12 md-lg:w-full">
+          <div className="w-8/12 md-lg:w-full mx-auto">
             <div className="flex h-[50px] relative">
               <div className="relative border border-zinc-500 h-[50px] w-[585px] rounded-l-full">
                 <div className="relative w-full h-full">
                   <input
                     type="text"
-                    className="w-full relative bg-transparent text-slate-500 outline-0 pr-2 px-3 h-full rounded-full"
+                    className="w-full relative bg-transparent text-slate-500 outline-0 pr-2 px-3 h-full rounded-full placeholder:text-black"
                     placeholder="What You need "
                   />
                 </div>
               </div>
-              <button className="bg-[#fc433d] right-0 absolute px-10 h-full font-semibold uppercase text-black rounded-r-full">
+              <button className="bg-primaryRed right-0 absolute px-10 h-full font-s uppercase text-white rounded-r-full">
                 Search
               </button>
             </div>

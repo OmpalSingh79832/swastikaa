@@ -11,6 +11,60 @@ import Sl6 from "../assets/sl6.jpg";
 import { IoStarSharp } from "react-icons/io5";
 
 const IndustrySec = () => {
+    const CustomPrevArrow = ({ onClick }) => (
+        <button
+            onClick={onClick}
+            className="custom-arrow custom-prev"
+            style={{
+                backgroundColor: "#000",
+                boxShadow: "0px 0px 48px 72px rgba(0,0,0,0.1)",
+                color: "#fff",
+                fontSize: "25px",
+                padding: "2px 15px 5px 15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                border: "none",
+                borderRadius: "5px",
+                position: "absolute",
+                left: "-40px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 1,
+                cursor: "pointer",
+            }}
+        >
+            &#8249;
+        </button>
+    );
+
+    const CustomNextArrow = ({ onClick }) => (
+        <button
+            onClick={onClick}
+            className="custom-arrow custom-next"
+            style={{
+                backgroundColor: "#000",
+                boxShadow: "0px 0px 48px 72px rgba(0,0,0,0.1)",
+                color: "#fff",
+                fontSize: "25px",
+                padding: "2px 15px 5px 15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                border: "none",
+                borderRadius: "5px",
+                position: "absolute",
+                right: "-40px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 1,
+                cursor: "pointer",
+            }}
+        >
+            &#8250;
+        </button>
+    );
+
     const settings = {
         infinite: true,
         speed: 500,
@@ -19,8 +73,8 @@ const IndustrySec = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        nextArrow: <CustomNextArrow />,
+        prevArrow: <CustomPrevArrow />,
         responsive: [
             {
                 breakpoint: 1024,
@@ -53,7 +107,7 @@ const IndustrySec = () => {
     ];
 
     return (
-        <div className="p-4 py-8 bg-gray-100 relative">
+        <div className="p-[6rem] py-24 bg-gray-100 relative">
             <div className="text-center pb-5">
                 <div className="flex justify-center items-center gap-2">
                     <IoStarSharp className="text-primaryRed text-3xl" />
@@ -77,7 +131,7 @@ const IndustrySec = () => {
                                 className="w-full h-80 object-cover rounded-md shadow-lg"
                             />
                             <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-                                <button className="bg-softYellow px-8 py-2 rounded-md hover:bg-blue-600">
+                                <button className="all-btn">
                                     {item.buttonText}
                                 </button>
                             </div>
@@ -89,28 +143,5 @@ const IndustrySec = () => {
     );
 };
 
-const NextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={`${className} `}
-            style={{ ...style, right: "20px", zIndex: 10 }}
-            onClick={onClick}
-        >
-        </div>
-    );
-};
-
-const PrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={`${className}`}
-            style={{ ...style, left: "10px", zIndex: 10 }}
-            onClick={onClick}
-        >
-        </div>
-    );
-};
 
 export default IndustrySec;

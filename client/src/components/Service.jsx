@@ -116,7 +116,7 @@ const Service = () => {
 
     return (
         <>
-            <div className="bg-gray-200 pt-10 pb-16">
+            <div className="bg-gray-300 pt-10 pb-16">
                 <div className="w-[90%] mx-auto">
                     <div className="text-center pb-10">
                         <div className="flex justify-center items-center gap-2">
@@ -132,7 +132,7 @@ const Service = () => {
                         <Slider {...settings}>
                             {sliderData.map((service) => (
                                 <div className="p-4" key={service.id}>
-                                    <div className="border bg-white rounded-xl shadow-sm sm:flex">
+                                    <div className="border bg-white rounded-xl shadow-sm sm:flex h-[60vh]">
                                         {/* Image Section */}
                                         <div className="shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
                                             <img

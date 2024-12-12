@@ -39,7 +39,7 @@ const Home = () => {
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
 
                       <p
-                        class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                        class="text-black text-lg font-normal leading-relaxed lg:text-start text-center">
                         Our achievement story is a testament to teamwork and perseverance. Together, we've
                         overcome challenges, celebrated victories, and created a narrative of progress and
                         success.</p>
@@ -50,14 +50,14 @@ const Home = () => {
                       <div
                         class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
                         <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">33+ Years</h4>
-                        <p class="text-gray-500 text-base font-normal leading-relaxed">Influencing Digital
+                        <p class="text-base font-normal leading-relaxed">Influencing Digital
                           Landscapes Together</p>
                       </div>
                       <div
                         class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
                         <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">125+ Projects
                         </h4>
-                        <p class="text-gray-500 text-base font-normal leading-relaxed">Excellence Achieved
+                        <p class="text-base font-normal leading-relaxed">Excellence Achieved
                           Through Success</p>
                       </div>
                     </div>
@@ -65,29 +65,21 @@ const Home = () => {
                       <div
                         class="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
                         <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">26+ Awards</h4>
-                        <p class="text-gray-500 text-base font-normal leading-relaxed">Our Dedication to
+                        <p class="text-base font-normal leading-relaxed">Our Dedication to
                           Innovation Wins Understanding</p>
                       </div>
                       <div
                         class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
                         <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">99% Happy
                           Clients</h4>
-                        <p class="text-gray-500 text-base font-normal leading-relaxed">Mirrors our Focus on
+                        <p class="text-base font-normal leading-relaxed">Mirrors our Focus on
                           Client Satisfaction.</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <button
-                  class="sm:w-fit w-full group px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
-                  <span
-                    class="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">Read
-                    More</span>
-                  <svg class="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
-                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
+                  class=" all-btn">Read More
                 </button>
               </div>
               <div class="w-full lg:justify-start justify-center items-start flex">
