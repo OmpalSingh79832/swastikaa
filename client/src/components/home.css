@@ -45,3 +45,12 @@
   background-color: black;
   font-weight: 500;
 }
+
+.heading-style{
+line-height: 50px;
+}
+.heading-style span{
+font-size: 40px;
+font-weight: bold;
+text-transform: uppercase;
+}

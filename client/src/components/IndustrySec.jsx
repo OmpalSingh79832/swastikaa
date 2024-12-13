@@ -107,41 +107,40 @@ const IndustrySec = () => {
     ];
 
     return (
-        <div className="p-[6rem] py-24 bg-gray-100 relative">
-            <div className="text-center pb-5">
-                <div className="flex justify-center items-center gap-2">
-                    <IoStarSharp className="text-primaryRed text-3xl" />
-                    <IoStarSharp className="text-yellow-500 text-3xl" />
-                    <p className="text-[40px] font-bold">Industry</p>
-                    <IoStarSharp className="text-yellow-500 text-3xl" />
-                    <IoStarSharp className="text-primaryRed text-3xl" />
+        <>
+
+            <div className="p-[6rem] py-24 bg-gray-100 relative">
+                <div className="heading-style pb-5 flex items-center relative">
+                    <span>Industry</span>
+                    <div className="ml-4 flex-grow relative">
+                        <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+                    </div>
                 </div>
-                <span className="text-[20px] font-semibold">Industries We Work</span>
-            </div>
-            <Slider {...settings}>
-                {sliderData.map((item) => (
-                    <div
-                        key={item.id}
-                        className="p-8 transition-transform duration-300"
-                    >
-                        <div className="relative">
-                            <img
-                                src={item.image}
-                                alt={`Slider ${item.id}`}
-                                className="w-full h-80 object-cover rounded-md shadow-lg"
-                            />
-                            <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-                                <button className="all-btn">
-                                    {item.buttonText}
-                                </button>
+                <Slider {...settings}>
+                    {sliderData.map((item) => (
+                        <div
+                            key={item.id}
+                            className="p-8 transition-transform duration-300"
+                        >
+                            <div className="relative">
+                                <img
+                                    src={item.image}
+                                    alt={`Slider ${item.id}`}
+                                    className="w-full h-80 object-cover rounded-md shadow-lg"
+                                />
+                                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                                    <button className="all-btn">
+                                        {item.buttonText}
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </Slider>
-        </div>
+                    ))}
+                </Slider>
+            </div>
+        </>
     );
 };
-
+{/* <span className="text-[20px]  font-semibold">Industries We Work</span> */ }
 
 export default IndustrySec;

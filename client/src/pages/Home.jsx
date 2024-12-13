@@ -26,18 +26,14 @@ const Home = () => {
             <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
               <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
                 <div class="w-full flex-col justify-center items-start gap-8 flex">
-                  <div class="flex-col justify-start lg:items-start items-center gap-4 flex">
-                    <div className="pb-2">
-                      <div className="flex gap-2">
-                        <IoStarSharp className="text-primaryRed text-3xl" />
-                        <IoStarSharp className="text-yellow-500 text-3xl" />
-                        <p className="text-[40px] text-black font-bold">About Us</p>
-                        <IoStarSharp className="text-yellow-500 text-3xl" />
-                        <IoStarSharp className="text-primaryRed text-3xl" />
+                  <div class="">
+                    <div class="heading-style pb-10 flex items-center relative">
+                      <span>About Us</span>
+                      <div class="ml-4 flex-grow relative">
+                        <hr class="absolute bottom-[-12px] h-1 bg-black w-1/2" />
                       </div>
                     </div>
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
-
                       <p
                         class="text-black text-lg font-normal leading-relaxed lg:text-start text-center">
                         Our achievement story is a testament to teamwork and perseverance. Together, we've

@@ -143,10 +143,11 @@ const BlogDetails = () => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-      </div>
+        </div>
 
       {/* Blog Content Section */}
-      <div className="max-w-3xl mx-auto bg-white p-5 sm:p-10 rounded shadow-lg relative mt-[-90px]">
+     <div className='flex gap-10'>
+     <div className="max-w-3xl mx-aut bg-white p-5 sm:p-10 rounded shadow-lg relative mt-[-90px]">
         <h1 className="text-gray-900 font-bold text-3xl mb-5 border-b-2 pb-3">
           {blog.title}
         </h1>
@@ -175,25 +176,48 @@ const BlogDetails = () => {
           </div>
         ))}
 
-      <div className='flex justify-between'>
-      <p className="text-base leading-8 my-5 border-t-2 pt-3">
-          For more insights into jackfruit processing, visit -{" "}
-          <Link
-            to="/"
-            className="text-md text-primaryRed font-medium hover:text-gray-900 transition duration-500 ease-in-out"
-          >
-            Swastika.com
-          </Link>
-        </p>
-        <p className='text-base leading-8 my-5 border-t-2 pt-3'>
-          <Link to="/blog"
-          className='text-md text-primaryRed font-medium hover:text-gray-900 transition duration-500 ease-in-out'
-          >
-          Go to Blog Page
-          </Link>
+        <div className='flex justify-between'>
+          <p className="text-base leading-8 my-5 border-t-2 pt-3">
+            For more insights into jackfruit processing, visit -{" "}
+            <Link
+              to="/"
+              className="text-md text-primaryRed font-medium hover:text-gray-900 transition duration-500 ease-in-out"
+            >
+              Swastika.com
+            </Link>
           </p>
+          <p className='text-base leading-8 my-5 border-t-2 pt-3'>
+            <Link to="/blog"
+              className='text-md text-primaryRed font-medium hover:text-gray-900 transition duration-500 ease-in-out'
+            >
+              Go to Blog Page
+            </Link>
+          </p>
+        </div>
       </div>
+      <div className="relative py-3 sm:max-w-xl h-fit sm:mx-auto mt-20">
+        <div className="absolute inset-0  bg-brightBlue shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+        </div>
+        <div className="relative px-2 py-10 bg-brightBlue shadow-lg sm:rounded-3xl sm:p-10">
+          <div className="text-center pb-6">
+            <h1 className="text-3xl">Contact Us!</h1>
+            <p className="">
+              Fill up the form below to send us a message.
+            </p>
+          </div>
+          <form>
+            <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Name" name="name" />
+            <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="Email" name="email" />
+            <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Subject" name="_subject" />
+            <textarea className="shadow mb-4 min-h-0 appearance-none border rounded h-64 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Type your message here..." name="message" style={{ height: 121 }} defaultValue={""} />
+            <div className="flex justify-between">
+              <input className="shadow all-btn font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" defaultValue="Send ➤" />
+              <input className="shadow all-btn font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="reset" />
+            </div>
+          </form>
+        </div>
       </div>
+     </div>
     </div>
   );
 };

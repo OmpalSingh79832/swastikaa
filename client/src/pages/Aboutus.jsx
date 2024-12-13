@@ -30,7 +30,12 @@ const Aboutus = () => {
         {/* our services section */}
         <section className="py-20" id="services">
           <div className="container mx-auto w-[90%] px-4">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
+            <div className="heading-style pb-10 flex items-center relative">
+              <span>Our Services</span>
+              <div className="ml-4 flex-grow relative">
+                <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" alt="wheat flour grinding" className="w-full h-64 object-cover" />
@@ -106,7 +111,12 @@ const Aboutus = () => {
           <div className="container mx-auto w-[90%] py-16 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               <div className="max-w-lg">
-                <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">About Us</h2>
+                <div className="heading-style pb-10 flex items-center relative">
+                  <span>About Us</span>
+                  <div className="ml-4 flex-grow relative">
+                    <hr className="absolute bottom-[-12px] h-1 bg-black w-2/4" />
+                  </div>
+                </div>
                 <p className="mt-4 text-gray-600 text-lg text-justify">
                   Swastikaa is a leading manufacturing Sector Consultant offering consulting services worldwide. From Ideation to Execution of Projects, Our focus is always on building an efficient and results-driven relationship. We will work with you to create a customized plan of action for your organization. Get in touch to learn more about our vision and consulting approach. <br />
                   We are committed to providing our customers with the best possible experience. We offer competitive
@@ -126,13 +136,11 @@ const Aboutus = () => {
         <ChooseUs />
         {/* Meet Our Professional Team */}
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-          <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-            <div>
-
+          <div className="heading-style pb-12 flex items-center relative">
+            <span>our professional team</span>
+            <div className="ml-4 flex-grow relative">
+              <hr className="absolute bottom-[-12px] h-1 bg-black w-1/4" />
             </div>
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-              Our Professionals Team
-            </h2>
 
           </div>
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -333,9 +341,13 @@ const Aboutus = () => {
 
 
         {/* Visit us section */}
-        <div className="max-w-2xl lg:max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900" id="contactUs">Visit Our Location</h2>
-          <p className="mt-3 text-lg text-gray-500">Let us serve you the best</p>
+        <div className="w-[94%] mx-auto">
+          <div className="heading-style pb-8 flex items-center relative">
+            <span>contact us </span>
+            <div className="ml-4 flex-grow relative">
+              <hr className="absolute bottom-[-12px] h-1 bg-black w-1/4" />
+            </div>
+          </div>
         </div>
         <ContactForm />
 

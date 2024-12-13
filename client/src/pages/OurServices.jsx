@@ -83,7 +83,13 @@ function OurServices() {
         <>
             <section className="pb-20 pt-10" id="services">
                 <div className="container mx-auto w-[90%] px-4">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
+                    <div className="heading-style pb-12 flex items-center relative">
+                        <span>Our Services</span>
+                        <div className="ml-4 flex-grow relative">
+                            <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {services.map((service, index) =>
                             service.isSpecial ? (
