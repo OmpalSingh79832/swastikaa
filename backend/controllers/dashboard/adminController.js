@@ -4,6 +4,8 @@ import formidable from "formidable";
 import cloudinary from "cloudinary";
 import responseReturn from "../../utiles/response.js";
 import createToken from "../../config/tokenCreate.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 cloudinary.v2.config({
   cloud_name: process.env.cloud_name,
@@ -84,7 +86,7 @@ const adminControllers = {
   getUser: async (req, res) => {
     const { id, role, admin } = req;
 
-    console.log("object", admin);
+    // console.log("object", admin);
 
     try {
       const admin = await adminModel.findById(id);
@@ -96,49 +98,47 @@ const adminControllers = {
   },
 
   profileImageUpload: async (req, res) => {
-    const { id } = req;
-    const form = formidable({ multiples: true });
+    const { id } = req; // Ensure `id` is passed through middleware
+    const { name } = req.body; // Extract 'name' from the request body
+    const imageFile = req.file; // Extract the file uploaded via Multer
 
-    form.parse(req, async (err, _, files) => {
-      if (err) {
-        return responseReturn(res, 500, { error: "Form parsing error" });
-      }
+    // console.log("name:", name);
 
-      const { image } = files;
-
-      try {
-        const result = await cloudinary.uploader.upload(image.filepath, {
-          folder: "profile",
-        });
-        await adminModel.findByIdAndUpdate(id, { image: result.url });
-
-        const updatedUser = await adminModel.findById(id);
-        responseReturn(res, 201, {
-          message: "Image upload success",
-          userInfo: updatedUser,
-        });
-      } catch (error) {
-        responseReturn(res, 500, { error: "Image upload failed" });
-      }
-    });
-  },
-
-  profileInfoAdd: async (req, res) => {
-    const { division, district, shopName, sub_district } = req.body;
-    const { id } = req;
+    if (!imageFile) {
+      return responseReturn(res, 400, { error: "Image file is required" });
+    }
 
     try {
-      await sellerModel.findByIdAndUpdate(id, {
-        shopInfo: { shopName, division, district, sub_district },
+      // Upload the file buffer to Cloudinary
+      const result = await new Promise((resolve, reject) => {
+        const uploadStream = cloudinary.v2.uploader.upload_stream(
+          { folder: "profile" },
+          (error, result) => {
+            if (error) {
+              console.error("Cloudinary upload error:", error);
+              reject(new Error("Image upload error"));
+            } else {
+              resolve(result);
+            }
+          }
+        );
+        uploadStream.end(imageFile.buffer); // Pass the file buffer
       });
 
-      const updatedUser = await sellerModel.findById(id);
+      // Update admin profile
+      await adminModel.findByIdAndUpdate(id, {
+        name,
+        image: result.secure_url,
+      });
+
+      const updatedUser = await adminModel.findById(id);
       responseReturn(res, 201, {
-        message: "Profile info added successfully",
+        message: "Image upload success",
         userInfo: updatedUser,
       });
     } catch (error) {
-      responseReturn(res, 500, { error: error.message });
+      console.error("Error during profile update:", error);
+      responseReturn(res, 500, { error: "Server error" });
     }
   },
 
