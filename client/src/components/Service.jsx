@@ -118,10 +118,10 @@ const Service = () => {
         <>
             <div className="bg-gray-300 py-24">
                 <div className="w-[90%] mx-auto">
-                    <div className="heading-style pb-10 flex items-center relative">
-                        <span>our services</span>
-                        <div className="ml-4 flex-grow relative">
-                            <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+                    <div className="text-center">
+                        <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
+                        <div className="w-[70%] mx-auto mb-8">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                         </div>
                     </div>
 

@@ -74,10 +74,10 @@ const ProjectComp = () => {
     return (
         <div className="w-full my-24 box-shadow-custo">
             <div className="w-[90%] mx-auto">
-                <div className="heading-style pb-10 flex items-center relative">
-                    <span>our analysis</span>
-                    <div className="ml-4 flex-grow relative">
-                        <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+                <div className="text-center">
+                    <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Analysis --</span></p>
+                    <div className="w-[70%] mx-auto">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                     </div>
                 </div>
 

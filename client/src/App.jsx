@@ -10,6 +10,7 @@ import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import OurServices from "./pages/OurServices";
 import PricingPage from "./pages/PricingPage";
+import DashboardIndex from "./dashboard";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/blog-details/:id" element={<BlogDetails />} />
         <Route path="/our-services" element={<OurServices />} />
         <Route path="/pricing-details" element={<PricingPage />} />
+        <Route path="/dashboard" element={<DashboardIndex />} />
       </Routes>
       <Footer />
     </>

@@ -46,11 +46,8 @@
   font-weight: 500;
 }
 
-.heading-style{
-line-height: 50px;
-}
-.heading-style span{
-font-size: 40px;
-font-weight: bold;
-text-transform: uppercase;
+
+.card-section{
+  background-color: black;
+      background-image: linear-gradient(to left top, rgba(220, 38, 38, 0.2) 20%, transparent 50%, transparent 100%);
 }

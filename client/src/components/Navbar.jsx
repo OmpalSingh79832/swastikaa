@@ -78,7 +78,7 @@ const Navbar = () => {
                     <Link to="/our-services">Our Services</Link>
                   </li>
                   <li className="hover:text-primaryRed">
-                    <Link to="/">Consulting Services</Link>
+                    <Link to="/dashboard">Consulting Services</Link>
                   </li>
                   <li className="hover:text-primaryRed">
                     <Link to="/">Apply Project</Link>

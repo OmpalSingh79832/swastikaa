@@ -27,11 +27,8 @@ const Home = () => {
               <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
                 <div class="w-full flex-col justify-center items-start gap-8 flex">
                   <div class="">
-                    <div class="heading-style pb-10 flex items-center relative">
-                      <span>About Us</span>
-                      <div class="ml-4 flex-grow relative">
-                        <hr class="absolute bottom-[-12px] h-1 bg-black w-1/2" />
-                      </div>
+                    <div className="text-start">
+                      <p className="text-[40px] mr-3 font-bold">-- About<span className="text-primaryRed">Us --</span></p>
                     </div>
                     <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                       <p

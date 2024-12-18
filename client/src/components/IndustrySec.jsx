@@ -109,11 +109,11 @@ const IndustrySec = () => {
     return (
         <>
 
-            <div className="p-[6rem] py-24 bg-gray-100 relative">
-                <div className="heading-style pb-5 flex items-center relative">
-                    <span>Industry</span>
-                    <div className="ml-4 flex-grow relative">
-                        <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+            <div className="p-[6rem] py-10 bg-gray-100 relative">
+                <div className="text-center">
+                    <p className="text-[40px] mr-3 font-bold">-- Explore<span className="text-primaryRed">Industry --</span></p>
+                    <div className="w-[70%] mx-auto">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                     </div>
                 </div>
                 <Slider {...settings}>
@@ -122,11 +122,11 @@ const IndustrySec = () => {
                             key={item.id}
                             className="p-8 transition-transform duration-300"
                         >
-                            <div className="relative">
+                            <div className="relative border-2 border-gray-500 rounded-md">
                                 <img
                                     src={item.image}
                                     alt={`Slider ${item.id}`}
-                                    className="w-full h-80 object-cover rounded-md shadow-lg"
+                                    className="w-full h-80 object-cover rounded-md shadow-2xl"
                                 />
                                 <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                                     <button className="all-btn">
