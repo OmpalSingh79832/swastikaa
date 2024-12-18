@@ -78,7 +78,7 @@ const Navbar = () => {
                     <Link to="/our-services">Our Services</Link>
                   </li>
                   <li className="hover:text-primaryRed">
-                    <Link to="/">Consulting Services</Link>
+                    <Link to="/dashboard">Consulting Services</Link>
                   </li>
                   <li className="hover:text-primaryRed">
                     <Link to="/">Apply Project</Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
                       <h2 className="text-sm font-medium text-slate-700">
                         +91 880-0982-482
                       </h2>
-                      <span className="text-sm">support 24x7 time</span>
+                      <span className="text-sm text-center">Contact support </span>
                     </div>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <button className="bg-primaryRed right-0 absolute px-10 h-full font-s uppercase text-white rounded-r-full">
+              <button className="bg-[#2e2d2d] right-0 absolute px-10 h-full font-s uppercase text-white rounded-r-full">
                 Search
               </button>
             </div>

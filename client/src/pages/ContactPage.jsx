@@ -12,7 +12,12 @@ const ContactPage = () => {
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="md:flex gap-x-24 clear-left md:mb-16 mb-10">
                             <div className=" md:mb-0 mb-4">
-                                <h2 className="text-black font-manrope text-4xl font-semibold leading-10 mb-5 md:text-left text-center">Get In Touch</h2>
+                                <div className="heading-style pb-8 flex items-center relative">
+                                    <span>Get In Touch </span>
+                                    <div className="ml-4 flex-grow relative">
+                                        <hr className="absolute bottom-[-12px] h-1 bg-black w-1/4" />
+                                    </div>
+                                </div>
                                 <p className="text-gray-600 text-lg font-normal leading-7 mb-7 md:text-left text-center">Whether you have a concern or simply want to say hello, We are here to facilitate communication with you.</p>
                                 <div className="flex md:items-center md:justify-start justify-center">
                                     <button className="w-36 h-12 shadow all-btn">Contact Us</button>
@@ -30,7 +35,13 @@ const ContactPage = () => {
                             </div>
                         </div>
                         <div>
-                            <p className='text-black font-manrope text-4xl font-semibold leading-10 mb-5 md:text-left text-center'>Our Presence</p>
+                            <div className="heading-style pb-8 flex items-center relative">
+                                <span>Our Presence</span>
+                                <div className="ml-4 flex-grow relative">
+                                    <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+                                </div>
+                            </div>
+
                             <ul className='text-base mb-10 ml-4'>
                                 <li>At Swastikaa, we take our consultancy services seriously..</li>
                                 <li>At Swastikaa, we take our consultancy services seriously...</li>
@@ -62,10 +73,10 @@ const ContactPage = () => {
                                     <p className="text-white text-base font-medium leading-6">456 Rue de la Paix, 8th Arrondissement, Paris</p>
                                 </div>
                             </div>
-                           
+
                         </div>
                         <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-8 w-[90%] mx-auto">
-                        <div className="h-96 relative flex justify-center">
+                            <div className="h-96 relative flex justify-center">
                                 <div className="w-full h-full absolute bg-gradient-to-t from-gray-800/50 to-gray-600/50 rounded-xl" />
                                 <img src="https://pagedone.io/asset/uploads/1696246565.png" alt="Switzerland image" className="w-full h-full rounded-xl object-cover" />
                                 <div className="absolute bottom-0 mb-6 text-center px-6">
@@ -81,7 +92,7 @@ const ContactPage = () => {
                                     <p className="text-white text-base font-medium leading-6">456 Rue de la Paix, 8th Arrondissement, Paris</p>
                                 </div>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </section>
             </div>

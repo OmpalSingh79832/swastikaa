@@ -72,15 +72,12 @@ const ProjectComp = () => {
     };
 
     return (
-        <div className="w-full my-10 box-shadow-custo">
+        <div className="w-full my-24 box-shadow-custo">
             <div className="w-[90%] mx-auto">
-                <div className="text-center pt-10 pb-5">
-                    <div className="flex justify-center items-center gap-2">
-                        <IoStarSharp className="text-primaryRed text-3xl" />
-                        <IoStarSharp className="text-yellow-500 text-3xl" />
-                        <p className="text-[40px] font-bold">Our Analysis</p>
-                        <IoStarSharp className="text-yellow-500 text-3xl" />
-                        <IoStarSharp className="text-primaryRed text-3xl" />
+                <div className="text-center">
+                    <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Analysis --</span></p>
+                    <div className="w-[70%] mx-auto">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                     </div>
                 </div>
 

@@ -6,13 +6,16 @@ const PricingPage = () => {
 
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-4xl text-center">
+                    <div className="mx-auto text-center">
 
-
-                        <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Pricing plans for teams of all sizes</p>
+                        <div className="heading-style pb-12 flex items-center relative">
+                            <span>Pricing plans </span>
+                            <div className="ml-4 flex-grow relative">
+                                <hr className="absolute bottom-[-12px] h-1 bg-black w-1/5" />
+                            </div>
+                        </div>
                     </div>
-                    <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-cyan-600">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</p>
-                    <div className="mt-16 flex justify-center">
+                    <div className="flex justify-center">
 
                     </div>
                     <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">

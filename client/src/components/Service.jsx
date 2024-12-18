@@ -116,15 +116,12 @@ const Service = () => {
 
     return (
         <>
-            <div className="bg-gray-300 pt-10 pb-16">
+            <div className="bg-gray-300 py-24">
                 <div className="w-[90%] mx-auto">
-                    <div className="text-center pb-10">
-                        <div className="flex justify-center items-center gap-2">
-                            <IoStarSharp className="text-primaryRed text-3xl" />
-                            <IoStarSharp className="text-yellow-500 text-3xl" />
-                            <p className="text-[40px] font-bold">Our Services</p>
-                            <IoStarSharp className="text-yellow-500 text-3xl" />
-                            <IoStarSharp className="text-primaryRed text-3xl" />
+                    <div className="text-center">
+                        <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
+                        <div className="w-[70%] mx-auto mb-8">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                         </div>
                     </div>
 

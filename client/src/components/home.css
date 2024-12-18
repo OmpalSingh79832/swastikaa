@@ -45,3 +45,9 @@
   background-color: black;
   font-weight: 500;
 }
+
+
+.card-section{
+  background-color: black;
+      background-image: linear-gradient(to left top, rgba(220, 38, 38, 0.2) 20%, transparent 50%, transparent 100%);
+}

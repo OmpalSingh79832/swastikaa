@@ -6,9 +6,15 @@ function ChooseUs() {
             <div className="bg-black">
                 <section id="features" className="relative block px-6 py-10 md:py-20 md:px-10  border-t border-b border-neutral-900 bg-neutral-900/30">
                     <div className="relative mx-auto max-w-5xl text-center">
-                        <span className="text-white my-3 flex items-center justify-center font-medium uppercase tracking-wider">
-                            Why choose us
-                        </span>
+                        <div class="heading-style pb-10 flex items-center relative">
+                            <div class="right-[-9.5rem] flex-grow relative">
+                                <hr class="absolute bottom-[-12px] h-1 bg-black w-1/2" />
+                            </div>
+                            <span className='text-white'>why choose us</span>
+                            <div class="ml-5 flex-grow relative">
+                                <hr class="absolute bottom-[-12px] h-1 bg-black w-1/2" />
+                            </div>
+                        </div>
                         <h2 className="block w-full bg-gradient-to-b from-white to-white bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
                             Build a Website That Your Customers Love
                         </h2>
@@ -69,7 +75,7 @@ function ChooseUs() {
                     </div>
                     <div className="absolute bottom-0 left-0 z-0 h-1/3 w-full border-b" style={{ backgroundImage: 'linear-gradient(to right top, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%)', borderColor: 'rgba(92, 79, 240, 0.2)' }}>
                     </div>
-                    <div className="absolute bottom-0 right-0 z-0 h-1/3 w-full" style={{ backgroundImage: 'linear-gradient(to left top, rgba(220, 38, 38, 0.2) 50%, transparent 50%, transparent 100%)', borderColor: 'rgba(92, 79, 240, 0.2)' }}>
+                    <div className="absolute bottom-0 right-0 z-0 h-1/3 w-full" style={{ backgroundImage: 'linear-gradient(to left top, rgba(220, 38, 38, 0.2) 20%, transparent 50%, transparent 100%)', borderColor: 'rgba(92, 79, 240, 0.2)' }}>
                     </div>
                 </section>
             </div>
