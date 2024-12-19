@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-const sectorSchema = new Schema(
+const sectorSchema = new mongoose.Schema(
   {
     name: {
       type: String,

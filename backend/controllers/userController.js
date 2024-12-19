@@ -86,6 +86,20 @@ export const profile_update = async (req, res) => {
   }
 };
 
+const getUser = async (req, res) => {
+  const { id } = req;
+
+  // console.log("object", admin);
+
+  try {
+    const user = await userModel.findById(id);
+
+    responseReturn(res, 200, { userInfo: user });
+  } catch (error) {
+    responseReturn(res, 500, { error: "Internal server error" });
+  }
+};
+
 // Login User
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -140,10 +154,10 @@ export const changePassword = async (req, res) => {
     }
 
     // Hash the new password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    // const hashedPassword = await bcrypt.hash(newPassword, 10);
 
     // Update the password in the database
-    user.password = hashedPassword;
+    user.password = newPassword;
     await user.save();
 
     res.status(200).json({ message: "Password changed successfully" });

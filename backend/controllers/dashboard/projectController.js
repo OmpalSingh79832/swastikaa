@@ -18,10 +18,9 @@ cloudinary.config({
 
 export const createProject = async (req, res) => {
   const { file } = req;
-  console.log(file);
+  const { id } = req;
   const {
     title,
-    slug,
     sector,
     budget,
     description,
@@ -56,6 +55,7 @@ export const createProject = async (req, res) => {
     // Move the uploaded file to the target location
     // fs.renameSync(file.path, filePath);
 
+    const slug = title.split(" ").join("-");
     const result = await cloudinary.uploader.upload(file.path, {
       folder: "project",
     });
@@ -64,7 +64,8 @@ export const createProject = async (req, res) => {
       // Save the project details to the database
       const newProject = await Project.create({
         title,
-        slug,
+        userId: id,
+        slug: slug,
         sector,
         budget,
         description,
@@ -90,35 +91,16 @@ export const createProject = async (req, res) => {
   }
 };
 
-export const updateProject = async (req, res) => {
+export const updateProjectByAdmin = async (req, res) => {
   const { id } = req.params;
-  const {
-    title,
-    slug,
-    sector,
-    budget,
-    description,
-    companyName,
-    keyPoints,
-    questions,
-    status,
-    rating,
-  } = req.body;
+  const { category, status } = req.body;
 
   try {
     const updatedProject = await Project.findByIdAndUpdate(
       id,
       {
-        title,
-        slug,
-        sector,
-        budget,
-        description,
-        companyName,
-        keyPoints,
-        questions,
+        category,
         status,
-        rating,
       },
       { new: true } // Return the updated document
     );
@@ -154,13 +136,29 @@ export const deleteProject = async (req, res) => {
 };
 
 // Fetch all projects
+export const getProjectsByUserId = async (req, res) => {
+  const { id } = req; // Assuming userId is passed as a URL parameter
+
+  console.log("id", id);
+
+  try {
+    const projects = await Project.find({ userId: id });
+    res.status(200).json({ projects });
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+// Fetch all projects
 export const getAllProjects = async (req, res) => {
+  // const { id } = req; // Assuming userId is passed as a URL parameter
+
+  // console.log("id", id);
+
   try {
     const projects = await Project.find();
     res.status(200).json({ projects });
   } catch (error) {
-    console.error("Error fetching projects:", error);
-    res.status(500).json({ error: "Failed to fetch projects" });
+    res.status(500).json({ error: "Internal server error" });
   }
 };
 

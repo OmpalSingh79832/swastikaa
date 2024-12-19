@@ -10,15 +10,27 @@ cloudinary.config({
 
 // Create a new sector
 export const createSector = async (req, res) => {
-  const { name, image, slug } = req.body;
+  const { id } = req;
+  const { file } = req;
+  const { name } = req.body;
 
   try {
-    const result = await cloudinary.uploader.upload(image.filepath, {
+    const slug = name.split(" ").join("-");
+    const existingSector = await sectorModel.findOne({ slug });
+
+    if (existingSector) {
+      return res.status(400).json({
+        success: false,
+        message: "Sector already exists",
+      });
+    }
+
+    const result = await cloudinary.uploader.upload(file.path, {
       folder: "sector",
     });
 
     if (result) {
-      const sector = new sectorModel({ name, image: result.url, slug });
+      const sector = new sectorModel({ name, image: result.url, slug: slug });
       await sector.save();
 
       res.status(201).json({

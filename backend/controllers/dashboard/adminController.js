@@ -16,7 +16,7 @@ cloudinary.v2.config({
 
 const adminControllers = {
   adminRegister: async (req, res) => {
-    const { name, email, password, image } = req.body;
+    const { name, email, password } = req.body;
 
     try {
       const existingAdmin = await adminModel.findOne({ email });
@@ -29,7 +29,6 @@ const adminControllers = {
         name,
         email,
         password: hashedPassword,
-        image,
       });
 
       //   await sellerCustomerModel.create({ myId: newAdmin.id });
@@ -96,6 +95,31 @@ const adminControllers = {
       responseReturn(res, 500, { error: "Internal server error" });
     }
   },
+
+  // ...existing code...
+  changePassword: async (req, res) => {
+    const { id, oldPassword, newPassword } = req.body;
+
+    try {
+      const admin = await adminModel.findById(id).select("+password");
+      if (!admin) {
+        return responseReturn(res, 404, { error: "User not found" });
+      }
+
+      const isPasswordMatch = await bcrypt.compare(oldPassword, admin.password);
+      if (!isPasswordMatch) {
+        return responseReturn(res, 400, { error: "Old password is incorrect" });
+      }
+
+      admin.password = await bcrypt.hash(newPassword, 10);
+      await admin.save();
+
+      responseReturn(res, 200, { message: "Password changed successfully" });
+    } catch (error) {
+      responseReturn(res, 500, { error: "Internal server error" });
+    }
+  },
+  // ...existing code...
 
   profileImageUpload: async (req, res) => {
     const { id } = req; // Ensure `id` is passed through middleware
