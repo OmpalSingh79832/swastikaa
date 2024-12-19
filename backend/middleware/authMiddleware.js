@@ -38,6 +38,7 @@ const authMiddleware = async (req, res, next) => {
     req.userRole = decodedToken.userRole;
     req.sector = decodedToken.sector;
     req.user = decodedToken;
+    req.id = decodedToken.id;
     // console.log("Decoded Token:", decodedToken);
     next();
   } catch (error) {
