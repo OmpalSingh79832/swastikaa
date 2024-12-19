@@ -16,17 +16,33 @@ const Sidebar = ({ setActivePage }) => {
                 <li>
                     <button
                         className="w-full text-left p-2 hover:bg-gray-200 rounded"
-                        onClick={() => setActivePage('my-projects')}
+                        onClick={() => setActivePage('pricing')}
                     >
-                        My Projects
+                        My Subsciption
                     </button>
                 </li>
                 <li>
                     <button
                         className="w-full text-left p-2 hover:bg-gray-200 rounded"
-                        onClick={() => setActivePage('chat')}
+                        onClick={() => setActivePage('freelance-project')}
                     >
-                        Chat
+                        Freelance Projects
+                    </button>
+                </li>
+                <li>
+                    <button
+                        className="w-full text-left p-2 hover:bg-gray-200 rounded"
+                        onClick={() => setActivePage('execution-project')}
+                    >
+                        Execution Projects
+                    </button>
+                </li>
+                <li>
+                    <button
+                        className="w-full text-left p-2 hover:bg-gray-200 rounded"
+                        onClick={() => setActivePage('applied-project')}
+                    >
+                        Applied Project
                     </button>
                 </li>
                 <li>
