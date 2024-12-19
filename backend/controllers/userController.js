@@ -1,6 +1,20 @@
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 import userModel from "../models/userModel.js";
 import createToken from "../config/tokenCreate.js";
+import responseReturn from "../utiles/response.js";
+
+import cloudinary from "cloudinary";
+import dotenv from "dotenv";
+dotenv.config();
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret,
+  secure: true,
+});
 
 // Register User
 
@@ -45,6 +59,33 @@ export const registerUser = async (req, res) => {
   }
 };
 
+export const profile_update = async (req, res) => {
+  const { file } = req;
+  const { name, exp } = req.body;
+  const { id } = req;
+
+  try {
+    const result = await cloudinary.uploader.upload(file.path, {
+      folder: "user",
+    });
+
+    if (result) {
+      await userModel.findByIdAndUpdate(id, { name: name, image: result.url });
+      const userInfo = await userModel.findById(id);
+      responseReturn(res, 201, {
+        message: "Profile info add success",
+        userInfo,
+      });
+    } else {
+      responseReturn(res, 404, {
+        message: "Image not uploade",
+      });
+    }
+  } catch (error) {
+    responseReturn(res, 500, { error: error.message });
+  }
+};
+
 // Login User
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -75,6 +116,37 @@ export const loginUser = async (req, res) => {
     });
 
     res.status(200).json({ message: "Login Sucessfully", token });
+  } catch (error) {
+    res.status(500).json({ message: "Server Error", error: error.message });
+  }
+};
+
+export const changePassword = async (req, res) => {
+  const { email, oldPassword, newPassword } = req.body;
+
+  try {
+    // Find the user by email
+    const user = await userModel.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Compare oldPassword with the stored hashed password
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ message: "Old password is incorrect" });
+    }
+
+    // Hash the new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update the password in the database
+    user.password = hashedPassword;
+    await user.save();
+
+    res.status(200).json({ message: "Password changed successfully" });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
   }

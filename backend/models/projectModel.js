@@ -18,18 +18,12 @@ const projectSchema = new Schema(
       type: Number,
       required: true,
     },
-
     description: {
       type: String,
       required: true,
     },
     companyName: {
       type: String,
-      required: true,
-    },
-    prepsole: {
-      type: String, // Stores the URL of the uploaded PDF
-      required: false,
     },
     rating: {
       type: Number,
@@ -38,6 +32,13 @@ const projectSchema = new Schema(
     keyPoints: {
       type: [String],
       default: [],
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
     },
     status: {
       type: Number,

@@ -18,6 +18,7 @@ cloudinary.config({
 
 export const createProject = async (req, res) => {
   const { file } = req;
+  console.log(file);
   const {
     title,
     slug,
@@ -26,111 +27,69 @@ export const createProject = async (req, res) => {
     description,
     companyName,
     keyPoints,
-    questions,
+    category,
   } = req.body;
 
-  if (!file) {
-    return res.status(400).json({ error: "No file uploaded" });
-  }
+  // if (!file) {
+  //   return res.status(400).json({ error: "No file uploaded" });
+  // }
 
-  if (file.mimetype !== "application/pdf") {
-    return res.status(400).json({ error: "Only PDF files are allowed" });
-  }
+  // if (file.mimetype !== "application/pdf") {
+  //   return res.status(400).json({ error: "Only PDF files are allowed" });
+  // }
 
   try {
     // Define the folder path where files will be saved
-    const uploadFolder = path.join(__dirname, "../../prepsole/agent");
+    // const uploadFolder = path.join(__dirname, "../../prepsole/agent");
 
     // Ensure the folder exists, create it if it doesn't
-    if (!fs.existsSync(uploadFolder)) {
-      fs.mkdirSync(uploadFolder, { recursive: true });
-    }
+    // if (!fs.existsSync(uploadFolder)) {
+    //   fs.mkdirSync(uploadFolder, { recursive: true });
+    // }
 
     // Generate a unique filename for the PDF
-    const uniqueFilename = `${Date.now()}-${file.originalname}`;
+    // const uniqueFilename = `${Date.now()}-${file.originalname}`;
 
     // Full path where the file will be saved
-    const filePath = path.join(uploadFolder, uniqueFilename);
+    // const filePath = path.join(uploadFolder, uniqueFilename);
 
     // Move the uploaded file to the target location
-    fs.renameSync(file.path, filePath);
+    // fs.renameSync(file.path, filePath);
 
-    // Save the project details to the database
-    const newProject = await Project.create({
-      title,
-      slug,
-      sector,
-      budget,
-      description,
-      companyName,
-      prepsole: `/prepsole/agent/${uniqueFilename}`, // Save the relative path in the database
-      keyPoints,
-      questions,
+    const result = await cloudinary.uploader.upload(file.path, {
+      folder: "project",
     });
 
-    res
-      .status(201)
-      .json({ message: "Project created successfully", project: newProject });
+    if (result) {
+      // Save the project details to the database
+      const newProject = await Project.create({
+        title,
+        slug,
+        sector,
+        budget,
+        description,
+        companyName,
+        // prepsole: `/prepsole/agent/${uniqueFilename}`, // Save the relative path in the database
+        image: result.url,
+        keyPoints,
+        category,
+      });
+
+      res
+        .status(201)
+        .json({ message: "Project created successfully", project: newProject });
+    } else {
+      res.status(404).json({
+        success: false,
+        error: "Image upload failed",
+      });
+    }
   } catch (error) {
     console.error("Error creating project:", error);
     res.status(500).json({ error: "Failed to create project" });
   }
 };
 
-// Create a new project
-// export const createProject = async (req, res) => {
-//   const { file } = req;
-//   const {
-//     title,
-//     slug,
-//     sector,
-//     budget,
-//     description,
-//     companyName,
-//     keyPoints,
-//     questions,
-//   } = req.body;
-
-//   // console.log("file", file);
-
-//   if (!file) {
-//     return res.status(400).json({ error: "No file uploaded" });
-//   }
-
-//   if (file.mimetype !== "application/pdf") {
-//     return res.status(400).json({ error: "Only PDF files are allowed" });
-//   }
-//   try {
-//     const result = await cloudinary.uploader.upload(file.path, {
-//       folder: "prepsole",
-//       resource_type: "raw", // Upload as a raw file (e.g., PDF)
-//       format: "pdf", // Ensure it's treated as a PDF
-//     });
-
-//     console.log("result", result);
-
-//     const newProject = await Project.create({
-//       title,
-//       slug,
-//       sector,
-//       budget,
-//       description,
-//       companyName,
-//       prepsole: result.secure_url,
-//       keyPoints,
-//       questions,
-//     });
-
-//     res
-//       .status(201)
-//       .json({ message: "Project created successfully", project: newProject });
-//   } catch (error) {
-//     console.error("Error creating project:", error);
-//     res.status(500).json({ error: "Failed to create project" });
-//   }
-// };
-
-// Update a project
 export const updateProject = async (req, res) => {
   const { id } = req.params;
   const {

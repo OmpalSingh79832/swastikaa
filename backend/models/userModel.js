@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   userRole: { type: String, required: true },
   sector: { type: String, required: true },
+  image: { type: String },
 });
 
 // Hash password before saving
