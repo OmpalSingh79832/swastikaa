@@ -10,7 +10,9 @@ const ExecutionProject = () => {
       category: "Silver Designer",
       sector: "IT",
       budget: "₹4850",
-      location: "19Jan - 05Feb",
+      location: "Delhi",
+      lastDate: "05Jan",
+      status: "Pending",
     },
     {
       id: 2,
@@ -19,7 +21,9 @@ const ExecutionProject = () => {
       category: "Silver Rudraksha",
       sector: "Civil",
       budget: "₹450",
-      location: "10Dec - 29Dec",
+      location: "Noida",
+      lastDate: "10March",
+      status: "Success",
     },
     {
       id: 3,
@@ -28,7 +32,9 @@ const ExecutionProject = () => {
       category: "Silver Rings",
       sector: "Mechanical",
       budget: "₹3750",
-      location: "01Sept - 20Aug",
+      location: "Lucknow",
+      lastDate: "15May",
+      status: "Pending",
     },
     {
       id: 4,
@@ -37,7 +43,9 @@ const ExecutionProject = () => {
       category: "Silver Kids Kada",
       sector: "Electrical",
       budget: "₹2890",
-      location: "09Oct - 06Dec",
+      location: "Delhi",
+      lastDate: "05June",
+      status: "Success",
     },
     {
       id: 5,
@@ -46,7 +54,9 @@ const ExecutionProject = () => {
       category: "Silver Mangalsutra",
       sector: "Commerce",
       budget: "₹18650",
-      location: "26May - 15June",
+      location: "Noida",
+      lastDate: "01Nov",
+      status: "Pending",
     },
   ];
 
@@ -77,7 +87,8 @@ const ExecutionProject = () => {
               <th scope="col" className="px-4 py-2">Sector</th>
               <th scope="col" className="px-4 py-2">Budget</th>
               <th scope="col" className="px-4 py-2">Location</th>
-              <th scope="col" className="px-4 py-2">ACTION</th>
+              <th scope="col" className="px-4 py-2">Last Date</th>
+              <th scope="col" className="px-4 py-2">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -96,9 +107,10 @@ const ExecutionProject = () => {
                 <td className="px-4 py-2">{product.sector}</td>
                 <td className="px-4 py-2">{product.budget}</td>
                 <td className="px-4 py-2">{product.location}</td>
+                <td className="px-4 py-2">{product.lastDate}</td>
                 <td className="px-4 py-2 flex gap-2">
                   <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                    Apply 
+                    Apply
                   </button>
                 </td>
               </tr>
