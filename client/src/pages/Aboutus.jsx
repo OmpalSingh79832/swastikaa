@@ -29,11 +29,11 @@ const Aboutus = () => {
         </div>
         {/* our services section */}
         <section className="py-20" id="services">
-          <div className="container mx-auto w-[90%] px-4">
-            <div className="heading-style pb-10 flex items-center relative">
-              <span>Our Services</span>
-              <div className="ml-4 flex-grow relative">
-                <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
+          <div className="container mx-auto w-[90%]">
+            <div className="text-center pb-10">
+              <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
+              <div className="w-[70%] mx-auto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -111,11 +111,8 @@ const Aboutus = () => {
           <div className="container mx-auto w-[90%] py-16 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               <div className="max-w-lg">
-                <div className="heading-style pb-10 flex items-center relative">
-                  <span>About Us</span>
-                  <div className="ml-4 flex-grow relative">
-                    <hr className="absolute bottom-[-12px] h-1 bg-black w-2/4" />
-                  </div>
+                <div className="heading-style pb-1 flex items-center relative">
+                  <p className="text-[40px] mr-3 font-bold">-- About<span className="text-primaryRed">Us --</span></p>
                 </div>
                 <p className="mt-4 text-gray-600 text-lg text-justify">
                   Swastikaa is a leading manufacturing Sector Consultant offering consulting services worldwide. From Ideation to Execution of Projects, Our focus is always on building an efficient and results-driven relationship. We will work with you to create a customized plan of action for your organization. Get in touch to learn more about our vision and consulting approach. <br />
@@ -136,12 +133,10 @@ const Aboutus = () => {
         <ChooseUs />
         {/* Meet Our Professional Team */}
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-          <div className="heading-style pb-12 flex items-center relative">
-            <span>our professional team</span>
-            <div className="ml-4 flex-grow relative">
-              <hr className="absolute bottom-[-12px] h-1 bg-black w-1/4" />
+          <div className="heading-style pb-7 ">
+            <div className="text-center">
+              <p className="text-[40px] mr-3 font-bold">-- Our Professional<span className="text-primaryRed"> Team --</span></p>
             </div>
-
           </div>
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
@@ -342,10 +337,9 @@ const Aboutus = () => {
 
         {/* Visit us section */}
         <div className="w-[94%] mx-auto">
-          <div className="heading-style pb-8 flex items-center relative">
-            <span>contact us </span>
-            <div className="ml-4 flex-grow relative">
-              <hr className="absolute bottom-[-12px] h-1 bg-black w-1/4" />
+          <div className="heading-style">
+            <div className="text-center">
+              <p className="text-[40px] mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
             </div>
           </div>
         </div>

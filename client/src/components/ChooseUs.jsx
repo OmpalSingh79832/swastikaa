@@ -6,18 +6,10 @@ function ChooseUs() {
             <div className="bg-black">
                 <section id="features" className="relative block px-6 py-10 md:py-20 md:px-10  border-t border-b border-neutral-900 bg-neutral-900/30">
                     <div className="relative mx-auto max-w-5xl text-center">
-                        <div class="heading-style pb-10 flex items-center relative">
-                            <div class="right-[-9.5rem] flex-grow relative">
-                                <hr class="absolute bottom-[-12px] h-1 bg-black w-1/2" />
-                            </div>
-                            <span className='text-white'>why choose us</span>
-                            <div class="ml-5 flex-grow relative">
-                                <hr class="absolute bottom-[-12px] h-1 bg-black w-1/2" />
-                            </div>
+                        <div class="heading-style ">
+                        <p className="text-[40px] text-center text-white font-bold">-- Why Choose<span className="text-white"> Us --</span></p>
                         </div>
-                        <h2 className="block w-full bg-gradient-to-b from-white to-white bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
-                            Build a Website That Your Customers Love
-                        </h2>
+                      
                         <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-white">
                             Our templates allow for maximum customization. No technical skills required – our intuitive design tools
                             let

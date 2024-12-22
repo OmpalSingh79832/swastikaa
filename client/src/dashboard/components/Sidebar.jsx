@@ -3,9 +3,9 @@ import { FaTachometerAlt, FaMoneyCheckAlt, FaProjectDiagram, FaUser, FaPlus } fr
 
 const Sidebar = ({ setActivePage, userRole }) => {
   return (
-    <div className="w-56 bg-gray-800 shadow-md">
+    <div className="w-56 bg-gray-800 shadow-md ">
       <h2 className="text-2xl font-bold ml-3 py-4 text-white">My Dashboard</h2>
-      <ul className="space-y-4 px-4">
+      <ul className="space-y-4 px-4 ">
         <li>
           <button
             className="w-full text-left flex items-center p-2 hover:bg-gray-200 text-white hover:text-black rounded"
@@ -22,19 +22,11 @@ const Sidebar = ({ setActivePage, userRole }) => {
               onClick={() => setActivePage("upload-project")}
             >
               <FaPlus className="mr-2" />
-              Upload Project
+              Post Project
             </button>
           </li>
         )}
-        <li>
-          <button
-            className="w-full text-left flex items-center p-2 hover:bg-gray-200 text-white hover:text-black rounded"
-            onClick={() => setActivePage("pricing")}
-          >
-            <FaMoneyCheckAlt className="mr-2" />
-            My Subscription
-          </button>
-        </li>
+
         <li>
           <button
             className="w-full text-left flex items-center p-2 hover:bg-gray-200 text-white hover:text-black rounded"
@@ -69,6 +61,15 @@ const Sidebar = ({ setActivePage, userRole }) => {
           >
             <FaUser className="mr-2" />
             My Profile
+          </button>
+        </li>
+        <li>
+          <button
+            className="w-full text-left flex items-center p-2 hover:bg-gray-200 text-white hover:text-black rounded"
+            onClick={() => setActivePage("pricing")}
+          >
+            <FaMoneyCheckAlt className="mr-2" />
+            My Subscription
           </button>
         </li>
         <li>

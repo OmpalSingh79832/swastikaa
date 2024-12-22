@@ -1,15 +1,15 @@
 import React from "react";
 import { FaEdit } from "react-icons/fa"; // Icon for edit functionality
-import Dash from "../../assets/dashbord-img.png"
 
 const Profile = () => {
     // Array holding profile data
     const profileData = {
         name: "Gopal and Sons",
+        phone: "+00000000",
+        dob: "29Aug2001",
         email: "msonpi9602@gmail.com",
         role: "Seller",
         status: "Active",
-        paymentAccount: "Click Active",
         shopDetails: {
             shopName: "Gopal and Sons",
             division: "Degana",
@@ -26,9 +26,9 @@ const Profile = () => {
                     {/* Profile Picture with Edit Icon */}
                     <div className="flex justify-center relative mb-6">
                         <img
-                            src={Dash}
+                            src="https://via.placeholder.com/150"
                             alt="Profile"
-                            className="rounded-lg h-[30vh]"
+                            className="rounded-lg"
                         />
                         <button className="absolute top-0 right-0 bg-gray-700 p-2 rounded-full hover:bg-gray-600">
                             <FaEdit className="text-blue-500" />
@@ -41,10 +41,40 @@ const Profile = () => {
                                 Name: <span className="font-light">{profileData.name}</span>
                             </p>
                             <p className="font-semibold">
+                                Phone Number: <span className="font-light">{profileData.phone}</span>
+                            </p>
+                            <p className="font-semibold">
+                                DOB: <span className="font-light">{profileData.dob}</span>
+                            </p>
+                            <p className="font-semibold">
                                 Email: <span className="font-light">{profileData.email}</span>
                             </p>
                             <p className="font-semibold">
                                 Role: <span className="font-light">{profileData.role}</span>
+                            </p>
+                            <p className="font-semibold">
+                                Manufacturing Sector:{" "}
+                                <span className="font-light">
+                                    {profileData.shopDetails.shopName}
+                                </span>
+                            </p>
+                            <p className="font-semibold">
+                                Brief Bio:{" "}
+                                <span className="font-light">
+                                    {profileData.shopDetails.division}
+                                </span>
+                            </p>
+                            <p className="font-semibold">
+                                Uploaded Resume:{" "}
+                                <span className="font-light">
+                                    {profileData.shopDetails.district}
+                                </span>
+                            </p>
+                            <p className="font-semibold">
+                                Address:{" "}
+                                <span className="font-light">
+                                    {profileData.shopDetails.subDistrict}
+                                </span>
                             </p>
                             <p className="font-semibold">
                                 Status:{" "}
@@ -52,39 +82,8 @@ const Profile = () => {
                                     {profileData.status}
                                 </span>
                             </p>
-                            <p className="font-semibold">
-                                Payment Account:{" "}
-                                <button className="bg-blue-600 px-3 py-1 rounded text-white hover:bg-blue-700">
-                                    {profileData.paymentAccount}
-                                </button>
-                            </p>
                         </div>
-                        <div className="bg-gray-700 p-4 rounded-md text-sm">
-                            <p className="font-semibold">
-                                Shop Name:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.shopName}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                Division:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.division}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                District:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.district}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                Sub-District:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.subDistrict}
-                                </span>
-                            </p>
-                        </div>
+
                     </div>
                 </div>
 

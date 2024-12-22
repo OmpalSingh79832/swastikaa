@@ -65,7 +65,7 @@ const Slider = () => {
             <div className="absolute top-[70%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 uppercase w-[50%]">
                 <h1 className="text-start rounded-3xl p-10 bg-white text-[40px] font-extrabold">
                     {sliderContent[currentIndex].heading}{" "}
-                    <span className="text-primaryRed">Manufacturer</span> <br />
+                    <span className="text-primaryRed">Manufacturing Platform</span> <br />
                     <button className="all-btn">
                         {sliderContent[currentIndex].button}
                     </button>

@@ -195,28 +195,59 @@ const BlogDetails = () => {
             </p>
           </div>
         </div>
-        <div className="relative py-3 sm:max-w-xl h-fit sm:mx-auto mt-20">
-          <div className="absolute inset-0 card-section shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
-          </div>
-          <div className="relative px-2 py-10 card-section shadow-lg sm:rounded-3xl sm:p-10">
-            <div className="text-center pb-6 text-white">
-              <h1 className="text-3xl">Contact Us!</h1>
-              <p className="">
-                Fill up the form below to send us a message.
-              </p>
-            </div>
-            <form>
-              <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Name" name="name" />
-              <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="Email" name="email" />
-              <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Subject" name="_subject" />
-              <textarea className="shadow mb-4 min-h-0 appearance-none border rounded h-64 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Type your message here..." name="message" style={{ height: 121 }} defaultValue={""} />
-              <div className="flex justify-between">
-                <input className="shadow all-btn font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" defaultValue="Send ➤" />
-                <input className="shadow all-btn font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="reset" />
+        <div>
+          <div className="relative py-3 sm:max-w-xl h-fit sm:mx-auto mt-20">
+            <div className="absolute inset-0 card-section shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"> </div>
+            <div className="relative px-2 py-10 card-section shadow-lg sm:rounded-3xl sm:p-10">
+              <div className="text-center pb-6 text-white">
+                <h1 className="text-3xl">Contact Us!</h1>
+                <p className="">
+                  Fill up the form below to send us a message.
+                </p>
               </div>
-            </form>
+              <form>
+                <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Name" name="name" />
+                <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="Email" name="email" />
+                <input className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Subject" name="_subject" />
+                <textarea className="shadow mb-4 min-h-0 appearance-none border rounded h-64 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Type your message here..." name="message" style={{ height: 121 }} defaultValue={""} />
+                <div className="flex justify-between">
+                  <input className="shadow all-btn font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" defaultValue="Send ➤" />
+                  <input className="shadow all-btn font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="reset" />
+                </div>
+              </form>
+            </div>
           </div>
+
+          {/* Related Blogs Section */}
+          <div className="mt-32">
+            <h2 className="text-2xl font-bold mb-5 text-gray-900">Related Blogs</h2>
+            <div className="flex flex-wrap gap-6">
+              {blogData
+                .filter((relatedBlog) => relatedBlog.id !== blog.id) // Exclude current blog
+                .slice(0, 3) // Limit to 3 related blogs
+                .map((relatedBlog) => (
+                  <Link to={`/blog-details/${relatedBlog.id}`} key={relatedBlog.id} className="flex gap-4 items-center bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300">
+                    <div className="flex-shrink-0 w-24 h-24">
+                      <img
+                        src={relatedBlog.image}
+                        alt={relatedBlog.title}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-lg font-semibold group-hover:text-indigo-600 transition duration-300">
+                        {relatedBlog.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">By: {relatedBlog.author}</p>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+
         </div>
+
       </div>
     </div>
   );

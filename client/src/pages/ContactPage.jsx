@@ -12,11 +12,8 @@ const ContactPage = () => {
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="md:flex gap-x-24 clear-left md:mb-16 mb-10">
                             <div className=" md:mb-0 mb-4">
-                                <div className="heading-style pb-8 flex items-center relative">
-                                    <span>Get In Touch </span>
-                                    <div className="ml-4 flex-grow relative">
-                                        <hr className="absolute bottom-[-12px] h-1 bg-black w-1/4" />
-                                    </div>
+                                <div className="">
+                                    <p className="text-[40px] mr-3 font-bold">-- Get In<span className="text-primaryRed"> Touch --</span></p>
                                 </div>
                                 <p className="text-gray-600 text-lg font-normal leading-7 mb-7 md:text-left text-center">Whether you have a concern or simply want to say hello, We are here to facilitate communication with you.</p>
                                 <div className="flex md:items-center md:justify-start justify-center">
@@ -35,13 +32,9 @@ const ContactPage = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="heading-style pb-8 flex items-center relative">
-                                <span>Our Presence</span>
-                                <div className="ml-4 flex-grow relative">
-                                    <hr className="absolute bottom-[-12px] h-1 bg-black w-1/6" />
-                                </div>
+                            <div className="pb-8">
+                                <p className="text-[40px] mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
                             </div>
-
                             <ul className='text-base mb-10 ml-4'>
                                 <li>At Swastikaa, we take our consultancy services seriously..</li>
                                 <li>At Swastikaa, we take our consultancy services seriously...</li>

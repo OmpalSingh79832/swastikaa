@@ -48,36 +48,34 @@ const Index = () => {
       <div className="flex-grow p-6 bg-gray-900">
         {/* Top Bar */}
         <div className="bg-gray-800 text-white p-4 rounded-md flex justify-between items-center mb-6">
-        <div className="space-x-4">
+          <div className="space-x-4">
             <button
-              className={`px-4 py-2 rounded ${
-                userRole === "execution"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-800"
-              }`}
+              className={`px-4 py-2 rounded ${userRole === "execution"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-800"
+                }`}
               onClick={() => setUserRole("execution")}
             >
-              Execution
+              Consultant Dashboard
             </button>
             <button
-              className={`px-4 py-2 rounded ${
-                userRole === "manufacturer"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-800"
-              }`}
+              className={`px-4 py-2 rounded ${userRole === "manufacturer"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-800"
+                }`}
               onClick={() => setUserRole("manufacturer")}
             >
-              Manufacturer
+              Enterprise Dashboard
             </button>
           </div>
           <div>
-           <div className="flex">
-           <h2 className="text-2xl font-bold mr-2 mt-2">{userDetails.name}</h2>
-           <img src={userDetails.image} alt="" className="h-[50px] rounded-full" />
-           </div>
+            <div className="flex">
+              <h2 className="text-2xl font-bold mr-2 mt-2">{userDetails.name}</h2>
+              <img src={userDetails.image} alt="" className="h-[50px] rounded-full" />
+            </div>
             <p className="text-sm">{userDetails.email}</p>
           </div>
-          
+
         </div>
 
         {/* Page Content */}

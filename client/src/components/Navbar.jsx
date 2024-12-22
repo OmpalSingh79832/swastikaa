@@ -25,9 +25,9 @@ const Navbar = () => {
                 <span>
                   <GrMail />
                 </span>
-                <span>sales@swastikaa.com</span>
+                <span>info@swastikaa.com</span>
               </li>
-              <span>Swastikaa Manufacturer</span>
+              <span>Swastikaa Manufacturing Sector Consultant</span>
             </ul>
             <div>
               <div className="flex justify-center items-center gap-10">
@@ -49,7 +49,7 @@ const Navbar = () => {
                   <span>
                     <FaLock />
                   </span>
-                  <button onClick={() => navigate("/login")}>Login</button>
+                  <button onClick={() => navigate("/dashboard")}>Login</button>
                 </div>
               </div>
             </div>
@@ -75,19 +75,21 @@ const Navbar = () => {
                     <Link to="/">Home</Link>
                   </li>
                   <li className="hover:text-primaryRed">
-                    <Link to="/our-services">Our Services</Link>
+                    <Link to="/our-services">Services</Link>
                   </li>
                   <li className="hover:text-primaryRed">
-                    <Link to="/dashboard">Consulting Services</Link>
+                    <Link to="/consulting-services">Get Quote</Link>
                   </li>
                   <li className="hover:text-primaryRed">
-                    <Link to="/">Apply Project</Link>
+                    <Link to="/apply-project">Apply</Link>
                   </li>
                   <li className="hover:text-primaryRed">
                     <Link to="/pricing-details">Pricing</Link>
                   </li>
                   <li className="hover:text-primaryRed">
-                    <Link to="/blog">Blog</Link>
+                    <Link to="/blog">Resources</Link>
+                    {/* project portfolio
+                    Blog */}
                   </li>
                   <li className="hover:text-primaryRed">
                     <Link to="/about-us">About Us</Link>
@@ -105,7 +107,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex justify-end flex-col gap-1">
                       <h2 className="text-sm font-medium text-slate-700">
-                        +91 880-0982-482
+                        +91 922-0461-947
                       </h2>
                       <span className="text-sm text-center">Contact support </span>
                     </div>
@@ -129,7 +131,7 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <button className="bg-[#2e2d2d] right-0 absolute px-10 h-full font-s uppercase text-white rounded-r-full">
+              <button className="bg-[#2e2d2d] right-[50px] absolute px-10 h-full font-s uppercase text-white rounded-r-full">
                 Search
               </button>
             </div>

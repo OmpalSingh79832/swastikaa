@@ -4,16 +4,15 @@ const PricingPage = () => {
     return (
         <>
 
-            <div className="bg-white py-24 sm:py-32">
+            <div className="bg-white py-24 sm:py-10">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto text-center">
-
-                        <div className="heading-style pb-12 flex items-center relative">
-                            <span>Pricing plans </span>
-                            <div className="ml-4 flex-grow relative">
-                                <hr className="absolute bottom-[-12px] h-1 bg-black w-1/5" />
-                            </div>
-                        </div>
+                    <div className="text-center pb-4">
+                    <p className="text-[40px] mr-3 font-bold">-- Pricing<span className="text-primaryRed">Details --</span></p>
+                    <div className="w-[70%] mx-auto">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                    </div>
+                </div>
                     </div>
                     <div className="flex justify-center">
 

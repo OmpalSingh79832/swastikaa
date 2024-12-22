@@ -110,10 +110,10 @@ const AppliedProject = () => {
                 <td className="px-4 py-2">
                   <span
                     className={`px-2 py-1 rounded-md text-sm font-medium ${product.status === "Pending"
-                        ? "bg-yellow-500 text-black"
-                        : product.status === "Success"
-                          ? "bg-green-500 text-white"
-                          : ""
+                      ? "bg-yellow-500 text-black"
+                      : product.status === "Success"
+                        ? "bg-green-500 text-white"
+                        : ""
                       }`}
                   >
                     {product.status}

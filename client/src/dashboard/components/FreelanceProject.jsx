@@ -80,8 +80,8 @@ const FreelanceProject = () => {
         <table className="w-full text-sm text-left text-gray-400">
           <thead className="text-xs uppercase bg-gray-700 text-gray-400">
             <tr>
-              <th scope="col" className="px-4 py-2">NO</th>
-              <th scope="col" className="px-4 py-2">IMAGE</th>
+              <th scope="col" className="px-4 py-2">Project Id</th>
+              <th scope="col" className="px-4 py-2">Upload Date</th>
               <th scope="col" className="px-4 py-2">NAME</th>
               <th scope="col" className="px-4 py-2">CATEGORY</th>
               <th scope="col" className="px-4 py-2">Sector</th>
