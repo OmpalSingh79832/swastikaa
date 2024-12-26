@@ -7,7 +7,7 @@ import FreelanceProject from "./components/FreelanceProject";
 import ExecutionProject from "./components/ExecutionProject";
 import Profile from "./components/Profile";
 import UploadProject from "./components/UploadProject"; // New Component
-import DashboardImg from "../assets/dashbord-img.png"
+import DashboardImg from "../assets/dashbord-img.png";
 
 const Index = () => {
   const [activePage, setActivePage] = useState("dashboard");
@@ -25,9 +25,9 @@ const Index = () => {
       case "pricing":
         return <Pricing />;
       case "freelance-project":
-        return <FreelanceProject />;
+        return <FreelanceProject userRole={userRole} />;
       case "execution-project":
-        return <ExecutionProject />;
+        return <ExecutionProject userRole={userRole} />;
       case "applied-project":
         return <AppliedProject />;
       case "profile":
@@ -50,19 +50,21 @@ const Index = () => {
         <div className="bg-gray-800 text-white p-4 rounded-md flex justify-between items-center mb-6">
           <div className="space-x-4">
             <button
-              className={`px-4 py-2 rounded ${userRole === "execution"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800"
-                }`}
+              className={`px-4 py-2 rounded ${
+                userRole === "execution"
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
               onClick={() => setUserRole("execution")}
             >
               Consultant Dashboard
             </button>
             <button
-              className={`px-4 py-2 rounded ${userRole === "manufacturer"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-800"
-                }`}
+              className={`px-4 py-2 rounded ${
+                userRole === "manufacturer"
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-800"
+              }`}
               onClick={() => setUserRole("manufacturer")}
             >
               Enterprise Dashboard
@@ -71,11 +73,14 @@ const Index = () => {
           <div>
             <div className="flex">
               <h2 className="text-2xl font-bold mr-2 mt-2">{userDetails.name}</h2>
-              <img src={userDetails.image} alt="" className="h-[50px] rounded-full" />
+              <img
+                src={userDetails.image}
+                alt=""
+                className="h-[50px] rounded-full"
+              />
             </div>
             <p className="text-sm">{userDetails.email}</p>
           </div>
-
         </div>
 
         {/* Page Content */}

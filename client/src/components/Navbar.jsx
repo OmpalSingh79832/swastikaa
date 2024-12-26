@@ -4,16 +4,14 @@ import { BsTwitter } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-import React from "react";
+import React, { useState } from "react";
 import { GrMail } from "react-icons/gr";
 import { IoIosCall } from "react-icons/io";
 import logo from "../assets/logo.png";
 
-
 const Navbar = () => {
-
   const navigate = useNavigate();
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <div className="w-full bg-white">
@@ -86,10 +84,22 @@ const Navbar = () => {
                   <li className="hover:text-primaryRed">
                     <Link to="/pricing-details">Pricing</Link>
                   </li>
-                  <li className="hover:text-primaryRed">
-                    <Link to="/blog">Resources</Link>
-                    {/* project portfolio
-                    Blog */}
+                  <li
+                    className="relative hover:text-primaryRed"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    <span className="cursor-pointer">Resources</span>
+                    {isDropdownOpen && (
+                      <ul className="absolute top-[100%] left-0 z-40 bg-blue-700 shadow-md rounded-md w-[200px]">
+                        <li className="hover:bg-gray-100 px-4 py-2 ">
+                          <Link to="/blog">Blog</Link>
+                        </li>
+                        <li className="hover:bg-gray-100 px-4 py-2">
+                          <Link to="/project-portfolio">Project Portfolio</Link>
+                        </li>
+                      </ul>
+                    )}
                   </li>
                   <li className="hover:text-primaryRed">
                     <Link to="/about-us">About Us</Link>
@@ -131,7 +141,7 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <button className="bg-[#2e2d2d] right-[50px] absolute px-10 h-full font-s uppercase text-white rounded-r-full">
+              <button className="bg-[#2e2d2d] right-[20px] absolute px-10 h-full font-s uppercase text-white rounded-r-full">
                 Search
               </button>
             </div>
