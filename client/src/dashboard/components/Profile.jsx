@@ -4,15 +4,15 @@ import { FaEdit } from "react-icons/fa"; // Icon for edit functionality
 const Profile = () => {
     // Array holding profile data
     const profileData = {
-        name: "Gopal and Sons",
+        name: "rj surya",
         phone: "+00000000",
         dob: "29Aug2001",
-        email: "msonpi9602@gmail.com",
+        email: "rjsurya90122@gmail.com",
         role: "Seller",
         status: "Active",
         shopDetails: {
-            shopName: "Gopal and Sons",
-            division: "Degana",
+            shopName: "Civil",
+            division: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
             district: "Nagaur",
             subDistrict: "Degana",
         },
@@ -28,7 +28,7 @@ const Profile = () => {
                         <img
                             src="https://via.placeholder.com/150"
                             alt="Profile"
-                            className="rounded-lg"
+                            className="rounded-full"
                         />
                         <button className="absolute top-0 right-0 bg-gray-700 p-2 rounded-full hover:bg-gray-600">
                             <FaEdit className="text-blue-500" />
@@ -36,55 +36,20 @@ const Profile = () => {
                     </div>
                     {/* Profile Details */}
                     <div className="space-y-4">
-                        <div className="bg-gray-700 p-4 rounded-md text-sm">
-                            <p className="font-semibold">
-                                Name: <span className="font-light">{profileData.name}</span>
-                            </p>
-                            <p className="font-semibold">
-                                Phone Number: <span className="font-light">{profileData.phone}</span>
-                            </p>
-                            <p className="font-semibold">
-                                DOB: <span className="font-light">{profileData.dob}</span>
-                            </p>
-                            <p className="font-semibold">
-                                Email: <span className="font-light">{profileData.email}</span>
-                            </p>
-                            <p className="font-semibold">
-                                Role: <span className="font-light">{profileData.role}</span>
-                            </p>
-                            <p className="font-semibold">
-                                Manufacturing Sector:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.shopName}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                Brief Bio:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.division}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                Uploaded Resume:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.district}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                Address:{" "}
-                                <span className="font-light">
-                                    {profileData.shopDetails.subDistrict}
-                                </span>
-                            </p>
-                            <p className="font-semibold">
-                                Status:{" "}
-                                <span className="font-normal text-green-500">
-                                    {profileData.status}
-                                </span>
-                            </p>
-                        </div>
+  <div className="bg-gray-700 p-6 rounded-md text-sm shadow-md">
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Name: <span className="font-light text-sm text-gray-300">{profileData.name}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Phone Number: <span className="text-sm font-light text-gray-300">{profileData.phone}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">DOB: <span className="text-sm font-light text-gray-300">{profileData.dob}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Email: <span className="text-sm font-light text-gray-300">{profileData.email}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Role: <span className="text-sm font-light text-gray-300">{profileData.role}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Manufacturing Sector: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.shopName}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Brief Bio: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.division}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Uploaded Resume: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.district}</span></p>
+    <p className="font-semibold text-base border-b border-gray-600 pb-2">Address: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.subDistrict}</span></p>
+    <p className="font-semibold text-lg">Status: <span className="font-normal text-green-500">{profileData.status}</span></p>
+  </div>
+</div>
 
-                    </div>
                 </div>
 
                 {/* Right Section - Change Password */}
