@@ -1,9 +1,9 @@
 import ApplyProject from "../models/applyprojectModel.js";
 import userModel from "../models/userModel.js";
 import { fileURLToPath } from "url";
-
 import path from "path";
 import fs from "fs";
+import mongoose from "mongoose";
 
 // Manually define __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +16,29 @@ export const getAllAppliedProjects = async (req, res) => {
     res.status(200).json(appliedProjects);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+};
+
+// Get all applied projects by userInfo._id
+export const getApplyProjectByUserInfoId = async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const appliedProjects = await ApplyProject.find({ applerUserId: userId });
+
+    if (!appliedProjects || appliedProjects.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No applied projects found for the user" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Applied projects fetched successfully",
+      appliedProjects,
+    });
+  } catch (error) {
+    console.error("Error fetching applied projects by userInfo._id:", error);
+    res.status(500).json({ error: "Failed to fetch applied projects" });
   }
 };
 
@@ -34,7 +57,9 @@ export const getAppliedProjectById = async (req, res) => {
 
 // Create a new applied project
 export const createAppliedProject = async (req, res) => {
-  const { id } = req;
+  const { id } = req.user;
+
+  console.log("object", id);
   const { file } = req;
   const { projectId, userBudget, preposal, status } = req.body;
 
@@ -67,6 +92,7 @@ export const createAppliedProject = async (req, res) => {
 
     const newAppliedProject = new ApplyProject({
       projectId,
+      applerUserId: id,
       userInfo,
       userBudget,
       preposal: `/prepsole/agent/${uniqueFilename}`, // Save the relative path in the database

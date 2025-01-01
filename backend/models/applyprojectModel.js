@@ -8,6 +8,10 @@ const applyProjectSchema = new Schema(
       type: String,
       required: true,
     },
+    applerUserId: {
+      type: String,
+      required: true,
+    },
     userInfo: {
       type: [String],
       required: true,

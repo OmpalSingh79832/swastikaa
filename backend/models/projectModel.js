@@ -18,6 +18,10 @@ const projectSchema = new Schema(
       type: String,
       required: true,
     },
+    sectorslug: {
+      type: String,
+      required: true,
+    },
     budget: {
       type: Number,
       required: true,
@@ -42,6 +46,9 @@ const projectSchema = new Schema(
       required: true,
     },
     category: {
+      type: String,
+    },
+    categoryslug: {
       type: String,
     },
     status: {

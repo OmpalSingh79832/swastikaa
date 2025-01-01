@@ -29,33 +29,10 @@ export const createProject = async (req, res) => {
     category,
   } = req.body;
 
-  // if (!file) {
-  //   return res.status(400).json({ error: "No file uploaded" });
-  // }
-
-  // if (file.mimetype !== "application/pdf") {
-  //   return res.status(400).json({ error: "Only PDF files are allowed" });
-  // }
-
   try {
-    // Define the folder path where files will be saved
-    // const uploadFolder = path.join(__dirname, "../../prepsole/agent");
-
-    // Ensure the folder exists, create it if it doesn't
-    // if (!fs.existsSync(uploadFolder)) {
-    //   fs.mkdirSync(uploadFolder, { recursive: true });
-    // }
-
-    // Generate a unique filename for the PDF
-    // const uniqueFilename = `${Date.now()}-${file.originalname}`;
-
-    // Full path where the file will be saved
-    // const filePath = path.join(uploadFolder, uniqueFilename);
-
-    // Move the uploaded file to the target location
-    // fs.renameSync(file.path, filePath);
-
     const slug = title.split(" ").join("-");
+    const sectorslug = sector.split(" ").join("-");
+    const categoryslug = category.split(" ").join("-");
     const result = await cloudinary.uploader.upload(file.path, {
       folder: "project",
     });
@@ -66,14 +43,15 @@ export const createProject = async (req, res) => {
         title,
         userId: id,
         slug: slug,
+        sectorslug: sectorslug,
         sector,
         budget,
         description,
         companyName,
-
         image: result.url,
         keyPoints,
         category,
+        categoryslug: categoryslug,
       });
 
       res
@@ -191,6 +169,31 @@ export const getProjectBySlug = async (req, res) => {
   } catch (error) {
     console.error("Error fetching project by slug:", error);
     res.status(500).json({ error: "Failed to fetch project" });
+  }
+};
+
+export const getProjectsBySectorSlug = async (req, res) => {
+  const { sector } = req;
+  const { sectorslug } = sector; // Extract sectorslug from route parameters
+
+  try {
+    // Find projects that match the sectorslug
+    const projects = await Project.find({ sectorslug });
+
+    if (projects.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No projects found for the given sector slug" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Projects fetched successfully",
+      projects,
+    });
+  } catch (error) {
+    console.error("Error fetching projects by sectorslug:", error);
+    res.status(500).json({ error: "Failed to fetch projects" });
   }
 };
 
