@@ -175,53 +175,52 @@ const ExecutionProject = ({ userRole }) => {
               {/* Left Form Section */}
               <form className="space-y-4 w-full">
                 <div>
-                  <label className="block font-semibold mb-2">Your Name</label>
-                  <input
-                    type="text"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Enter your name"
-                  />
+                  <label className="text-xl block font-bold mb-2">Project Name : </label>
+                 <h2 className="text-sm">{selectedProduct?.name}</h2>
                 </div>
                 <div>
-                  <label className="block font-semibold mb-2">Your Phone Number</label>
-                  <input
-                    type="number"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Enter your Phone Number"
-                  />
+                <label className="text-xl block font-bold mb-2">Project Sector :</label>
+                <h2 className="text-sm">{selectedProduct?.sector}</h2>
                 </div>
                 <div>
-                  <label className="block font-semibold mb-2">Your Email</label>
-                  <input
-                    type="email"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Enter your email"
-                  />
+                  <label className="text-xl block font-bold mb-2">Project Description :</label>
+                  <h2 className="text-sm mr-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, officia ipsum dolor, sit amet consectetur adipisicing?</h2>
                 </div>
                 <div>
-                  <label className="block font-semibold mb-2">Brief Intro Yourself?</label>
-                  <textarea
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Enter your Bio"
-                    rows="2"
-                  />
+                  <label className="text-xl block font-bold mb-2">Last Date for Apply :</label>
+                  <h2 className="text-sm">{selectedProduct?.lastDate}</h2>
+                </div>
+               {/* Submit Button */}
+               <div className="flex md:mt-auto">
+                  <button
+                    style={{ backgroundColor: "rgb(223, 20, 97)" }}
+                    type="submit"
+                    className="w-full md:w-[30%] px-4 py-2 text-white rounded hover:bg-pink-600"
+                    onClick={closeModal}
+                  >
+                    Submit 
+                  </button>
                 </div>
               </form>
 
               {/* Right Section */}
               <div className="w-full md:w-full flex flex-col space-y-6">
-                {/* Excution Details */}
+                {/* Manufacturer Details */}
+               
                 <div className="bg-gray-700 p-4 rounded-md text-white space-y-2">
+                  <h3 className="text-lg font-bold">Manufacturer Details</h3>
+                  <p><span className="font-semibold">Name:</span> John Doe</p>
+                  <p><span className="font-semibold">Contact Number:</span> +91-9876543210</p>
+                  <p><span className="font-semibold">Email ID:</span> johndoe@example.com</p>
+                </div>
                 <div>
-                  <label className="block font-semibold mb-2">Enter Amount</label>
-                  <input
-                    type="number"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Enter your Phone Number"
-                  />
-                </div>
-                </div>
-
+            {/* <label className="block font-semibold mb-2">Budget</label> */}
+            <input
+              type="number"
+              className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
+              placeholder="Enter Your budget"
+            />
+          </div>
                 {/* File Uploader */}
                 <div className="bg-gray-700 p-4 rounded-md">
                   <h3 className="text-lg font-bold text-white mb-2">Upload Your Proposal</h3>
@@ -231,17 +230,7 @@ const ExecutionProject = ({ userRole }) => {
                   />
                 </div>
 
-                {/* Submit Button */}
-                <div className="flex justify-end md:mt-auto">
-                  <button
-                    style={{ backgroundColor: "rgb(223, 20, 97)" }}
-                    type="submit"
-                    className="w-full md:w-[50%] px-4 py-2 text-white rounded hover:bg-pink-600"
-                    onClick={closeModal}
-                  >
-                    Submit Application
-                  </button>
-                </div>
+               
               </div>
             </div>
 

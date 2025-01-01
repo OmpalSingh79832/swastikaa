@@ -51,7 +51,7 @@ const Sidebar = ({ setActivePage, userRole }) => {
             onClick={() => setActivePage("applied-project")}
           >
             <FaProjectDiagram className="mr-2" />
-            Applied Projects
+            {userRole === "manufacturer" ? "All Projects" : "Applied Projects"}
           </button>
         </li>
         <li>
