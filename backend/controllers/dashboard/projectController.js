@@ -70,7 +70,7 @@ export const createProject = async (req, res) => {
         budget,
         description,
         companyName,
-        // prepsole: `/prepsole/agent/${uniqueFilename}`, // Save the relative path in the database
+
         image: result.url,
         keyPoints,
         category,
