@@ -9,6 +9,7 @@ import {
   getProjectsByUserId,
   updateProjectByAdmin,
   getAllProjects,
+  getProjectsBySectorSlug,
 } from "../../controllers/dashboard/projectController.js";
 
 import { adminMiddleware } from "../../middleware/adminMiddleware.js";
@@ -34,6 +35,11 @@ router.get("/user/get-all-project", authMiddleware, getProjectsByUserId); // Get
 router.get("/get-project/:id", authMiddleware, getProjectById); // Get a project by ID
 // project status and category update
 router.put("/admin/project-update/:id", adminMiddleware, updateProjectByAdmin);
+router.get(
+  "/projects/sector/:sectorslug",
+  authMiddleware,
+  getProjectsBySectorSlug
+);
 router.post(
   "/upload",
   authMiddleware,
