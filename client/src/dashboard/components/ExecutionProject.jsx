@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
 const ExecutionProject = ({ userRole }) => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [modalType, setModalType] = useState(""); // "apply" or "applied"
   const [appliedCounts, setAppliedCounts] = useState({});
-
 
   const products = [
     {
@@ -60,11 +59,11 @@ const ExecutionProject = ({ userRole }) => {
       lastDate: "01Nov",
     },
   ];
-
-  const openModal = (product) => {
+  const openApplyModal = (product) => {
     if (userRole === "manufacturer") return; // Disable action for manufacturer
     setSelectedProduct(product);
     setIsModalOpen(true);
+    setModalType("apply");
 
     setAppliedCounts((prev) => ({
       ...prev,
@@ -72,25 +71,20 @@ const ExecutionProject = ({ userRole }) => {
     }));
   };
 
+  const openAppliedModal = (product) => {
+    setSelectedProduct(product);
+    setModalType("applied");
+    setIsModalOpen(true);
+  };
+
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProduct(null);
+    setModalType("");
   };
+
   return (
     <div className="bg-gray-900 p-6 rounded-lg">
-      {/* Dropdown and Search */}
-      <div className="flex justify-between items-center mb-4">
-        <select className="bg-gray-800 text-white p-2 px-3 rounded-md" defaultValue="5">
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-        </select>
-        <input
-          type="text"
-          placeholder="search"
-          className="bg-gray-800 text-white p-2 rounded-md focus:outline-none"
-        />
-      </div>
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-center text-gray-400">
@@ -122,119 +116,143 @@ const ExecutionProject = ({ userRole }) => {
                   {userRole === "execution" ? (
                     <button
                       className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                      onClick={() => openModal(product)}
+                      onClick={() => openApplyModal(product)}
                     >
-                      Apply 
+                      Apply Now
                     </button>
                   ) : (
-                    <div className="flex space-x-2">
-                      <button
-                        type="button"
-                        className="m-1 ms-0 relative py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50"
-                      >
-                        Applied
-                        <span className="flex absolute top-0 end-0 -mt-2 -me-2">
-                          <span className="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75"></span>
-                          <span className="relative inline-flex text-xs bg-red-500 text-white rounded-full py-0.5 px-1.5">
-                            {appliedCounts[product.id] || 0}
-                          </span>
+                    <button
+                      type="button"
+                      className="m-1 ms-0 relative py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+                      onClick={() => openAppliedModal(product)}
+                    >
+                      Applied Now
+                      <span className="flex absolute top-0 end-0 -mt-2 -me-2">
+                        <span className="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex text-xs bg-red-500 text-white rounded-full py-0.5 px-1.5">
+                          {appliedCounts[product.id] || 0}
                         </span>
-                      </button>
-                    </div>
+                      </span>
+                    </button>
                   )}
                 </td>
-
-
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      {/* Pagination */}
-      <div className="flex justify-end items-center mt-4">
-        <button className="bg-gray-800 text-white px-3 py-1 rounded-md mx-1">1</button>
-        <button className="bg-gray-800 text-white px-3 py-1 rounded-md mx-1">2</button>
-        <button className="bg-gray-800 text-white px-3 py-1 rounded-md mx-1">3</button>
-        <button className="bg-gray-800 text-white px-3 py-1 rounded-md mx-1">4</button>
-      </div>
 
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-gray-800 text-white p-6 rounded-md w-[60%] h-fit">
-            <div className="flex justify-between">
-              <h2 className="text-xl font-bold mb-4">Apply for {selectedProduct?.name}</h2>
+          <div className="bg-gray-800 text-white p-6 rounded-md w-[60%]">
+            <div className="justify-end text-right mb-2">
               <button
-                className="px-3 h-fit py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
+                className="px-3 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
                 onClick={closeModal}
               >
                 <RxCross2 />
               </button>
             </div>
-            <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
-              {/* Left Form Section */}
-              <form className="space-y-4 w-full">
-                <div>
-                  <label className="text-xl block font-bold mb-2">Project Name : </label>
-                 <h2 className="text-sm">{selectedProduct?.name}</h2>
+
+            {/* Modal Content */}
+            {modalType === "apply" ? (
+              <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+                {/* Left Form Section */}
+                <form className="space-y-4 w-full">
+                  <div>
+                    <label className="text-xl block font-bold mb-2">Project Name : </label>
+                    <h2 className="text-sm">{selectedProduct?.name}</h2>
+                  </div>
+                  <div>
+                    <label className="text-xl block font-bold mb-2">Project Sector :</label>
+                    <h2 className="text-sm">{selectedProduct?.sector}</h2>
+                  </div>
+                  <div>
+                    <label className="text-xl block font-bold mb-2">Project Description :</label>
+                    <h2 className="text-sm mr-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, officia ipsum dolor, sit amet consectetur adipisicing?</h2>
+                  </div>
+                  <div>
+                    <label className="text-xl block font-bold mb-2">Last Date for Apply :</label>
+                    <h2 className="text-sm">{selectedProduct?.lastDate}</h2>
+                  </div>
+                  <div>
+                    {/* <label className="block font-semibold mb-2">Budget</label> */}
+                    <input
+                      type="number"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      placeholder="Enter Proposal Amount"
+                    />
+                  </div>
+
+                </form>
+
+                {/* Right Section */}
+                <div className="w-full md:w-full flex flex-col space-y-6">
+                  {/* Manufacturer Details */}
+
+                  <div className="bg-gray-700 p-4 rounded-md text-white space-y-2">
+                    <h3 className="text-lg font-bold">Manufacturer Details</h3>
+                    <p><span className="font-semibold">Name:</span> John Doe</p>
+                    <p><span className="font-semibold">Contact Number:</span> +91-9876543210</p>
+                    <p><span className="font-semibold">Email ID:</span> johndoe@example.com</p>
+                  </div>
+
+                  {/* File Uploader */}
+                  <div className="bg-gray-700 p-4 rounded-md">
+                    <h3 className="text-lg font-bold text-white mb-2">Upload Your Proposal</h3>
+                    <input
+                      type="file"
+                      className="w-full bg-gray-800 text-white border border-gray-600 rounded p-2"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="flex md:mt-auto justify-center">
+                    <button
+                      style={{ backgroundColor: "rgb(223, 20, 97)" }}
+                      type="submit"
+                      className="w-full md:w-[30%] px-4 py-2 text-white rounded hover:bg-pink-600"
+                      onClick={closeModal}
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
-                <div>
-                <label className="text-xl block font-bold mb-2">Project Sector :</label>
-                <h2 className="text-sm">{selectedProduct?.sector}</h2>
-                </div>
-                <div>
-                  <label className="text-xl block font-bold mb-2">Project Description :</label>
-                  <h2 className="text-sm mr-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, officia ipsum dolor, sit amet consectetur adipisicing?</h2>
-                </div>
-                <div>
-                  <label className="text-xl block font-bold mb-2">Last Date for Apply :</label>
-                  <h2 className="text-sm">{selectedProduct?.lastDate}</h2>
-                </div>
-               {/* Submit Button */}
-               <div className="flex md:mt-auto">
-                  <button
-                    style={{ backgroundColor: "rgb(223, 20, 97)" }}
-                    type="submit"
-                    className="w-full md:w-[30%] px-4 py-2 text-white rounded hover:bg-pink-600"
-                    onClick={closeModal}
-                  >
-                    Submit 
+              </div>
+            ) : (
+              <div className="flex flex-col md:flex-row md:space-x-6">
+                {/* Left Side */}
+                <div className="w-full">
+                  <h3 className="text-lg font-bold mb-2">Details:</h3>
+                  <p>Name: John Doe</p>
+                  <p>Email: john@example.com</p>
+                  <p>Phone: 1234567890</p>
+                  <p>Experience: 5 Years</p>
+                  <p>Brief Bio: Lorem ipsum dolor sit amet.</p>
+                  <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+                    Download Proposal
                   </button>
                 </div>
-              </form>
 
-              {/* Right Section */}
-              <div className="w-full md:w-full flex flex-col space-y-6">
-                {/* Manufacturer Details */}
-               
-                <div className="bg-gray-700 p-4 rounded-md text-white space-y-2">
-                  <h3 className="text-lg font-bold">Manufacturer Details</h3>
-                  <p><span className="font-semibold">Name:</span> John Doe</p>
-                  <p><span className="font-semibold">Contact Number:</span> +91-9876543210</p>
-                  <p><span className="font-semibold">Email ID:</span> johndoe@example.com</p>
-                </div>
-                <div>
-            {/* <label className="block font-semibold mb-2">Budget</label> */}
-            <input
-              type="number"
-              className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-              placeholder="Enter Your budget"
-            />
-          </div>
-                {/* File Uploader */}
-                <div className="bg-gray-700 p-4 rounded-md">
-                  <h3 className="text-lg font-bold text-white mb-2">Upload Your Proposal</h3>
-                  <input
-                    type="file"
-                    className="w-full bg-gray-800 text-white border border-gray-600 rounded p-2"
-                  />
+                {/* Right Side */}
+                <div className="w-full flex flex-col">
+                  <select className="bg-gray-700 text-white p-2 rounded mt-4">
+                    <option value="pending">Pending</option>
+                    <option value="awarded">Awarded</option>
+                    <option value="rejected">Rejected</option>
+                  </select>
+                  <button
+                    className="bg-green-500 text-white px-4 py-2 rounded mt-auto"
+                    style={{ marginTop: "auto" }}
+                  >
+                    Submit Now
+                  </button>
                 </div>
 
-               
+
               </div>
-            </div>
-
-
+            )}
           </div>
         </div>
       )}

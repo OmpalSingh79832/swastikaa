@@ -47,7 +47,20 @@ const UploadProject = () => {
         </form>
 
         {/* Right Section */}
-        <div className="w-[30%] space-y-6 flex flex-col justify-between">
+        <div className="w-[30%] space-y-6 flex flex-col">
+          <div>
+            <label className="block font-semibold mb-2">Choose Your Location</label>
+            <select
+              className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
+            >
+              <option value="">Select a Location</option>
+              <option value="IT">Delhi</option>
+              <option value="Mechanical">Noida</option>
+              <option value="Civil">Mumbai</option>
+              <option value="Electrical">Agra</option>
+              <option value="Commerce">Andhra Pradesh</option>
+            </select>
+          </div>
           <div>
             <label className="block font-semibold mb-2">Last Date for Apply</label>
             <input
@@ -55,13 +68,15 @@ const UploadProject = () => {
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
-          <button
-            style={{ backgroundColor: "rgb(223, 20, 97)" }}
-            type="submit"
-            className="w-full h-[50px] px-4 py-2 text-white rounded hover:bg-pink-600"
-          >
-            Submit Project
-          </button>
+          <div className="mt-30">
+            <button
+              style={{ backgroundColor: "rgb(223, 20, 97)" }}
+              type="submit"
+              className="w-full px-4 py-3 text-white rounded hover:bg-pink-600"
+            >
+              Submit Project
+            </button>
+          </div>
         </div>
       </div>
     </div>
