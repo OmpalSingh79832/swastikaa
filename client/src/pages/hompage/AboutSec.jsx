@@ -1,26 +1,8 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Slider from "../components/Slider";
-import IndustrySec from "../components/IndustrySec";
-import ProjectComp from "../components/ProjectComp";
-import Service from "../components/Service";
-import ChooseUs from "../components/ChooseUs";
-import ContactForm from "../components/ContactForm";
-import { IoStarSharp } from "react-icons/io5";
-import { LuCircleArrowRight } from "react-icons/lu";
+import React from 'react'
 
-const Home = () => {
+const AboutSec = () => {
   return (
     <div>
-
-      <Slider />
-      <IndustrySec />
-      <ProjectComp />
-      <Service />
-      <div>
-
-
         <section class="py-24 relative xl:mr-0 lg:mr-5 mr-0">
           <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
@@ -85,12 +67,8 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-      </div>
-      <ChooseUs />
-      <ContactForm />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default AboutSec

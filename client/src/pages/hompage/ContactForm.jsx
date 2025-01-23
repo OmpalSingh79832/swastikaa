@@ -3,9 +3,9 @@ import React from 'react'
 const ContactForm = () => {
     return (
         <>
-            <section className="mb-32 mt-32 text-white">
+            <section className="my-32 text-white">
 
-                <div className="container relative px-6 md:px-12 mx-auto">
+                <div className="lg:container relative px-6 md:px-12 mx-auto">
                     <div className="block rounded-lg bg-[#0a4275] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
                         <div className="flex flex-wrap">
                             <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">

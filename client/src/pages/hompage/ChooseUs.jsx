@@ -16,7 +16,7 @@ function ChooseUs() {
                             you get the job done easily.
                         </p>
                     </div>
-                    <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="relative mx-auto max-w-7xl z-10 grid gap-10 pt-14 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         <div className="rounded-md border border-white bg-neutral-900/50 p-8 text-center shadow">
                             <div className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border bg-softYellow">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-color-swatch" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">

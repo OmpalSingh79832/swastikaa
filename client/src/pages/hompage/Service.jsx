@@ -1,8 +1,8 @@
 import React from "react";
 import { IoStarSharp } from "react-icons/io5";
 import Slider from "react-slick";
-import Img11 from "../assets/sl3.jpg";
-import Img22 from "../assets/sl4.jpg";
+import Img11 from "../../assets/sl3.jpg";
+import Img22 from "../../assets/sl4.jpg";
 
 const Service = () => {
     // Array to store slider data
@@ -36,14 +36,13 @@ const Service = () => {
     const CustomPrevArrow = ({ onClick }) => (
         <button
             onClick={onClick}
-            className="custom-arrow custom-prev"
+            className="custom-arrow custom-prev hidden sm:hidden lg:block"
             style={{
                 backgroundColor: "#000",
                 boxShadow: "0px 0px 48px 72px rgba(0,0,0,0.1)",
                 color: "#fff",
                 fontSize: "25px",
                 padding: "2px 15px 5px 15px",
-                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 border: "none",
@@ -59,18 +58,18 @@ const Service = () => {
             &#8249;
         </button>
     );
+    
 
     const CustomNextArrow = ({ onClick }) => (
         <button
             onClick={onClick}
-            className="custom-arrow custom-next"
+            className="custom-arrow custom-next hidden sm:hidden lg:block"
             style={{
                 backgroundColor: "#000",
                 boxShadow: "0px 0px 48px 72px rgba(0,0,0,0.1)",
                 color: "#fff",
                 fontSize: "25px",
                 padding: "2px 15px 5px 15px",
-                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 border: "none",
@@ -86,6 +85,7 @@ const Service = () => {
             &#8250;
         </button>
     );
+    
 
     const settings = {
         infinite: true,
@@ -100,12 +100,18 @@ const Service = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            }, {
+                breakpoint: 300,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -116,51 +122,54 @@ const Service = () => {
 
     return (
         <>
-            <div className="bg-gray-300 py-24">
-                <div className="w-[90%] mx-auto">
-                    <div className="text-center">
-                        <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
-                        <div className="w-[70%] mx-auto mb-8">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
-                        </div>
-                    </div>
+           <div className="bg-gray-300 py-16 sm:py-24">
+  <div className="w-[90%] mx-auto">
+    {/* Section Header */}
+    <div className="text-center">
+      <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-bold">
+        -- Our <span className="text-primaryRed">Services --</span>
+      </p>
+      <div className="w-[95%] sm:w-[80%] lg:w-[70%] mx-auto mb-6 sm:mb-8">
+        <p className="text-sm sm:text-base lg:text-lg">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!
+        </p>
+      </div>
+    </div>
 
-                    <div className="slider-container">
-                        <Slider {...settings}>
-                            {sliderData.map((service) => (
-                                <div className="p-4" key={service.id}>
-                                    <div className="border bg-white rounded-xl shadow-sm sm:flex h-[60vh]">
-                                        {/* Image Section */}
-                                        <div className="shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
-                                            <img
-                                                className="size-full absolute top-0 object-cover"
-                                                src={service.image}
-                                                alt={service.title}
-                                            />
-                                        </div>
-                                        {/* Text Content Section */}
-                                        <div className="flex flex-wrap">
-                                            <div className="p-4 flex flex-col h-full sm:p-7">
-                                                <h3 className="text-lg font-bold text-gray-800">
-                                                    {service.title}
-                                                </h3>
-                                                <p className="mt-1 text-gray-500">
-                                                    {service.description}
-                                                </p>
-                                                <div className="mt-5 sm:mt-auto">
-                                                    <p className="text-xs text-gray-500">
-                                                        {service.updated}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                    </div>
+    {/* Slider Section */}
+    <div className="slider-container">
+      <Slider {...settings}>
+        {sliderData.map((service) => (
+          <div className="p-4" key={service.id}>
+           <div className="border bg-white rounded-xl shadow-md h-[400px] flex flex-col">
+              {/* Image Section */}
+              <div className="relative w-full rounded-t-xl overflow-hidden flex-shrink-0 h-[50%]">
+                <img
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  src={service.image}
+                  alt={service.title}
+                />
+              </div>
+              {/* Text Content Section */}
+              <div className="flex flex-col p-4 sm:p-6 lg:p-8 h-[50%] justify-between">
+                <h3 className="text-md sm:text-lg lg:text-xl font-bold text-gray-800">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm sm:text-base text-gray-500">
+                  {service.description}
+                </p>
+                <div className="mt-auto">
+                  <p className="text-xs text-gray-400">{service.updated}</p>
                 </div>
+              </div>
             </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  </div>
+</div>
+
         </>
     );
 };

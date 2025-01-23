@@ -82,7 +82,7 @@ function OurServices() {
     return (
         <>
             <section className="pb-20 pt-10" id="services">
-                <div className="container mx-auto w-[90%] px-4">
+                <div className="containe mx-auto w-[90%] px-4">
                 <div className="text-center pb-10">
                     <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
                     <div className="w-[70%] mx-auto">
@@ -90,7 +90,7 @@ function OurServices() {
                     </div>
                 </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) =>
                             service.isSpecial ? (
                                 // Special Product Card

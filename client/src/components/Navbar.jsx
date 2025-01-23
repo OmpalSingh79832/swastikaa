@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { GrMail } from "react-icons/gr";
 import { IoIosCall } from "react-icons/io";
 import logo from "../assets/logo.png";
-
+import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,6 +18,10 @@ const Navbar = () => {
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const handleClose = () => {
+    setIsDropdownOpen(false);
+  }
 
   const navmenu = [
     { name: "Home", path: "/" },
@@ -31,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <div className="w-full bg-white">
-        <div className="header-top bg-[#2e2d2d] lg:py-1 sm:py-4">
+        <div className="header-top bg-[#2e2d2d] lg:py-1 sm:py-4 sm:hidden lg:block">
           <div className="w-[90%] lg:w-[95%] mx-auto pt-1">
             <div className="flex flex-col md:flex-row justify-between items-center h-auto md:h-[50px] text-white">
               {/* Left Section */}
@@ -83,100 +87,89 @@ const Navbar = () => {
         </div>
         <header className="border-b bg-white font-sans min-h-[60px] px-10 py-3 tracking-wide relative z-50">
           <div className="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
-            <a href="#">
+            <Link to={"/"}>
               <img
                 src={logo}
                 alt="logo"
-                className="lg:w-[140px] sm:w-[60px] max-sm:hidden"
+                className="lg:w-[100px] sm:w-[60px] max-sm:hidden"
               />
 
-            </a>
+            </Link>
 
             <div
               className={`${menuOpen ? "block" : "hidden"
                 } lg:!flex lg:items-center max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50`}
             >
               <button
-                className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
+                className="lg:hidden fixed top-5 right-10 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
                 onClick={handleToggle}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-3.5 h-3.5 fill-black"
-                  viewBox="0 0 320.591 320.591"
-                ></svg>
+                <RxCross2 className="font-bold text-2xl" />
               </button>
-
-              <ul className="lg:flex lg:gap-x-10 lg:absolute lg:left-1/2 lg:-translate-x-1/2 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+              <ul className="lg:flex lg:gap-x-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
                 <li className="mb-6 hidden max-lg:block">
-                  <a href="#">
+                  <Link to={"/"} onClick={handleToggle}>
                     <img
                       src={logo}
                       alt="logo"
-                      className="w-36"
+                      className="w-24"
                     />
-                  </a>
+                  </Link>
                 </li>
-                <li key="Home" className="max-lg:border-b max-lg:py-3">
-                  <Link
-                    to={"/"}
-                    className="hover:text-[#007bff] text-[#007bff] font-bold block font-bold text-[14px]"
-                  >
+                <li className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                  <Link to={"/"} className="hover:text-[#007bff] text-[#007bff] font-bold block text-[16px]">
                     Home
                   </Link>
                 </li>
-                <li key="Services" className="max-lg:border-b max-lg:py-3">
-                  <Link
-                    to={"/our-services"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
-                  >
+                <li key="Services" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                  <Link to={"/our-services"} className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]">
                     Services
                   </Link>
                 </li>
-                <li key="Get Quote" className="max-lg:border-b max-lg:py-3">
+                <li key="Get Quote" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
                   <Link
                     to={"/consulting-services"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
                   >
                     Get Quote
                   </Link>
                 </li>
-                <li key="Apply" className="max-lg:border-b max-lg:py-3">
+                <li key="Apply" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
                   <Link
                     to={"/apply-project"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
                   >
                     Apply
                   </Link>
                 </li>
-                <li key="Pricing" className="max-lg:border-b max-lg:py-3">
+                <li key="Pricing" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
                   <Link
                     to={"/pricing-details"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
                   >
                     Pricing
                   </Link>
                 </li>
-                <li key="About Us" className="max-lg:border-b max-lg:py-3">
+                <li key="About Us" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
                   <Link
                     to={"/about-us"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
                   >
                     About Us
                   </Link>
                 </li>
-                <li key="Contact Us" className="max-lg:border-b max-lg:py-3">
+                <li key="Contact Us" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
                   <Link
                     to={"/contact-us"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
                   >
                     Contact Us
                   </Link>
                 </li>
-                <li key="Resources" className="max-lg:border-b max-lg:py-3">
+                <li key="Resources" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
                   <Link
                     to={"/blog"}
-                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[14px]"
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
                   >
                     Resources
                   </Link>
@@ -186,7 +179,7 @@ const Navbar = () => {
 
             <div className="flex items-center ml-auto space-x-8">
 
-              <div className="md-lg:flex pl-2 md-lg:w-full">
+              <div className="md-lg:flex pl-2 md-lg:w-full sm:hidden lg:block">
                 <div className="flex gap-3 items-center">
                   <div className="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center">
                     <IoIosCall />
@@ -198,6 +191,9 @@ const Navbar = () => {
                     <span className="text-sm font-bold">Contact Support</span>
                   </div>
                 </div>
+              </div>
+              <div className="flex gap-3 items-center sm:block lg:hidden">
+                <button className="bg-softYellow px-4 py-2 rounded-sm font-semibold text-lg">Login</button>
               </div>
               <button id="toggleOpen" className="lg:hidden" onClick={handleToggle}>
                 <svg
@@ -216,7 +212,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="bg-gray-100 border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto max-lg:mt-6 transition-all">
+          <div className="bg-gray-100 border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 192.904 192.904"

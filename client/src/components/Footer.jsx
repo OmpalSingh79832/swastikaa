@@ -8,7 +8,7 @@ const Footer = () => {
 
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-start lg:gap-8">
-            <div className="w-[170px] h-[120px] p-2 bg-white cursor-pointer">
+            <div className="lg:w-[170px] sm:w-[100px] lg:h-[120px] sm:h-[100px] p-2 bg-white cursor-pointer">
               <img src={LogoImg} alt="" className="" />
             </div>
 
