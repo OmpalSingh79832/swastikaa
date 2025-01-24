@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
@@ -179,17 +176,15 @@ const FreelanceProject = ({ userRole }) => {
                     <label className="text-xl block font-bold mb-2">Last Date for Apply :</label>
                     <h2 className="text-sm">{selectedProduct?.lastDate}</h2>
                   </div>
-                  {/* Submit Button */}
-                  <div className="flex md:mt-auto">
-                    <button
-                      style={{ backgroundColor: "rgb(223, 20, 97)" }}
-                      type="submit"
-                      className="w-full md:w-[30%] px-4 py-2 text-white rounded hover:bg-pink-600"
-                      onClick={closeModal}
-                    >
-                      Submit
-                    </button>
+                  <div>
+                    {/* <label className="block font-semibold mb-2">Budget</label> */}
+                    <input
+                      type="number"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      placeholder="Enter Proposal Amount"
+                    />
                   </div>
+
                 </form>
 
                 {/* Right Section */}
@@ -202,14 +197,7 @@ const FreelanceProject = ({ userRole }) => {
                     <p><span className="font-semibold">Contact Number:</span> +91-9876543210</p>
                     <p><span className="font-semibold">Email ID:</span> johndoe@example.com</p>
                   </div>
-                  <div>
-                    {/* <label className="block font-semibold mb-2">Budget</label> */}
-                    <input
-                      type="number"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      placeholder="Enter Your budget"
-                    />
-                  </div>
+
                   {/* File Uploader */}
                   <div className="bg-gray-700 p-4 rounded-md">
                     <h3 className="text-lg font-bold text-white mb-2">Upload Your Proposal</h3>
@@ -219,7 +207,17 @@ const FreelanceProject = ({ userRole }) => {
                     />
                   </div>
 
-
+                  {/* Submit Button */}
+                  <div className="flex md:mt-auto justify-center">
+                    <button
+                      style={{ backgroundColor: "rgb(223, 20, 97)" }}
+                      type="submit"
+                      className="w-full md:w-[30%] px-4 py-2 text-white rounded hover:bg-pink-600"
+                      onClick={closeModal}
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -251,6 +249,8 @@ const FreelanceProject = ({ userRole }) => {
                     Submit Now
                   </button>
                 </div>
+
+
               </div>
             )}
           </div>

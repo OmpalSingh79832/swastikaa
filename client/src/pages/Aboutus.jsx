@@ -2,8 +2,8 @@ import React from "react";
 import AboutImg1 from "../assets/aboutus-1.jpg";
 import AboutsImg2 from "../assets/aboutus-2.avif";
 import { useNavigate } from "react-router-dom";
-import ChooseUs from "../components/ChooseUs";
-import ContactForm from "../components/ContactForm";
+import ChooseUs from "../pages/hompage/ChooseUs";
+import ContactForm from "../pages/hompage/ContactForm";
 
 const Aboutus = () => {
 
@@ -13,30 +13,43 @@ const Aboutus = () => {
     <>
       <div>
         {/* hero seciton */}
-        <div className="relative w-full bg-slate-800  h-[550px]" id="home">
-          <div className="absolute inset-0 opacity-40">
-            <img src={AboutImg1} alt="Background Image" className="object-cover object-center w-full h-full" />
+        <div className="relative w-full bg-slate-800 h-[520px] sm:h-[400px] lg:h-[520px]" id="home">
+          {/* Background Image */}
+          <div className="absolute inset-0 opacity-40 ">
+            <img
+              src={AboutImg1}
+              alt="Background Image"
+              className="object-cover object-center w-full h-full"
+            />
           </div>
-          <div className="absolute inset-9 flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 mb-4 md:mb-0 opacity-100 leading-10">
-              <h1 className="text-white font-medium text-7xl md:text-7xl  mb-2">Swastikaa Manufacturing <br />Sector Consultant</h1>
-              <p className="font-regular font-bold text-2xl mb-8 mt-4 text-white">One stop solution for flour grinding services</p>
+
+          {/* Content Section */}
+          <div className="absolute inset-4 sm:inset-9 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div className="md:w-1/2 mb-4 md:mb-0">
+              <h1 className="text-white font-medium text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 leading-tight">
+                Swastikaa Manufacturing <br />
+                Sector Consultant
+              </h1>
+              <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 text-white">
+                One stop solution for flour grinding services
+              </p>
               <button className="all-btn">
                 Contact Us
               </button>
             </div>
           </div>
         </div>
+
         {/* our services section */}
         <section className="py-20" id="services">
-          <div className="container mx-auto w-[90%]">
+          <div className="mx-auto w-[90%]">
             <div className="text-center pb-10">
               <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
               <div className="w-[70%] mx-auto">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" alt="wheat flour grinding" className="w-full h-64 object-cover" />
                 <div className="p-6 text-center">
@@ -108,7 +121,7 @@ const Aboutus = () => {
         </section>
         {/* about us */}
         <section className="bg-gray-100 " id="aboutus">
-          <div className="container mx-auto w-[90%] py-16 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-[90%] py-16 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               <div className="max-w-lg">
                 <div className="heading-style pb-1 flex items-center relative">

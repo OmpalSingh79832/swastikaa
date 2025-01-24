@@ -4,16 +4,16 @@ import BannerImg from "../assets/contact-banner.jpg";
 const ContactPage = () => {
     return (
         <>
-            <div className=' mb-3'>
-                <img src={BannerImg} alt="" className='h-[35em] w-full' />
+            <div className='mb-3'>
+                <img src={BannerImg} alt="" className='lg:h-[35em] sm:h-[15em] w-full' />
             </div>
             <div>
-                <section className="py-24">
+                <section className="lg:py-24 sm:py-4">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="md:flex gap-x-24 clear-left md:mb-16 mb-10">
-                            <div className=" md:mb-0 mb-4">
+                            <div className="md:mb-0 mb-4">
                                 <div className="">
-                                    <p className="text-[40px] mr-3 font-bold">-- Get In<span className="text-primaryRed"> Touch --</span></p>
+                                    <p className="lg:text-[40px] sm:text-[30px] sm:text-center lg:text-left mr-3 font-bold">-- Get In<span className="text-primaryRed"> Touch --</span></p>
                                 </div>
                                 <p className="text-gray-600 text-lg font-normal leading-7 mb-7 md:text-left text-center">Whether you have a concern or simply want to say hello, We are here to facilitate communication with you.</p>
                                 <div className="flex md:items-center md:justify-start justify-center">
@@ -33,7 +33,7 @@ const ContactPage = () => {
                         </div>
                         <div>
                             <div className="pb-8">
-                                <p className="text-[40px] mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
+                                <p className="lg:text-[40px] sm:text-[30px] sm:text-center lg:text-left mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
                             </div>
                             <ul className='text-base mb-10 ml-4'>
                                 <li>At Swastikaa, we take our consultancy services seriously..</li>
