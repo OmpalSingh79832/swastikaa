@@ -86,13 +86,9 @@ const Home = () => {
           <p className="lg:text-2xl sm:text-sm leading-snug">*Invite your team and collaborate together</p>
         </div>
       </div>
-
       <IndustrySec />
       <ProjectComp />
       <div>
-
-
-
         <div>
           <div className="w-[90%] mx-auto my-16">
             <p className="text-primaryRed text-xl font-semibold mb-4">OUR WORK</p>
@@ -139,28 +135,27 @@ const Home = () => {
 
           </div>
         </div>
-
-        <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-20">
+        <div className="w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-10">
           {/* Image Section */}
-          <div className="flex justify-center items-center w-[500px]">
+          <div className="flex justify-center items-center">
             <img
               src={activeTestimonial.image}
               alt={activeTestimonial.name}
-              className="w-full h-fit object-cover rounded-lg shadow-lg"
+              className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto object-cover rounded-lg shadow-lg"
             />
           </div>
 
           {/* Content Section */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             {/* Tabs */}
-            <div className="flex space-x-20">
+            <div className="flex flex-wrap justify-start gap-6 md:gap-12">
               {testimonials.map((item) => (
                 <button
                   key={item.category}
                   onClick={() => setActiveCategory(item.category)}
-                  className={`text-2xl my-10 font-semibold ${activeCategory === item.category
-                    ? "text-blue-500 border-b-2 border-blue-500"
-                    : "text-gray-500"
+                  className={`text-lg sm:text-sm font-semibold ${activeCategory === item.category
+                      ? "text-blue-500 border-b-2 border-blue-500"
+                      : "text-gray-500"
                     }`}
                 >
                   {item.category}
@@ -169,17 +164,20 @@ const Home = () => {
             </div>
 
             {/* Testimonial Content */}
-            <div className="w-[85%]">
-              <blockquote className="text-2xl mb-6 text-gray-700">
+            <div className="w-full max-w-3xl">
+              <blockquote className="text-xl sm:text-xl text-gray-700 mb-4 sm:mb-6">
                 "{activeTestimonial.quote}"
               </blockquote>
-              <p className="font-bold text-xl mb-2">
+              <p className="font-bold text-lg sm:text-xl mb-2">
                 {activeTestimonial.name}
               </p>
-              <p className="text-gray-800 text-xl">{activeTestimonial.title}</p>
+              <p className="text-gray-800 text-base sm:text-lg">
+                {activeTestimonial.title}
+              </p>
             </div>
           </div>
         </div>
+
       </div>
       {/* <Service /> */}
       <AboutSec />

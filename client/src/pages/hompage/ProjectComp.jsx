@@ -87,7 +87,7 @@ const ProjectComp = () => {
           </div>
       
           {/* Top Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[95%] sm:w-[80%] lg:w-[70%] mx-auto gap-4 py-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 w-[95%] sm:w-[100%] lg:w-[70%] mx-auto gap-4 py-6 text-center">
             {Object.keys(contentData).map((tab) => (
               <div
                 key={tab}
@@ -98,7 +98,7 @@ const ProjectComp = () => {
                     : "hover:bg-gray-100"
                 }`}
               >
-                <h3 className="text-sm sm:text-lg lg:text-xl font-bold">
+                <h3 className="text-sm sm:text-sm lg:text-xl font-bold">
                   {contentData[tab].title}
                 </h3>
               </div>

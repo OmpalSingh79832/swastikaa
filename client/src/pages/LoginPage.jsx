@@ -19,7 +19,6 @@ const LoginPage = () => {
     return (
         <>
 
-
             <div className="min-h-screen flex flex-col justify-center bg-gray-900 text-white">
                 <div className="mx-auto flex flex-col md:flex-row items-center">
                     {/* Left Section */}
