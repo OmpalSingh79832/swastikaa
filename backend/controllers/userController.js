@@ -47,7 +47,7 @@ export const registerUser = async (req, res) => {
       phone: user.phone,
       email: user.email,
       userRole: user.userRole,
-      sectoe: user.sector,
+      sector: user.sector,
     });
     res.cookie("customerToken", token, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
@@ -123,7 +123,7 @@ export const loginUser = async (req, res) => {
       phone: user.phone,
       email: user.email,
       userRole: user.userRole,
-      sectoe: user.sector,
+      sector: user.sector,
     });
     res.cookie("customerToken", token, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),

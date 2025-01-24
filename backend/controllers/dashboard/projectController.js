@@ -69,9 +69,23 @@ export const createProject = async (req, res) => {
   }
 };
 
+// Fetch all projects
+export const getAllProjects = async (req, res) => {
+  // const { id } = req; // Assuming userId is passed as a URL parameter
+
+  // console.log("id", id);
+
+  try {
+    const projects = await Project.find();
+    res.status(200).json({ projects });
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
 export const updateProjectByAdmin = async (req, res) => {
-  const { id } = req.params;
-  const { category, status } = req.body;
+  const { id } = req.params; // Project ID
+  const { category, status, name, phone, email } = req.body; // Fields to update
 
   try {
     const updatedProject = await Project.findByIdAndUpdate(
@@ -79,12 +93,18 @@ export const updateProjectByAdmin = async (req, res) => {
       {
         category,
         status,
+        $set: {
+          "executiondetails.0.name": name, // Update the first element's name
+          "executiondetails.0.phone": phone, // Update the first element's phone
+          "executiondetails.0.email": email, // Update the first element's email
+        },
       },
       { new: true } // Return the updated document
     );
 
-    if (!updatedProject)
+    if (!updatedProject) {
       return res.status(404).json({ error: "Project not found" });
+    }
 
     res.status(200).json({
       message: "Project updated successfully",
@@ -126,19 +146,6 @@ export const getProjectsByUserId = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
-// Fetch all projects
-export const getAllProjects = async (req, res) => {
-  // const { id } = req; // Assuming userId is passed as a URL parameter
-
-  // console.log("id", id);
-
-  try {
-    const projects = await Project.find();
-    res.status(200).json({ projects });
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
-  }
-};
 
 // Fetch a single project by ID
 export const getProjectById = async (req, res) => {
@@ -174,7 +181,8 @@ export const getProjectBySlug = async (req, res) => {
 
 export const getProjectsBySectorSlug = async (req, res) => {
   const { sector } = req;
-  const { sectorslug } = sector; // Extract sectorslug from route parameters
+  console.log("sector", sector);
+  const sectorslug = sector; // Extract sectorslug from route parameters
 
   try {
     // Find projects that match the sectorslug

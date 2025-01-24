@@ -34,12 +34,8 @@ router.get("/get-all-project", getAllProjects); // Get all projects
 router.get("/user/get-all-project", authMiddleware, getProjectsByUserId); // Get all projects
 router.get("/get-project/:id", authMiddleware, getProjectById); // Get a project by ID
 // project status and category update
-router.put("/admin/project-update/:id", adminMiddleware, updateProjectByAdmin);
-router.get(
-  "/projects/sector/:sectorslug",
-  authMiddleware,
-  getProjectsBySectorSlug
-);
+router.put("/admin/project-update/:id", updateProjectByAdmin);
+router.get("/projects/sector", authMiddleware, getProjectsBySectorSlug);
 router.post(
   "/upload",
   authMiddleware,
