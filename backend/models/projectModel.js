@@ -41,6 +41,13 @@ const projectSchema = new Schema(
       type: [String],
       default: [],
     },
+    executiondetails: [
+      {
+        name: { type: String },
+        phone: { type: String },
+        email: { type: String },
+      },
+    ],
     image: {
       type: String,
       required: true,
