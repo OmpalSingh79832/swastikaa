@@ -108,14 +108,14 @@ const IndustrySec = () => {
   return (
     <>
 
-      <div className="p-6 sm:p-10 lg:p-16 bg-gray-100 relative">
+      <div className="sm:p-1 sm:py-6 md:py-10 md:p-16 bg-gray-100 relative">
         {/* Section Title */}
         <div className="text-center">
           <p className="text-[24px] sm:text-[30px] lg:text-[40px] font-bold">
             -- Explore <span className="text-primaryRed">Industry --</span>
           </p>
-          <div className="w-[90%] sm:w-[75%] lg:w-[60%] mx-auto mt-4">
-            <p className="text-sm sm:text-base lg:text-lg">
+          <div className="sm:w-[95%] md:w-[60%] mx-auto mt-4">
+            <p className="text-sm sm:text-base lg:text-lg md:text-center sm:text-start">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!
             </p>
           </div>

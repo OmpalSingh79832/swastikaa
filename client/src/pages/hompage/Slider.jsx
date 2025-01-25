@@ -52,7 +52,7 @@ const Slider = () => {
   }, [sliderContent.length]);
 
   return (
-    <div className="slider-container relative w-full h-[35em] sm:h-[25em] md:h-[40em] lg:h-[35em] overflow-hidden rounded-2xl">
+    <div className="slider-container relative w-full h-[35em] sm:h-[15em] md:h-[40em] lg:h-[35em] overflow-hidden sm:rounded-sm rounded-2xl">
       {/* Background Image */}
       <div
         className="slider-image w-full h-full bg-cover bg-center absolute top-0 left-0"
@@ -62,7 +62,7 @@ const Slider = () => {
       ></div>
 
       {/* Text Content */}
-      <div className="sm:none absolute top-[70%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[75%] md:w-[60%] lg:w-[50%] uppercase">
+      <div className="sm:hidden absolute top-[70%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[75%] md:w-[60%] lg:w-[50%] uppercase">
         <h1 className="text-center sm:text-start rounded-3xl p-6 sm:p-8 lg:p-10 bg-gray-300 text-[24px] sm:text-[18px] md:text-[36px] lg:text-[40px] font-extrabold leading-snug">
           {sliderContent[currentIndex].heading}{" "}
           <span className="text-primaryRed">Manufacturing Platform</span>
