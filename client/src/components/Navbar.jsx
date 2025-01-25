@@ -85,17 +85,23 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <header className="border-b bg-white font-sans min-h-[60px] px-10 py-3 tracking-wide relative z-50">
+        <header className="border-b bg-white font-sans min-h-[60px] sm:px-5 px-10 py-3 tracking-wide relative z-50">
           <div className="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
             <Link to={"/"}>
               <img
                 src={logo}
                 alt="logo"
-                className="lg:w-[100px] sm:w-[60px] max-sm:hidden"
+                className="lg:w-[100px] sm:w-[40px] max-sm:hidden"
               />
 
             </Link>
-
+            <div className="bg-gray-100 sm:block md:block lg:hidden border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-2 py-2 rounded-lg w-[50%] mx-auto transition-all">
+              <input
+                type="email"
+                placeholder="Search..."
+                className="w-full outline-none bg-transparent text-gray-600 font-semibold text-[15px]"
+              />
+            </div>
             <div
               className={`${menuOpen ? "block" : "hidden"
                 } lg:!flex lg:items-center max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50`}
@@ -174,10 +180,15 @@ const Navbar = () => {
                     Resources
                   </Link>
                 </li>
+                <li>
+                  <div className="flex gap-3 items-center sm:block lg:hidden">
+                    <button className="bg-softYellow px-10 py-2 rounded-md font-semibold text-lg">Login</button>
+                  </div>
+                </li>
               </ul>
             </div>
 
-            <div className="flex items-center ml-auto space-x-8">
+            <div className="flex items-center mx-auto space-x-">
 
               <div className="md-lg:flex pl-2 md-lg:w-full sm:hidden lg:block">
                 <div className="flex gap-3 items-center">
@@ -192,9 +203,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex gap-3 items-center sm:block lg:hidden">
-                <button className="bg-softYellow px-4 py-2 rounded-sm font-semibold text-lg">Login</button>
-              </div>
+
               <button id="toggleOpen" className="lg:hidden" onClick={handleToggle}>
                 <svg
                   className="w-7 h-7"
@@ -212,7 +221,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="bg-gray-100 border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
+          <div className="bg-gray-100 sm:hidden md:hidden lg:block border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 192.904 192.904"
