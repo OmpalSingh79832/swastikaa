@@ -7,9 +7,9 @@ function ChooseUs() {
                 <section id="features" className="relative block px-6 py-10 md:py-20 md:px-10  border-t border-b border-neutral-900 bg-neutral-900/30">
                     <div className="relative mx-auto max-w-5xl text-center">
                         <div class="heading-style ">
-                        <p className="text-[40px] text-center text-white font-bold">-- Why Choose<span className="text-white"> Us --</span></p>
+                            <p className="sm:text-[30px] md:text-[40px] text-center text-white font-bold">-- Why Choose<span className="text-white"> Us --</span></p>
                         </div>
-                      
+
                         <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-white">
                             Our templates allow for maximum customization. No technical skills required – our intuitive design tools
                             let

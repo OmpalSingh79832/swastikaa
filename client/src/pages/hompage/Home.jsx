@@ -50,36 +50,34 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[85%] mx-auto py-20">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:py-10 md:py-10">
         <div>
           <img src={DesignerImg} alt="" />
         </div>
-        <div className="mt-16">
+        <div className="sm:mt-12 md:mt-16">
           <p className="text-primaryRed text-lg font-semibold">NEED A DESIGNER ASAP?</p>
-          <h3 className="lg:text-5xl sm:text-3xl lg:leading-tight my-8 font-bold">Hiring a designer should be simple</h3>
+          <h3 className="lg:text-5xl sm:text-2xl lg:leading-tight sm:my-2 md:my-8 font-bold">Hiring a designer should be simple</h3>
           <p className="lg:text-2xl sm:text-sm leading-snug">Finding quality and reliable freelancers takes a lot of time and luck. In-house hires are expensive and can create HR drama.</p>
         </div>
       </div>
-      <div className="grid lg:grid-cols-2 md:grid-cols- sm:grid-cols-1 w-[85%] mx-auto py-20">
-
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:py-10 md:py-4 sm:fle">
         <div className="flex flex-col justify-center">
           <p className="text-primaryRed text-lg font-semibold">ONE POINT SOLUTION?</p>
-          <h3 className="lg:text-5xl sm:text-3xl lg:leading-tight my-8 font-bold">Meet your virtual design team</h3>
+          <h3 className="lg:text-5xl sm:text-2xl lg:leading-tight sm:my-2 md:my-8 font-bold">Meet your virtual design team</h3>
           <p className="lg:text-2xl sm:text-sm leading-snug">ManyPixels provides you with vetted designers for a flat monthly fee. No hiring, no contracts, no stress.</p>
         </div>
-
         <div className="w-full flex justify-end items-end">
           <img src={DesignerImg2} alt="" className="w-full max-w-[500px]" />
         </div>
 
       </div>
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[85%] mx-auto py-20">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:py-10 md:py-20">
         <div>
           <img src={DesignerImg} alt="" />
         </div>
-        <div className="mt-16">
+        <div className="sm:mt-12 md:mt-16">
           <p className="text-primaryRed text-lg font-semibold">POWERED BY TECHNOLOGY</p>
-          <h3 className="lg:text-5xl sm:text-3xl lg:leading-tight my-8 font-bold">Manage everything from one simple platform</h3>
+          <h3 className="lg:text-5xl sm:text-2xl lg:leading-tight sm:my-2 md:my-8 font-bold">Manage everything from one simple platform</h3>
           <p className="lg:text-2xl sm:text-sm leading-snug mb-2">*Submit and prioritize your requests</p>
           <p className="lg:text-2xl sm:text-sm leading-snug mb-2">*Manage your different brands</p>
           <p className="lg:text-2xl sm:text-sm leading-snug mb-2">*Communicate directly with your designer</p>
@@ -90,9 +88,9 @@ const Home = () => {
       <ProjectComp />
       <div>
         <div>
-          <div className="w-[90%] mx-auto my-16">
+          <div className="w-[90%] mx-auto sm:my-10 md:my-16">
             <p className="text-primaryRed text-xl font-semibold mb-4">OUR WORK</p>
-            <h3 className="text-5xl font-bold">Your one-stop shop for all your creatives</h3>
+            <h3 className="md:text-5xl sm:text-[30px] font-bold">Your one-stop shop for all your creatives</h3>
           </div>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 w-[90%] mx-auto mb-10">
             <div className="h-96 relative flex justify-center overflow-hidden rounded-xl cursor-pointer">
@@ -153,9 +151,9 @@ const Home = () => {
                 <button
                   key={item.category}
                   onClick={() => setActiveCategory(item.category)}
-                  className={`text-lg sm:text-sm font-semibold ${activeCategory === item.category
-                      ? "text-blue-500 border-b-2 border-blue-500"
-                      : "text-gray-500"
+                  className={`md:text-lg sm:text-sm font-semibold ${activeCategory === item.category
+                    ? "text-blue-500 border-b-2 border-blue-500"
+                    : "text-gray-500"
                     }`}
                 >
                   {item.category}

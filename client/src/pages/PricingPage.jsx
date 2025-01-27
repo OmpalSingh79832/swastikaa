@@ -7,12 +7,12 @@ const PricingPage = () => {
             <div className="bg-white py-24 sm:py-10">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto text-center">
-                    <div className="text-center pb-4">
-                    <p className="text-[40px] mr-3 font-bold">-- Pricing<span className="text-primaryRed">Details --</span></p>
-                    <div className="w-[70%] mx-auto">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
-                    </div>
-                </div>
+                        <div className="sm:text-justify md:text-center pb-4">
+                            <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold text-center">-- Pricing<span className="text-primaryRed">Details --</span></p>
+                            <div className="sm:w-[100%] md:w-[70%] mx-auto">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                            </div>
+                        </div>
                     </div>
                     <div className="flex justify-center">
 
