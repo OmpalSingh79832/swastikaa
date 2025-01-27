@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const handleClose = () => {
     setIsDropdownOpen(false);
-  }
+  };
 
   const navmenu = [
     { name: "Home", path: "/" },
@@ -31,7 +31,7 @@ const Navbar = () => {
     { name: "Pricing", path: "/pricing-details" },
     { name: "About Us", path: "/about-us" },
     { name: "Contact", path: "/contact-us" },
-  ]
+  ];
   return (
     <>
       <div className="w-full bg-white">
@@ -86,16 +86,15 @@ const Navbar = () => {
           </div>
         </div>
         <header className="border-b bg-white font-sans min-h-[60px] sm:px-5 px-10 py-3 tracking-wide relative z-50">
-          <div className="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
+          <div className="flex flex-wrap items-center lg:gap-y-6 sm:gap-x-4">
             <Link to={"/"}>
               <img
                 src={logo}
                 alt="logo"
                 className="lg:w-[100px] sm:w-[40px] max-sm:hidden"
               />
-
             </Link>
-            <div className="bg-gray-100 sm:block md:block lg:hidden border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-2 py-2 rounded-lg w-[50%] mx-auto transition-all">
+            <div className="bg-gray-100 sm:block md:block lg:hidden border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-2 py-2 w-[70%] mx-auto transition-all rounded-full">
               <input
                 type="email"
                 placeholder="Search..."
@@ -103,8 +102,9 @@ const Navbar = () => {
               />
             </div>
             <div
-              className={`${menuOpen ? "block" : "hidden"
-                } lg:!flex lg:items-center max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50`}
+              className={`${
+                menuOpen ? "block" : "hidden"
+              } lg:!flex lg:items-center max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50`}
             >
               <button
                 className="lg:hidden fixed top-5 right-10 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
@@ -115,24 +115,37 @@ const Navbar = () => {
               <ul className="lg:flex lg:gap-x-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
                 <li className="mb-6 hidden max-lg:block">
                   <Link to={"/"} onClick={handleToggle}>
-                    <img
-                      src={logo}
-                      alt="logo"
-                      className="w-24"
-                    />
+                    <img src={logo} alt="logo" className="w-24" />
                   </Link>
                 </li>
-                <li className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
-                  <Link to={"/"} className="hover:text-[#007bff] text-[#007bff] font-bold block text-[16px]">
+                <li
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
+                  <Link
+                    to={"/"}
+                    className="hover:text-[#007bff] text-[#007bff] font-bold block text-[16px]"
+                  >
                     Home
                   </Link>
                 </li>
-                <li key="Services" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
-                  <Link to={"/our-services"} className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]">
+                <li
+                  key="Services"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
+                  <Link
+                    to={"/our-services"}
+                    className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
+                  >
                     Services
                   </Link>
                 </li>
-                <li key="Get Quote" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                <li
+                  key="Get Quote"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
                   <Link
                     to={"/consulting-services"}
                     className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
@@ -140,7 +153,11 @@ const Navbar = () => {
                     Get Quote
                   </Link>
                 </li>
-                <li key="Apply" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                <li
+                  key="Apply"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
                   <Link
                     to={"/apply-project"}
                     className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
@@ -148,7 +165,11 @@ const Navbar = () => {
                     Apply
                   </Link>
                 </li>
-                <li key="Pricing" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                <li
+                  key="Pricing"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
                   <Link
                     to={"/pricing-details"}
                     className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
@@ -156,7 +177,11 @@ const Navbar = () => {
                     Pricing
                   </Link>
                 </li>
-                <li key="About Us" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                <li
+                  key="About Us"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
                   <Link
                     to={"/about-us"}
                     className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
@@ -164,7 +189,11 @@ const Navbar = () => {
                     About Us
                   </Link>
                 </li>
-                <li key="Contact Us" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                <li
+                  key="Contact Us"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
                   <Link
                     to={"/contact-us"}
                     className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
@@ -172,7 +201,11 @@ const Navbar = () => {
                     Contact Us
                   </Link>
                 </li>
-                <li key="Resources" className="max-lg:border-b max-lg:py-3" onClick={handleToggle}>
+                <li
+                  key="Resources"
+                  className="max-lg:border-b max-lg:py-3"
+                  onClick={handleToggle}
+                >
                   <Link
                     to={"/blog"}
                     className="hover:text-[#007bff] text-gray-600 block font-bold text-[16px]"
@@ -182,14 +215,15 @@ const Navbar = () => {
                 </li>
                 <li>
                   <div className="flex gap-3 items-center sm:block lg:hidden">
-                    <button className="bg-softYellow px-10 py-2 rounded-md font-semibold text-lg">Login</button>
+                    <button className="bg-softYellow px-10 py-2 rounded-md font-semibold text-lg">
+                      Login
+                    </button>
                   </div>
                 </li>
               </ul>
             </div>
 
-            <div className="flex items-center mx-auto space-x-">
-
+            <div className="flex items-center ml-auto space-x-">
               <div className="md-lg:flex pl-2 md-lg:w-full sm:hidden lg:block">
                 <div className="flex gap-3 items-center">
                   <div className="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center">
@@ -204,7 +238,11 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <button id="toggleOpen" className="lg:hidden" onClick={handleToggle}>
+              <button
+                id="toggleOpen"
+                className="lg:hidden"
+                onClick={handleToggle}
+              >
                 <svg
                   className="w-7 h-7"
                   fill="#000"
@@ -235,15 +273,7 @@ const Navbar = () => {
           </div>
         </header>
       </div>
-
-
-
-
-
     </>
-
-
-
   );
 };
 
