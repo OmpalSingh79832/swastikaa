@@ -52,6 +52,7 @@ const ProjectComp = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     slidesToShow: 3,
+    arrows: false,
     slidesToScroll: 1,
     responsive: [
       {

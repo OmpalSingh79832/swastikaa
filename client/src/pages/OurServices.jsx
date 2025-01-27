@@ -82,13 +82,13 @@ function OurServices() {
     return (
         <>
             <section className="pb-20 pt-10" id="services">
-                <div className="containe mx-auto w-[90%] px-4">
-                <div className="text-center pb-10">
-                    <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
-                    <div className="w-[70%] mx-auto">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                <div className="mx-auto sm:w-[98%] md:w-[90%] px-4">
+                    <div className="sm:text-justify md:text-center pb-10">
+                        <p className="sm:text-[30px] md:text-[40px]  mr-3 font-bold text-center">-- Our<span className="text-primaryRed">Services --</span></p>
+                        <div className="sm:w-[100%] md:w-[70%] mx-auto">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                        </div>
                     </div>
-                </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) =>

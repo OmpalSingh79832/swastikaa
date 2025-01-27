@@ -24,9 +24,9 @@ const Aboutus = () => {
           </div>
 
           {/* Content Section */}
-          <div className="absolute inset-4 sm:inset-9 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <div className="absolute inset-4 sm:inset-9 flex flex-col md:flex-row items-center justify-between sm:text-start text-center md:text-left">
             <div className="md:w-1/2 mb-4 md:mb-0">
-              <h1 className="text-white font-medium text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 leading-tight">
+              <h1 className="text-white font-medium sm:text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight">
                 Swastikaa Manufacturing <br />
                 Sector Consultant
               </h1>
@@ -43,9 +43,9 @@ const Aboutus = () => {
         {/* our services section */}
         <section className="py-20" id="services">
           <div className="mx-auto w-[90%]">
-            <div className="text-center pb-10">
-              <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Services --</span></p>
-              <div className="w-[70%] mx-auto">
+            <div className="sm:text-start md:text-center  pb-10">
+              <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold text-center">-- Our<span className="text-primaryRed">Services --</span></p>
+              <div className="sm:w-[100%] md:w-[70%] mx-auto">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
               </div>
             </div>
