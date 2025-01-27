@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
         </div>
         <header className="border-b bg-white font-sans min-h-[60px] sm:px-5 px-10 py-3 tracking-wide relative z-50">
-          <div className="flex flex-wrap items-center lg:gap-y-6 sm:gap-x-4">
+          <div className="flex flex-wrap items-center lg:gap-y-6 sm:gap-x-2">
             <Link to={"/"}>
               <img
                 src={logo}
