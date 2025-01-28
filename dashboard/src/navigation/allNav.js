@@ -70,7 +70,7 @@ export const allNav = [
   },
   {
     id: 9,
-    title: "Category",
+    title: "Sector",
     icon: <BiCategory />,
     role: "seller",
     path: "/seller/dashboard/category",
