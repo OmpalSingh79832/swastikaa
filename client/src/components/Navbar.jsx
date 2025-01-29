@@ -258,7 +258,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="bg-gray-100 sm:hidden md:hidden lg:block border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
+          <div className="bg-gray-100 sm:hidden md:hidden lg:block border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full h-14 lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 192.904 192.904"
