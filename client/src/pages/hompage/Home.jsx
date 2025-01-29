@@ -50,7 +50,7 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:py-10 md:py-10">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:pt-10 md:py-10">
         <div>
           <img src={DesignerImg} alt="" />
         </div>
@@ -71,7 +71,7 @@ const Home = () => {
         </div>
 
       </div>
-      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:py-10 md:py-20">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 w-[92%] mx-auto sm:pt-10 md:py-20">
         <div>
           <img src={DesignerImg} alt="" />
         </div>
@@ -151,7 +151,7 @@ const Home = () => {
                 <button
                   key={item.category}
                   onClick={() => setActiveCategory(item.category)}
-                  className={`md:text-lg sm:text-sm font-semibold ${activeCategory === item.category
+                  className={`md:text-2xl sm:text-sm font-semibold ${activeCategory === item.category
                     ? "text-blue-500 border-b-2 border-blue-500"
                     : "text-gray-500"
                     }`}
@@ -163,13 +163,13 @@ const Home = () => {
 
             {/* Testimonial Content */}
             <div className="w-full max-w-3xl">
-              <blockquote className="text-xl sm:text-xl text-gray-700 mb-4 sm:mb-6">
+              <blockquote className="md:text-xl sm:text-sm text-gray-700 mb-4 sm:mb-6 md:mb-10">
                 "{activeTestimonial.quote}"
               </blockquote>
               <p className="font-bold text-lg sm:text-xl mb-2">
                 {activeTestimonial.name}
               </p>
-              <p className="text-gray-800 text-base sm:text-lg">
+              <p className="text-gray-800 md:text-xl sm:text-sm">
                 {activeTestimonial.title}
               </p>
             </div>

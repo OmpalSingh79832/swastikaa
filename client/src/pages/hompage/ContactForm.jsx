@@ -3,9 +3,9 @@ import React from 'react'
 const ContactForm = () => {
     return (
         <>
-            <section className="my-32 text-white">
+            <section className="sm:my-[100px] md:my-32 text-white">
 
-                <div className="lg:container relative px-6 md:px-12 mx-auto">
+                <div className="lg:container relative sm:px-0 px-6 md:px-12 mx-auto">
                     <div className="block rounded-lg bg-[#0a4275] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
                         <div className="flex flex-wrap">
                             <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
@@ -117,7 +117,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                 </div>
-                <div id="map" className=" mt-12 h-[500px] mb-[-150px] overflow-hidden bg-cover bg-[50%] bg-no-repeat">
+                <div id="map" className="sm:mt-0 md:mt-12 sm:h-[300px] md:h-[500px] mb-[-150px] overflow-hidden bg-cover bg-[50%] bg-no-repeat">
 
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.5806403800375!2d72.84198277529843!3d21.16908098294425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e31aff9dd4f%3A0x3754a377c70249b6!2sUdhana%20Udyog%20Nagar%20Sangh%20Commercial%20Complex!5e0!3m2!1sen!2sin!4v1733646807966!5m2!1sen!2sin" width="100%" height={480} style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
                 </div>

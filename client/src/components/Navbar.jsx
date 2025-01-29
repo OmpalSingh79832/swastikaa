@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
         </div>
         <header className="border-b bg-white font-sans min-h-[60px] sm:px-5 px-10 py-3 tracking-wide relative z-50">
-          <div className="flex flex-wrap items-center lg:gap-y-6 sm:gap-x-4">
+          <div className="flex flex-wrap items-center lg:gap-y-6 sm:gap-x-2">
             <Link to={"/"}>
               <img
                 src={logo}
@@ -102,8 +102,9 @@ const Navbar = () => {
               />
             </div>
             <div
-              className={`${menuOpen ? "block" : "hidden"
-                } lg:!flex lg:items-center max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50`}
+              className={`${
+                menuOpen ? "block" : "hidden"
+              } lg:!flex lg:items-center max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50`}
             >
               <button
                 className="lg:hidden fixed top-5 right-10 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border"
@@ -258,7 +259,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="bg-gray-100 sm:hidden md:hidden lg:block border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
+          <div className="bg-gray-100 sm:hidden md:hidden lg:block border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex items-center px-4 rounded-full h-14 lg:w-2/4 mt-[-10px] mx-auto max-lg:mt-6 transition-all">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 192.904 192.904"

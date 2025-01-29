@@ -33,12 +33,12 @@ const Blog = () => {
   ];
 
   return (
-    <section className="py-16">
-      <div className="mx-auto w-[90%] px-4 sm:px-6 lg:px-8">
+    <section className="sm:py-0 md:py-16">
+      <div className="mx-auto w-[90%] sm:px-0 lg:px-8">
       <div className="text-center pb-8">
-                    <p className="text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Blog --</span></p>
-                    <div className="w-[70%] mx-auto">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                    <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold">-- Our<span className="text-primaryRed">Blog --</span></p>
+                    <div className="sm:w-[100%] md:w-[70%] mx-auto">
+                        <p className='sm:text-sm md:text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                     </div>
                 </div>
         <div className="flex justify-center mb-16 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
@@ -58,10 +58,10 @@ const Blog = () => {
                 <span className="text-primaryRed font-medium mb-3 block">
                   {blog.date}
                 </span>
-                <h4 className="text-xl text-gray-900 font-medium leading-8 mb-5">
+                <h4 className="text-xl text-gray-900 font-medium leading-8 sm:text-mb-2 md:mb-5">
                   {blog.title}
                 </h4>
-                <p className="text-gray-500 leading-6 mb-10">
+                <p className="text-gray-500 leading-6 sm:text-sm md:text-base sm:mb-5 md:mb-10">
                   {blog.description}
                 </p>
                 <a

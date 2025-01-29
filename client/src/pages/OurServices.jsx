@@ -86,7 +86,7 @@ function OurServices() {
                     <div className="sm:text-justify md:text-center pb-10">
                         <p className="sm:text-[30px] md:text-[40px]  mr-3 font-bold text-center">-- Our<span className="text-primaryRed">Services --</span></p>
                         <div className="sm:w-[100%] md:w-[70%] mx-auto">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                            <p className='sm:text-sm lg:text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@ function OurServices() {
                                     />
                                     <div className="p-6 bg-white text-center rounded-b-lg md:min-h-full">
                                         <h3 className="text-xl font-medium text-gray-800 mb-2">{service.title}</h3>
-                                        <p className="text-gray-700 text-base">{service.description}</p>
+                                        <p className="text-gray-700 sm:text-sm md:text-base">{service.description}</p>
                                     </div>
                                 </div>
                             ) : (
@@ -119,7 +119,7 @@ function OurServices() {
                                     />
                                     <div className="p-6 text-center">
                                         <h3 className="text-xl font-medium text-gray-800 mb-2">{service.title}</h3>
-                                        <p className="text-gray-700 text-base">{service.description}</p>
+                                        <p className="text-gray-700 sm:text-sm md:text-base">{service.description}</p>
                                     </div>
                                 </div>
                             )

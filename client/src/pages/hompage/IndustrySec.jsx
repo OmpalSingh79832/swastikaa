@@ -115,7 +115,7 @@ const IndustrySec = () => {
             -- Explore <span className="text-primaryRed">Industry --</span>
           </p>
           <div className="sm:w-[95%] md:w-[60%] mx-auto mt-4">
-            <p className="text-sm sm:text-base lg:text-lg md:text-center sm:text-start">
+            <p className="sm:text-sm lg:text-lg md:text-center sm:text-start">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!
             </p>
           </div>
