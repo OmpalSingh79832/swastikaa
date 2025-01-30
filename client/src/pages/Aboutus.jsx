@@ -13,7 +13,7 @@ const Aboutus = () => {
     <>
       <div>
         {/* hero seciton */}
-        <div className="relative w-full bg-slate-800 h-[520px] sm:h-[400px] lg:h-[520px]" id="home">
+        <div className="relative w-full bg-slate-800 h-[520px] sm:h-[16em] lg:h-[520px]" id="home">
           {/* Background Image */}
           <div className="absolute inset-0 opacity-40 ">
             <img
@@ -26,7 +26,7 @@ const Aboutus = () => {
           {/* Content Section */}
           <div className="absolute inset-4 sm:inset-9 flex flex-col md:flex-row items-center justify-between sm:text-start text-center md:text-left">
             <div className="md:w-1/2 mb-4 md:mb-0">
-              <h1 className="text-white font-medium sm:text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight">
+              <h1 className="text-white font-medium sm:text-xl md:text-3xl lg:text-7xl mb-4 leading-tight">
                 Swastikaa Manufacturing <br />
                 Sector Consultant
               </h1>
@@ -41,12 +41,12 @@ const Aboutus = () => {
         </div>
 
         {/* our services section */}
-        <section className="py-20" id="services">
+        <section className=" sm:py-4 md:py-20" id="services">
           <div className="mx-auto w-[90%]">
             <div className="sm:text-start md:text-center  pb-10">
               <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold text-center">-- Our<span className="text-primaryRed">Services --</span></p>
               <div className="sm:w-[100%] md:w-[70%] mx-auto">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
+                <p className="sm:text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -54,7 +54,7 @@ const Aboutus = () => {
                 <img src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" alt="wheat flour grinding" className="w-full h-64 object-cover" />
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
-                  <p className="text-gray-700 text-base">Our wheat flour grinding service provides fresh, high-quality
+                  <p className="text-gray-700 sm:text-sm md:text-base">Our wheat flour grinding service provides fresh, high-quality
                     flour to businesses and individuals in the area. We use state-of-the-art equipment to grind
                     wheat into flour, and we offer a variety of flours to meet the needs of our customers.</p>
                 </div>
@@ -63,7 +63,7 @@ const Aboutus = () => {
                 <img src="https://images.unsplash.com/photo-1606854428728-5fe3eea23475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhbSUyMGZsb3VyfGVufDB8fDB8fHww" alt="Coffee" className="w-full h-64 object-cover" />
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
-                  <p className="text-gray-700 text-base">Our gram flour is perfect for a variety of uses, including
+                  <p className="text-gray-700 sm:text-sm md:text-base">Our gram flour is perfect for a variety of uses, including
                     baking, cooking, and making snacks. It is also a good source of protein and fiber.Our gram flour
                     grinding service is a convenient and affordable way to get the freshest gram flour possible.</p>
                 </div>
@@ -72,7 +72,7 @@ const Aboutus = () => {
                 <img src="https://image2.jdomni.in/banner/13062021/D2/99/0D/48D7F4AFC48C041DC8D80432E9_1623562146900.png?output-format=webp" alt="Coffee" className="w-full h-64 object-cover" />
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
-                  <p className="text-gray-700 text-base">Our jowar grinding service is a convenient and affordable way to
+                  <p className="text-gray-700 sm:text-sm md:text-base">Our jowar grinding service is a convenient and affordable way to
                     get fresh, high-quality jowar flour. We use state-of-the-art equipment to grind jowar into a
                     fine powder, which is perfect for making roti, bread, and other dishes.
                   </p>
@@ -83,7 +83,7 @@ const Aboutus = () => {
                 <img src="https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee" className="w-full h-64 object-cover" />
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-medium text-gray-800 mb-2">Chilli pounding</h3>
-                  <p className="text-gray-700 text-base">We specializes in the production of high-quality chili powder.
+                  <p className="text-gray-700 sm:text-sm md:text-base">We specializes in the production of high-quality chili powder.
                     Our chili powder is made from the finest, freshest chilies, and we use traditional pounding
                     methods to ensure that our chili powder retains its full flavor and aroma.
                   </p>
@@ -95,7 +95,7 @@ const Aboutus = () => {
                 <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmF3JTIwc3BhZ2hldHRpfGVufDB8fDB8fHww" alt="Coffee" className="w-full h-64 object-cover rounded-t-lg" />
                 <div className="p-6 bg-white text-center rounded-b-lg md:min-h-full">
                   <h3 className="text-xl font-medium text-gray-800 mb-2">Flavoured Spaghetti</h3>
-                  <p className="text-gray-700 text-base">Our speciality is
+                  <p className="text-gray-700 sm:text-sm md:text-base">Our speciality is
                     Bappa Flour Mill offers a variety of flavored spaghetti dishes that are sure to tantalize your
                     taste
                     buds. We use only the freshest ingredients Our
@@ -107,7 +107,7 @@ const Aboutus = () => {
                 <img src="https://media.istockphoto.com/id/1265641298/photo/fried-papad.jpg?s=612x612&w=0&k=20&c=e_iEy4CTvU6Thn02zGgKt_TiSYAheCKmgfTF5j52ovU=" alt="papad" className="w-full h-64 object-cover" />
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
-                  <p className="text-gray-700 text-base">Our company produces high-quality rice papad that is made with
+                  <p className="text-gray-700 sm:text-sm md:text-base">Our company produces high-quality rice papad that is made with
                     the finest ingredients. We use traditional methods to make our papad, which gives it a unique
                     flavor and texture. Our papad is also gluten-free and vegan.
                   </p>
@@ -115,19 +115,19 @@ const Aboutus = () => {
               </div>
             </div>
           </div>
-          <div className="pt-14 text-center">
+          <div className="sm:pt-4 md:pt-14 text-center">
             <button onClick={() => navigate("/our-services")} className="all-btn" style={{ paddingBottom: "20px", paddingTop: "20px" }}>View All Services</button>
           </div>
         </section>
         {/* about us */}
         <section className="bg-gray-100 " id="aboutus">
-          <div className="mx-auto w-[90%] py-16 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-[90%] py-16 sm:px-0 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               <div className="max-w-lg">
                 <div className="heading-style pb-1 flex items-center relative">
                   <p className="text-[40px] mr-3 font-bold">-- About<span className="text-primaryRed">Us --</span></p>
                 </div>
-                <p className="mt-4 text-gray-600 text-lg text-justify">
+                <p className="mt-4 text-gray-600 sm:text-sm md:text-base text-justify">
                   Swastikaa is a leading manufacturing Sector Consultant offering consulting services worldwide. From Ideation to Execution of Projects, Our focus is always on building an efficient and results-driven relationship. We will work with you to create a customized plan of action for your organization. Get in touch to learn more about our vision and consulting approach. <br />
                   We are committed to providing our customers with the best possible experience. We offer competitive
                   prices, fast shipping, and excellent customer service. We are also happy to answer any questions
@@ -135,7 +135,8 @@ const Aboutus = () => {
                   If you are looking for a flour and spices service business that can provide you with the highest
                   quality products and services, then we are the company for you. We look forward to serving you!</p>
               </div>
-              <div className="mt-12 md:mt-0">
+              <div className="sm:
+              mt-12 md:mt-0">
                 <img src={AboutsImg2} alt="About Us Image" className="object-cover rounded-lg shadow-md" />
               </div>
             </div>
@@ -145,10 +146,10 @@ const Aboutus = () => {
         {/* why us  */}
         <ChooseUs />
         {/* Meet Our Professional Team */}
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="px-4 sm:py-4 md:py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="heading-style pb-7 ">
             <div className="text-center">
-              <p className="text-[40px] mr-3 font-bold">-- Our Professional<span className="text-primaryRed"> Team --</span></p>
+              <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold">-- Our Professional<span className="text-primaryRed"> Team --</span></p>
             </div>
           </div>
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -352,7 +353,7 @@ const Aboutus = () => {
         <div className="w-[94%] mx-auto">
           <div className="heading-style">
             <div className="text-center">
-              <p className="text-[40px] mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
+              <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
             </div>
           </div>
         </div>

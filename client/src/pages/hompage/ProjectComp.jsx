@@ -81,7 +81,7 @@ const ProjectComp = () => {
             -- Our <span className="text-primaryRed">Analysis --</span>
           </p>
           <div className="sm:w-[95%] md:w-[60%] mx-auto mt-4">
-            <p className="text-sm sm:text-base lg:text-lg md:text-center sm:text-start">
+            <p className=" sm:text-sm lg:text-lg md:text-center sm:text-start">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!
             </p>
           </div>
@@ -106,13 +106,13 @@ const ProjectComp = () => {
         </div>
 
         {/* Divider Section */}
-        <div className="flex flex-col lg:flex-row py-8 gap-6">
+        <div className="flex flex-col lg:flex-row sm:py-0 md:py-8 gap-6">
           {/* Left Side */}
           <div className="w-full lg:w-[25%] border-r lg:pr-4">
             <h2 className="text-lg sm:text-xl lg:text-3xl text-center text-primaryRed font-bold">
               {contentData[activeTab].title}
             </h2>
-            <p className="text-sm sm:text-md lg:text-xl text-center font-semibold mt-3">
+            <p className="sm:text-sm lg:text-xl text-center font-semibold mt-3">
               {contentData[activeTab].description}
             </p>
           </div>

@@ -9,19 +9,19 @@ const ContactPage = () => {
             </div>
             <div>
                 <section className="lg:py-24 sm:py-4">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-7xl sm:px- lg:px-8">
                         <div className="md:flex gap-x-24 clear-left md:mb-16 mb-10">
                             <div className="md:mb-0 mb-4">
                                 <div className="">
                                     <p className="lg:text-[40px] sm:text-[30px] sm:text-center lg:text-left mr-3 font-bold">-- Get In<span className="text-primaryRed"> Touch --</span></p>
                                 </div>
-                                <p className="text-gray-600 text-lg font-normal leading-7 mb-7 md:text-left text-center">Whether you have a concern or simply want to say hello, We are here to facilitate communication with you.</p>
+                                <p className="text-gray-600 sm:text-sm md:text-lg font-normal leading-7 mb-7 md:text-left text-center">Whether you have a concern or simply want to say hello, We are here to facilitate communication with you.</p>
                                 <div className="flex md:items-center md:justify-start justify-center">
                                     <button className="w-36 h-12 shadow all-btn">Contact Us</button>
                                 </div>
                             </div>
-                            <div className="border-l-2 md:border-indigo-600 border-white px-10 py-6">
-                                <div className="mb-8">
+                            <div className="border-l-2 md:border-indigo-600 border-white sm:px-1 md:px-10 sm:py-2 md:py-6">
+                                <div className="sm:mb-2 md:mb-8">
                                     <h6 className="text-gray-500 text-sm font-medium leading-5 pb-3 md:text-start text-center">Email Address</h6>
                                     <h3 className="text-black text-xl font-semibold leading-8 md:text-start text-center">pagedone@gmail.com</h3>
                                 </div>
@@ -32,10 +32,10 @@ const ContactPage = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="pb-8">
+                            <div className="sm:pb-2 md:pb-8">
                                 <p className="lg:text-[40px] sm:text-[30px] sm:text-center lg:text-left mr-3 font-bold">-- Contact<span className="text-primaryRed">Us --</span></p>
                             </div>
-                            <ul className='text-base mb-10 ml-4'>
+                            <ul className='sm:text-sm md:text-base mb-10 ml-4'>
                                 <li>At Swastikaa, we take our consultancy services seriously..</li>
                                 <li>At Swastikaa, we take our consultancy services seriously...</li>
                                 <li>At Swastikaa, we take our consultancy services seriously......</li>
@@ -89,7 +89,7 @@ const ContactPage = () => {
                     </div>
                 </section>
             </div>
-            <div class="font-[sans-serif] max-w-6xl mx-auto relative bg-white rounded-lg py-10">
+            <div class="font-[sans-serif] max-w-6xl mx-auto relative bg-white rounded-lg sm:py-0 md:py-10">
                 <div class="grid lg:grid-cols-3 items-center">
                     <div class="grid sm:grid-cols-2 gap-4 z-20 relative lg:left-16 max-lg:px-4">
                         <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">

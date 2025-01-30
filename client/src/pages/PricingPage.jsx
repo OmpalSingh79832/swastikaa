@@ -9,7 +9,7 @@ const PricingPage = () => {
                     <div className="mx-auto text-center">
                         <div className="sm:text-justify md:text-center pb-4">
                             <p className="sm:text-[30px] md:text-[40px] mr-3 font-bold text-center">-- Pricing<span className="text-primaryRed">Details --</span></p>
-                            <div className="sm:w-[100%] md:w-[70%] mx-auto">
+                            <div className="sm:w-[100%] md:w-[70%] mx-auto sm:text-sm md:text-base">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ut optio beatae nisi aliquam laborum dolor quasi, vero soluta illo consequatur excepturi magnam dignissimos cumque dolorum placeat iure harum!</p>
                             </div>
                         </div>

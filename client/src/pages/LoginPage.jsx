@@ -22,9 +22,9 @@ const LoginPage = () => {
             <div className="min-h-screen flex flex-col justify-center bg-gray-900 text-white">
                 <div className="mx-auto flex flex-col md:flex-row items-center">
                     {/* Left Section */}
-                    <div className="md:w-1/2 px-6 md:px-32">
-                        <img src={Logo} alt="" className="bg-white w-32 h-32 p-2 rounded-md  mx-auto mb-4" />
-                        <h1 className="text-3xl font-bold mb-6 text-center">Let's get started</h1>
+                    <div className="md:w-1/2 px-6 md:px-32 sm:mt-2 md:mt-0">
+                        <img src={Logo} alt="" className="bg-white w-32 h-32 p-2 rounded-md mx-auto mb-4" />
+                        <h1 className="sm:text-2xl md:text-3xl font-bold mb-6 text-center">Let's get started</h1>
                         <form className="space-y-4">
                             <div>
                                 <label htmlFor="role" className="block text-sm mb-1">
@@ -101,11 +101,11 @@ const LoginPage = () => {
 
                     {/* Right Section */}
                     <div className="md:w-1/2 px-6 md:px-12 mt-10 md:mt-0">
-                        <h2 className="text-4xl leading-snug font-semibold mb-4 text-center">
+                        <h2 className="sm:text-xl md:text-4xl leading-snug font-semibold mb-4 text-center">
                             Kontentino increased user activation by 10% within a month of
                             installing Userpilot
                         </h2>
-                        <p className="text-lg leading-6 mb-6">
+                        <p className="sm:text-sm md:text-lg leading-6 mb-6">
                             Userpilot was able to increase 1 and 2nd run, as well as well 1 week
                             retention. We've seen 10% more engagement from the users. We're able
                             to help our existing users adopt more features.
@@ -118,149 +118,119 @@ const LoginPage = () => {
                                 className="w-36 h-36 rounded-sm"
                             />
                             <div className="ml-8 mt-16">
-                                <h3 className="font-bold text-xl">Prinka Roy</h3>
-                                <p className="text-md">Product Marketing Manager</p>
+                                <h3 className="font-bold sm:text-base md:text-xl">Prinka Roy</h3>
+                                <p className="sm:text-sm md:text-md">Product Marketing Manager</p>
                             </div>
                         </div>
-                        <p className="text-xl font-medium mb-4 px-10 text-center">
+                        <p className="sm:text-sm md:text-xl font-medium mb-4 px-10 text-center">
                             Improve user onboarding, increase feature adoption, and collect user
                             feedback.
                         </p>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center justify-start">
-                            <img
-                                src={SignupI}
-                                alt="Logo 1"
-                                className="w-16"
-                            />
-                            <img
-                                src={SignupI}
-                                alt="Logo 2"
-                                className="w-16"
-                            />
-                            <img
-                                src={SignupI}
-                                alt="Logo 3"
-                                className="w-16"
-                            />
-                            <img
-                                src={SignupI}
-                                alt="Logo 3"
-                                className="w-16"
-                            />
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-4">
+                            <img src={SignupI} alt="Logo 1" className="w-16 mx-auto" />
+                            <img src={SignupI} alt="Logo 2" className="w-16 mx-auto" />
+                            <img src={SignupI} alt="Logo 3" className="w-16 mx-auto" />
+                            <img src={SignupI} alt="Logo 4" className="w-16 mx-auto" />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="min-h-screen flex flex-col justify-center bg-gray-900 text-white">
-                <div className="mx-auto flex flex-col md:flex-row items-center">
-                    {/* Left Section */}
-                    <div className="md:w-1/2 px-6 md:px-32">
-                        <img src={Logo} alt="" className="bg-white w-32 h-32 p-2 rounded-md  mx-auto mb-4" />
-                        <form className="space-y-4">
-                            <h1 className="text-xl font-bold mb-6">Sign In with Email</h1>
-                            <div>
-                                <label htmlFor="email" className="block text-sm mb-1">
-                                    Work Email
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    placeholder="name@work.com"
-                                    className="w-full px-4 py-3 bg-gray-800 rounded focus:outline-none"
-                                />
-                            </div>
-
-                            <div className="relative">
-                                <label htmlFor="password" className="block text-sm mb-1">
-                                    Password
-                                </label>
-                                <input
-                                    type={showPassword ? "text" : "password"}
-                                    id="password"
-                                    placeholder="Password"
-                                    className="w-full px-4 py-3 bg-gray-800 rounded focus:outline-none"
-                                />
-                                <button
-                                    type="button"
-                                    onClick={togglePasswordVisibility}
-                                    className="absolute top-10 right-4 text-gray-400 hover:text-gray-200 focus:outline-none"
-                                >
-                                    {showPassword ? <FaEye /> : < FaEyeSlash />}
-                                </button>
-                            </div>
-                            <div className="flex items-center justify-between">
+            <div className="md:w-full sm:bg-gray-900 mx-auto sm:pt-6 md:pt-0">
+                <div className="min-h-screen flex flex-col justify-center bg-gray-900 text-white">
+                    <div className="mx-auto flex flex-col md:flex-row md:items-center">
+                        {/* Left Section */}
+                        <div className="md:w-1/2 sm:px-6 md:px-32">
+                            <img src={Logo} alt="" className="bg-white w-32 h-32 p-2 rounded-md  mx-auto mb-4" />
+                            <form className="space-y-4">
+                                <h1 className="text-xl font-bold mb-6 text-center">Sign In with Email</h1>
                                 <div>
-                                    <label className="inline-flex items-center">
-                                        <input
-                                            type="checkbox"
-                                            className="form-checkbox bg-gray-800 text-purple-600 border-gray-700 rounded focus:outline-none"
-                                        />
-                                        <span className="ml-2 text-sm">Remember Me</span>
+                                    <label htmlFor="email" className="block text-sm mb-1">
+                                        Work Email
                                     </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="name@work.com"
+                                        className="w-full px-4 py-3 bg-gray-800 rounded focus:outline-none"
+                                    />
                                 </div>
-                                <div>
-                                    <a
-                                        href="#"
-                                        className="text-sm text-blue-500 hover:underline"
+
+                                <div className="relative">
+                                    <label htmlFor="password" className="block text-sm mb-1">
+                                        Password
+                                    </label>
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        id="password"
+                                        placeholder="Password"
+                                        className="w-full px-4 py-3 bg-gray-800 rounded focus:outline-none"
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={togglePasswordVisibility}
+                                        className="absolute top-10 right-4 text-gray-400 hover:text-gray-200 focus:outline-none"
                                     >
-                                        Forgot Password?
-                                    </a>
+                                        {showPassword ? <FaEye /> : < FaEyeSlash />}
+                                    </button>
                                 </div>
-                            </div>
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <label className="inline-flex items-center">
+                                            <input
+                                                type="checkbox"
+                                                className="form-checkbox bg-gray-800 text-purple-600 border-gray-700 rounded focus:outline-none"
+                                            />
+                                            <span className="ml-2 text-sm">Remember Me</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <a
+                                            href="#"
+                                            className="text-sm text-blue-500 hover:underline"
+                                        >
+                                            Forgot Password?
+                                        </a>
+                                    </div>
+                                </div>
 
-                            <div className="w-2/3 mx-auto">
-                                <button className="w-full py-3 all-btn rounded font-bold text-black">
-                                    Continue with Email
-                                </button>
-                            </div>
-                            <p className="text-center text-sm mt-2">
-                                Don’t have an account?{" "}
-                                <a href="#" className="text-blue-500 hover:underline">
-                                    Sign Up
-                                </a>
-                            </p>
-                        </form>
-                    </div>
-
-                    {/* Right Section */}
-                    <div className="md:w-1/2 px-6 md:px-12 mt-10 md:mt-0">
-                        <h2 className="text-4xl leading-snug font-semibold mb-4 text-center">
-                            Introducing Autocapture
-                        </h2>
-                        <p className="text-lg leading-6 mb-6 text-center">
-                            Automatically record all user interactions within your product, including clicks, text input changes, and form submissions. Say goodbye to manual event tagging!
-                        </p>
-
-                        <div className="flex items-center mb-6 ">
-                            <img
-                                src={LoginImg}
-                                alt="Profile"
-                                className="w-full"
-                            />
-
+                                <div className="w-2/3 mx-auto">
+                                    <button className="w-full py-3 all-btn rounded font-bold text-black">
+                                        Continue with Email
+                                    </button>
+                                </div>
+                                <p className="text-center text-sm mt-2">
+                                    Don’t have an account?{" "}
+                                    <a href="#" className="text-blue-500 hover:underline">
+                                        Sign Up
+                                    </a>
+                                </p>
+                            </form>
                         </div>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center justify-start">
-                            <img
-                                src={SignupI}
-                                alt="Logo 1"
-                                className="w-16"
-                            />
-                            <img
-                                src={SignupI}
-                                alt="Logo 2"
-                                className="w-16"
-                            />
-                            <img
-                                src={SignupI}
-                                alt="Logo 3"
-                                className="w-16"
-                            />
-                            <img
-                                src={SignupI}
-                                alt="Logo 3"
-                                className="w-16"
-                            />
+
+                        {/* Right Section */}
+                        <div className="md:w-1/2 px-6 md:px-12 mt-10 md:mt-0">
+                            <h2 className="sm:text-xl md:text-4xl leading-snug font-semibold mb-4 text-center">
+                                Introducing Autocapture
+                            </h2>
+                            <p className="sm:text-sm md:text-lg leading-6 mb-6 text-center">
+                                Automatically record all user interactions within your product, including clicks, text input changes, and form submissions. Say goodbye to manual event tagging!
+                            </p>
+
+                            <div className="flex items-center mb-6 ">
+                                <img
+                                    src={LoginImg}
+                                    alt="Profile"
+                                    className="w-full"
+                                />
+
+                            </div>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-4">
+                                <img src={SignupI} alt="Logo 1" className="w-16 mx-auto" />
+                                <img src={SignupI} alt="Logo 2" className="w-16 mx-auto" />
+                                <img src={SignupI} alt="Logo 3" className="w-16 mx-auto" />
+                                <img src={SignupI} alt="Logo 4" className="w-16 mx-auto" />
+                            </div>
                         </div>
                     </div>
                 </div>
