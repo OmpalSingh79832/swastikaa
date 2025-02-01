@@ -26,6 +26,36 @@ const Orders = () => {
     );
   }, [parPage, currentPage, searchValue]);
 
+  const ordersdata = [
+    {
+      _id: "1234567890abcdef",
+      name: "Raman",
+      price: "$49.99",
+      plan_status: "Plan A",
+      payment_status: "Pending",
+      user_role: "Consultant",
+      date: "2024-02-01",
+    },
+    {
+      _id: "abcdef1234567890",
+      name: "Shyam",
+      price: "$39.99",
+      plan_status: "Plan B",
+      payment_status: "Awarded",
+      user_role: "Enterprise",
+      date: "2024-01-28",
+    },
+    {
+      _id: "abcdef1234567890",
+      name: "Shyam",
+      price: "$39.99",
+      plan_status: "Plan B",
+      payment_status: "Rejected",
+      user_role: "Consultant",
+      date: "2024-01-28",
+    },
+  ];
+
   return (
     <div className="px-2 lg:px-7 pt-5 ">
       <div className="w-full p-4  bg-[#283046] rounded-md">
@@ -39,7 +69,7 @@ const Orders = () => {
             <thead className="text-sm text-[#d0d2d6] uppercase border-b border-slate-700">
               <tr>
                 <th scope="col" className="py-3 px-4">
-                  Order Id
+                  Customer Id
                 </th>
                 <th scope="col" className="py-3 px-4">
                   Name
@@ -47,105 +77,41 @@ const Orders = () => {
                 <th scope="col" className="py-3 px-4">
                   Price
                 </th>
-                {/* <th scope="col" className="py-3 px-4">
-                  Weight
-                </th> */}
                 <th scope="col" className="py-3 px-4">
-                  Payment Status
+                  Plan
                 </th>
+              
                 <th scope="col" className="py-3 px-4">
-                  Order Status
+                  User Role
                 </th>
                 <th scope="col" className="py-3 px-4">
                   Date
                 </th>
                 <th scope="col" className="py-3 px-4">
-                  Action
+                  Payment Status
                 </th>
               </tr>
             </thead>
             <tbody>
-              {myOrders.map((d, i) => (
+              {ordersdata.map((order, i) => (
                 <tr key={i}>
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap flex flex-col"
-                  >
-                    #{d._id.slice(-6)}
-                  </td>
-
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap"
-                  >
-                    {d.products.map((name, i) => (
-                      <div>{name.name}</div>
-                    ))}
-                  </td>
-
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap text-lg"
-                  >
-                    {d.price}
-                  </td>
-                  {/* {d.products.map((wa, i) => (
-                    <td
-                      scope="row"
-                      className="py-3 px-4 font-medium whitespace-nowrap"
-                    >
-                      <span>{wa.weight}</span> <span>{wa.unit}</span>
-                    </td>
-                  ))} */}
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap"
-                  >
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">#{order._id.slice(-6)}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">{order.name}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap text-lg">{order.price}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">{order.plan_status}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">{order.user_role}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">{order.date}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">
                     <span
-                      className={`${
-                        d.payment_status === "paid"
-                          ? "bg-green-500 py-2 px-4 rounded-full text-lg capitalize"
-                          : d.payment_status == "COD"
-                          ? "bg-red-500 py-2 px-4 rounded-full text-lg capitalize"
-                          : "bg-yellow-500 py-2 px-4 rounded-full text-lg capitalize text-black"
-                      }`}
+                      className={`${order.payment_status === "Pending"
+                        ? "bg-yellow-500 py-1 px-3 rounded-full text-base text-white capitalize"
+                        : order.payment_status === "Rejected"
+                          ? "bg-red-500 py-1 px-3 rounded-full text-base text-white capitalize"
+                          : " bg-green-500 py-1 px-3 rounded-full text-base text-white capitalize"
+                        }`}
                     >
-                      {d.payment_status}
+                      {order.payment_status}
                     </span>
-                  </td>
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap"
-                  >
-                    <span
-                      className={`${
-                        d.delivery_status == "processing"
-                          ? "  bg-green-500 py-2 px-4 rounded-full text-lg capitalize"
-                          : d.payment_status == "pending"
-                          ? " bg-yellow-500 py-2 px-4 rounded-full text-lg capitalize text-black"
-                          : "bg-red-500 py-2 px-4 rounded-full text-lg capitalize"
-                      }`}
-                    >
-                      {d.delivery_status}
-                      {console.log("object1111", d.delivery_status)}
-                    </span>
-                  </td>
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap"
-                  >
-                    {d.date}
-                  </td>
-                  <td
-                    scope="row"
-                    className="py-3 px-4 font-medium whitespace-nowrap"
-                  >
-                    <Link
-                      to={`/seller/dashboard/order/details/${d._id}`}
-                      className="p-[6px] w-[30px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50 flex justify-center items-center"
-                    >
-                      <FaEye />
-                    </Link>
                   </td>
                 </tr>
               ))}

@@ -19,7 +19,7 @@ const Profile = () => {
     };
 
     return (
-        <div className="bg-gray-900 min-h-screen p-6 text-white">
+        <div className="bg-gray-900 min-h-screen sm:p-0 md:p-6 text-white">
             <div className="flex flex-wrap gap-6">
                 {/* Left Section */}
                 <div className="w-full lg:w-1/2 bg-gray-800 p-6 rounded-md">
@@ -36,19 +36,19 @@ const Profile = () => {
                     </div>
                     {/* Profile Details */}
                     <div className="space-y-4">
-  <div className="bg-gray-700 p-6 rounded-md text-sm shadow-md">
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Name: <span className="font-light text-sm text-gray-300">{profileData.name}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Phone Number: <span className="text-sm font-light text-gray-300">{profileData.phone}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">DOB: <span className="text-sm font-light text-gray-300">{profileData.dob}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Email: <span className="text-sm font-light text-gray-300">{profileData.email}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Role: <span className="text-sm font-light text-gray-300">{profileData.role}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Manufacturing Sector: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.shopName}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Brief Bio: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.division}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Uploaded Resume: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.district}</span></p>
-    <p className="font-semibold text-base border-b border-gray-600 pb-2">Address: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.subDistrict}</span></p>
-    <p className="font-semibold text-lg">Status: <span className="font-normal text-green-500">{profileData.status}</span></p>
-  </div>
-</div>
+                        <div className="bg-gray-700 p-6 rounded-md text-sm shadow-md">
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Name: <span className="font-light text-sm text-gray-300">{profileData.name}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Phone Number: <span className="text-sm font-light text-gray-300">{profileData.phone}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">DOB: <span className="text-sm font-light text-gray-300">{profileData.dob}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Email: <span className="text-sm font-light text-gray-300">{profileData.email}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Role: <span className="text-sm font-light text-gray-300">{profileData.role}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Manufacturing Sector: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.shopName}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Brief Bio: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.division}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Uploaded Resume: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.district}</span></p>
+                            <p className="font-semibold text-base border-b border-gray-600 pb-2">Address: <span className="text-sm font-light text-gray-300">{profileData.shopDetails.subDistrict}</span></p>
+                            <p className="font-semibold text-lg">Status: <span className="font-normal text-green-500">{profileData.status}</span></p>
+                        </div>
+                    </div>
 
                 </div>
 

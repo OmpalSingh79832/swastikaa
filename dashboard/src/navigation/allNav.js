@@ -9,7 +9,7 @@ import { CiChat1 } from "react-icons/ci";
 import { BsCurrencyDollar, BsChat } from "react-icons/bs";
 import { RiProductHuntLine } from "react-icons/ri";
 import { RiCoupon2Fill } from "react-icons/ri";
-import AllGift from "../views/seller/AllGift";
+import AllGift from "../views/seller/AllEnterprises";
 export const allNav = [
   {
     id: 1,
@@ -70,54 +70,71 @@ export const allNav = [
   },
   {
     id: 9,
-    title: "Category",
+    // title: "Category",
+    title: "Add Sector",
     icon: <BiCategory />,
     role: "seller",
     path: "/seller/dashboard/category",
   },
-  {
-    id: 10,
-    title: "Upload Banner",
-    icon: <AiOutlinePlus />,
-    role: "seller",
-    path: "/seller/dashboard/upload-banner",
-  },
+  // {
+  //   id: 10,
+  //   title: "Upload Banner",
+  //   icon: <AiOutlinePlus />,
+  //   role: "seller",
+  //   path: "/seller/dashboard/upload-banner",
+  // },
   {
     id: 11,
-    title: "Add Product",
+    title: "Add Project",
     icon: <AiOutlinePlus />,
     role: "seller",
     path: "/seller/dashboard/add-product",
   },
   {
     id: 13,
-    title: "All Product",
+    title: "All Project",
     icon: <RiProductHuntLine />,
     role: "seller",
     path: "/seller/dashboard/products",
   },
+    {
+    id: 14,
+    title: "Freelance Projects",
+    icon: <RiCoupon2Fill />,
+    role: "seller",
+    path: "/seller/dashboard/add-coupon",
+  },
+    {
+    id: 13,
+    title: "Execution Projects",
+    icon: <RiProductHuntLine />,
+    role: "seller",
+    path: "/seller/dashboard/discount-products",
+  },
   {
     id: 12,
-    title: "Add Gift Product",
+    // title: "Add Gift Product",
+    title: "All Consultants",
     icon: <AiOutlinePlus />,
     role: "seller",
     path: "/seller/dashboard/add-gift",
   },
   {
     id: 13,
-    title: "All Gift Product",
+    // title: "All Gift Product",
+    title: "All Enterprises",
     icon: <RiProductHuntLine />,
     role: "seller",
     path: "/seller/dashboard/all-gift",
   },
 
-  {
-    id: 14,
-    title: "Add Coupon",
-    icon: <RiCoupon2Fill />,
-    role: "seller",
-    path: "/seller/dashboard/add-coupon",
-  },
+  // {
+  //   id: 14,
+  //   title: "Add Coupon",
+  //   icon: <RiCoupon2Fill />,
+  //   role: "seller",
+  //   path: "/seller/dashboard/add-coupon",
+  // },
   {
     id: 15,
     title: "Upload Blogs",
@@ -140,13 +157,13 @@ export const allNav = [
     role: "seller",
     path: "/seller/dashboard/orders",
   },
-  {
-    id: 17,
-    title: "Payments",
-    icon: <BsCurrencyDollar />,
-    role: "seller",
-    path: "/seller/dashboard/payments",
-  },
+  // {
+  //   id: 17,
+  //   title: "Payments",
+  //   icon: <BsCurrencyDollar />,
+  //   role: "seller",
+  //   path: "/seller/dashboard/payments",
+  // },
   // {
   //   id: 16,
   //   title: "Chat Customer",

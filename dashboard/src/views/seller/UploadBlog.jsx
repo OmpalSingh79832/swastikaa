@@ -266,11 +266,36 @@ const UploadBlog = () => {
     });
   };
 
+  const dataBlogs = [
+    {
+      id: 1,
+      title: "Understanding AI in Modern Businesses",
+      description: "A deep dive into how AI is transforming industries.",
+      image: "https://via.placeholder.com/100",
+      uploadedDate: "2024-02-01",
+    },
+    {
+      id: 2,
+      title: "Top 10 Web Development Trends in 2024",
+      description: "Exploring the latest trends in web technologies.",
+      image: "https://via.placeholder.com/100",
+      uploadedDate: "2024-01-28",
+    },
+    {
+      id: 3,
+      title: "Cybersecurity in the Digital Age",
+      description: "The importance of securing your online data.",
+      image: "https://via.placeholder.com/100",
+      uploadedDate: "2024-01-25",
+    },
+  ];
+
+
   return (
     <div className="px-2 lg:px-7 pt-5 ">
       <div className="w-full p-4  bg-[#283046] rounded-md">
         <div className="flex justify-between items-center pb-4">
-          <h1 className="text-[#d0d2d6] text-xl font-semibold">Add Blogs</h1>
+          <h1 className="text-[#d0d2d6] text-xl font-semibold">Upload New Blog</h1>
           <Link
             className="bg-blue-500 hover:shadow-blue-500/50 hover:shadow-lg text-white rounded-sm px-7 py-2 my-2 "
             to="/seller/dashboard"
@@ -282,93 +307,32 @@ const UploadBlog = () => {
           <form onSubmit={add}>
             <div className="flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]">
               <div className="flex flex-col w-full gap-1">
-                <label htmlFor="name">Blog Title</label>
+                <label htmlFor="name">Date</label>
                 <input
                   className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                   onChange={inputHandle}
                   value={state.name}
-                  type="text"
+                  type="date"
                   placeholder="Enter Blog Title.."
                   name="name"
                   id="name"
+
                 />
               </div>
               <div className="flex flex-col w-full gap-1">
-                <label htmlFor="brand">Blog Product Name</label>
+                <label htmlFor="brand">Blog Name</label>
                 <input
                   className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
                   onChange={inputHandle}
                   value={state.brand}
                   type="text"
-                  placeholder="Blog product Name"
+                  placeholder="Blog Name"
                   name="brand"
                   id="brand"
                 />
               </div>
             </div>
-            <div className="flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]">
-              <div className="flex flex-col w-full gap-1">
-                <label htmlFor="brand">Blog Sub Title</label>
-                <input
-                  className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
-                  onChange={inputHandle}
-                  value={state.subtitle}
-                  type="text"
-                  placeholder="Sub title"
-                  name="subtitle"
-                  id="subtitle"
-                />
-              </div>
-            </div>
 
-            <div className="flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]">
-              <div className="flex flex-col w-full gap-1 relative">
-                <label htmlFor="category">Category</label>
-                <input
-                  readOnly
-                  onClick={() => setCateShow(!cateShow)}
-                  className="px-4 py-2 focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]"
-                  onChange={inputHandle}
-                  value={category}
-                  type="text"
-                  placeholder="--select category--"
-                  id="category"
-                />
-                <div
-                  className={`absolute top-[101%] bg-slate-800 w-full transition-all ${
-                    cateShow ? "scale-100" : "scale-0"
-                  }`}
-                >
-                  <div className="w-full px-4 py-2 fixed">
-                    <input
-                      value={searchValue}
-                      onChange={categorySearch}
-                      className="px-3 py-1 w-full focus:border-indigo-500 outline-none bg-transparent border border-slate-700 rounded-md text-[#d0d2d6] overflow-hidden"
-                      type="text"
-                      placeholder="search"
-                    />
-                  </div>
-                  <div className="pt-14"></div>
-                  <div className="flex justify-start items-start flex-col h-[200px] overflow-x-scroll">
-                    {allCategory.map((c, i) => (
-                      <span
-                        className={`px-4 py-2 hover:bg-indigo-500 hover:text-white hover:shadow-lg w-full cursor-pointer ${
-                          category === c.name && "bg-indigo-500"
-                        }`}
-                        onClick={() => {
-                          setCateShow(false);
-                          setCategory(c.name);
-                          setSearchValue("");
-                          setAllCategory(categorys);
-                        }}
-                      >
-                        {c.name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Ingredients Section */}
             <div className="flex flex-col mb-3 w-full text-[#d0d2d6]">
@@ -384,31 +348,12 @@ const UploadBlog = () => {
                       }
                       value={be.benefit}
                       type="text"
-                      placeholder={`Description ${index + 1}`}
+                      placeholder="Add Description"
                       name={`benefits-${index}`}
                     />
-                    {index > 0 && (
-                      <button
-                        type="button"
-                        className="text-red-500"
-                        onClick={() => {
-                          const updatedBenefits = [...state.instructions];
-                          updatedBenefits.splice(index, 1);
-                          setState({ ...state, benefits: updatedBenefits });
-                        }}
-                      >
-                        <IoCloseSharp />
-                      </button>
-                    )}
                   </div>
                 ))}
-              <button
-                type="button"
-                className="bg-green-500 text-white rounded-sm px-4 py-2 mt-2"
-                onClick={addBenefitPoint}
-              >
-                Add Description
-              </button>
+
             </div>
 
             <div className="flex flex-col mb-3 w-full text-[#d0d2d6]">
@@ -453,7 +398,7 @@ const UploadBlog = () => {
                 ))}
               <button
                 type="button"
-                className="bg-green-500 text-white rounded-sm px-4 py-2 mt-2"
+                className="bg-green-500 w-fit text-white rounded-sm px-6 py-3 mt-2"
                 onClick={addQuestionAnswerPair}
               >
                 Add Additional Description With Heading
@@ -523,59 +468,32 @@ const UploadBlog = () => {
           <table className="w-full text-sm text-left text-[#d0d2d6]">
             <thead className="text-sm text-[#d0d2d6] uppercase border-b border-slate-700">
               <tr>
-                <th scope="col" className="py-3 px-4">
-                  No
-                </th>
-                <th scope="col" className="py-3 px-4">
-                  Image
-                </th>
-                <th scope="col" className="py-3 px-4">
-                  Name
-                </th>
-                <th scope="col" className="py-3 px-4">
-                  Action
-                </th>
+                <th className="py-3 px-4">No</th>
+                <th className="py-3 px-4">Image</th>
+                <th className="py-3 px-4">Uploaded Date</th>
+                <th className="py-3 px-4">Name</th>
+                <th className="py-3 px-4">Action</th>
               </tr>
             </thead>
             <tbody>
-              {blogs.map((d, i) => (
-                <tr key={i}>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    {i + 1}
+              {dataBlogs.map((blog, i) => (
+                <tr key={blog.id}>
+                  <td className="py-1 px-4 font-medium whitespace-nowrap">{i + 1}</td>
+                  <td className="py-1 px-4 font-medium whitespace-nowrap">
+                    <img className="w-[45px] h-[45px] rounded-md" src={blog.image} alt="Blog" />
                   </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    <img
-                      className="w-[45px] h-[45px]"
-                      src={d.images[0]}
-                      alt=""
-                    />
+                  <td className="py-1 px-4 font-medium whitespace-nowrap">{blog.uploadedDate}</td>
+                  <td className="py-1 px-4 font-medium whitespace-nowrap">
+                    <span>{blog.title}</span>
                   </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    <span>{d?.name?.slice(0, 16)}...</span>
-                  </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
+                  <td className="py-1 px-4 font-medium whitespace-nowrap">
                     <div className="flex justify-start items-center gap-4">
-                      <Link className="p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yellow-500/50">
+                      <Link className="p-[6px] bg-yellow-500 rounded hover:shadow-lg">
                         <FaEdit />
                       </Link>
-                      <Link className="p-[6px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50">
-                        <FaEye />
-                      </Link>
                       <button
-                        className="p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50"
-                        onClick={() => handleDelete(d._id)}
+                        className="p-[6px] bg-red-500 rounded hover:shadow-lg"
+                        onClick={() => handleDelete(blog.id)}
                       >
                         <FaTrash />
                       </button>
@@ -586,6 +504,8 @@ const UploadBlog = () => {
             </tbody>
           </table>
         </div>
+
+
       </div>
     </div>
   );

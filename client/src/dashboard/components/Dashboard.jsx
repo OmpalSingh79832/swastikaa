@@ -28,11 +28,11 @@ const Dashboard = () => {
                             className={`w-10 h-10 ${card.bgColor} text-white flex items-center justify-center rounded-full text-lg`}
                         >
                             {card.icon}
-                        </div>
-                    </div>
+                        </div >
+                    </div >
                 ))}
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
