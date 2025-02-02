@@ -83,10 +83,18 @@ const Category = () => {
     };
     dispatch(get_category(obj));
   }, [searchValue, currentPage, parPage]);
+
+  const addSectors = [
+    { id: 1, name: "Electronics" },
+    { id: 2, name: "Clothing" },
+    { id: 3, name: "Home & Kitchen" },
+    { id: 4, name: "Sports & Outdoors" },
+  ];
+
   return (
     <div className="px-2 lg:px-7 pt-5">
       <div className="flex lg:hidden justify-between items-center mb-5 p-4 bg-[#283046] rounded-md">
-        <h1 className="text-[#d0d2d6] font-semibold text-lg">Categorys</h1>
+        <h1 className="text-[#d0d2d6] font-semibold text-lg">Add Sectors</h1>
         <button
           onClick={() => setShow(true)}
           className="bg-indigo-500 shadow-lg hover:shadow-indigo-500/50 px-4 py-2 cursor-pointer text-white rounded-sm text-sm"
@@ -109,9 +117,9 @@ const Category = () => {
                     <th scope="col" className="py-3 px-4">
                       No
                     </th>
-                    <th scope="col" className="py-3 px-4">
+                    {/* <th scope="col" className="py-3 px-4">
                       Image
-                    </th>
+                    </th> */}
                     <th scope="col" className="py-3 px-4">
                       Name
                     </th>
@@ -121,44 +129,18 @@ const Category = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {categorys.map((d, i) => (
-                    <tr key={i}>
-                      <td
-                        scope="row"
-                        className="py-1 px-4 font-medium whitespace-nowrap"
-                      >
-                        {i + 1}
+                  {addSectors.map((category, i) => (
+                    <tr key={category.id}>
+                      <td className="py-1 px-4 font-medium whitespace-nowrap">{i + 1}</td>
+                      <td className="py-1 px-4 font-medium whitespace-nowrap">
+                        <span>{category.name}</span>
                       </td>
-                      <td
-                        scope="row"
-                        className="py-1 px-4 font-medium whitespace-nowrap"
-                      >
-                        <img
-                          className="w-[45px] h-[45px]"
-                          src={d.image}
-                          alt=""
-                        />
-                      </td>
-                      <td
-                        scope="row"
-                        className="py-1 px-4 font-medium whitespace-nowrap"
-                      >
-                        <span>{d.name}</span>
-                      </td>
-                      <td
-                        scope="row"
-                        className="py-1 px-4 font-medium whitespace-nowrap"
-                      >
-                        <div className="flex justify-start items-center gap-4">
-                          <Link className="p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yellow-500/50">
-                            <FaEdit />
-                          </Link>
-                          <div
-                            onClick={() => handleDelete(d._id)}
-                            className="p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50"
-                          >
-                            <FaTrash />
-                          </div>
+                      <td className="py-1 px-4 font-medium whitespace-nowrap">
+                        <div
+                          onClick={() => handleDelete(category.id)}
+                          className="p-[6px] w-fit bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50 cursor-pointer"
+                        >
+                          <FaTrash />
                         </div>
                       </td>
                     </tr>
@@ -178,15 +160,14 @@ const Category = () => {
           </div>
         </div>
         <div
-          className={`w-[320px] lg:w-5/12 translate-x-100 lg:relative lg:right-0 fixed ${
-            show ? "right-0" : "-right-[340px]"
-          } z-[9999] top-0 transition-all duration-500`}
+          className={`w-[320px] lg:w-5/12 translate-x-100 lg:relative lg:right-0 fixed ${show ? "right-0" : "-right-[340px]"
+            } z-[9999] top-0 transition-all duration-500`}
         >
           <div className="w-full pl-5">
             <div className="bg-[#283046] h-screen lg:h-auto px-3 py-2 lg:rounded-md text-[#d0d2d6]">
               <div className="flex justify-between items-center mb-4">
                 <h1 className="text-[#d0d2d6] font-semibold text-xl">
-                  Add Category
+                  Add Sector
                 </h1>
                 <div
                   onClick={() => setShow(false)}
@@ -197,7 +178,7 @@ const Category = () => {
               </div>
               <form onSubmit={add_category}>
                 <div className="flex flex-col w-full gap-1 mb-3">
-                  <label htmlFor="name">Category name</label>
+                  <label htmlFor="name">Sector Name</label>
                   <input
                     value={state.name}
                     onChange={(e) =>
@@ -207,35 +188,10 @@ const Category = () => {
                     type="text"
                     id="name"
                     name="category_name"
-                    placeholder="category name"
+                    placeholder="Enter Sector Name"
                     required
                   />
                 </div>
-                <div>
-                  <label
-                    className="flex justify-center items-center flex-col h-[238px] cursor-pointer border border-dashed hover:border-indigo-500 w-full border-[#d0d2d6]"
-                    htmlFor="image"
-                  >
-                    {imageShow ? (
-                      <img className="w-full h-full" src={imageShow} />
-                    ) : (
-                      <>
-                        <span>
-                          <BsImage />
-                        </span>
-                        <span>select Image</span>
-                      </>
-                    )}
-                  </label>
-                </div>
-                <input
-                  onChange={imageHandle}
-                  className="hidden"
-                  type="file"
-                  name="image"
-                  id="image"
-                  required
-                />
                 <div className="mt-4">
                   <button
                     disabled={loader ? true : false}
@@ -247,7 +203,7 @@ const Category = () => {
                         cssOverride={overrideStyle}
                       />
                     ) : (
-                      "Add Category"
+                      "Add Sector"
                     )}
                   </button>
                 </div>

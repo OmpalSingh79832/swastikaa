@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
-const ExecutionProject = ({ userRole }) => {
+const FreelanceProject = ({ userRole }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalType, setModalType] = useState(""); // "apply" or "applied"
@@ -84,11 +84,11 @@ const ExecutionProject = ({ userRole }) => {
   };
 
   return (
-    <div className="bg-gray-900 p-6 rounded-lg">
+    <div className="bg-[#283046] w-[95%] mx-auto p-6 rounded-lg mt-6">
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-center text-gray-400">
-          <thead className="text-xs uppercase bg-gray-700 text-gray-400">
+          <thead className="sm:text-xs md:text-base uppercase bg-gray-700 text-white">
             <tr>
               <th scope="col" className="px-3 py-2">Project Id</th>
               <th scope="col" className="px-3 py-2">NAME</th>
@@ -104,15 +104,15 @@ const ExecutionProject = ({ userRole }) => {
           <tbody>
             {products.map((product, index) => (
               <tr key={product.id} className="border-b border-gray-700 hover:bg-gray-800">
-                <td className="px-4 py-2">{index + 1}</td>
-                <td className="px-4 py-2">{product.name}</td>
-                <td className="px-4 py-2">{product.category}</td>
-                <td className="px-4 py-2">{product.sector}</td>
-                <td className="px-4 py-2">{product.budget}</td>
-                <td className="px-4 py-2">{product.location}</td>
-                <td className="px-4 py-2">{product.uploadeddate}</td>
-                <td className="px-4 py-2">{product.lastDate}</td>
-                <td className="px-4 py-2 flex justify-center">
+                <td className="px-1 py-">{index + 1}</td>
+                <td className="px-1 py-">{product.name}</td>
+                <td className="px-1 py-">{product.category}</td>
+                <td className="px-1 py-">{product.sector}</td>
+                <td className="px-1 py-">{product.budget}</td>
+                <td className="px-1 py-">{product.location}</td>
+                <td className="px-1 py-">{product.uploadeddate}</td>
+                <td className="px-1 py-">{product.lastDate}</td>
+                <td className="px-1 py- flex justify-center">
                   {userRole === "execution" ? (
                     <button
                       className="bg-blue-500 text-white px-4 py-2 rounded-md"
@@ -123,10 +123,10 @@ const ExecutionProject = ({ userRole }) => {
                   ) : (
                     <button
                       type="button"
-                      className="m-1 ms-0 relative py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+                      className="m-1 ms-0 relative py-2 my-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50"
                       onClick={() => openAppliedModal(product)}
                     >
-                      Applied Now
+                      Applied
                       <span className="flex absolute top-0 end-0 -mt-2 -me-2">
                         <span className="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75"></span>
                         <span className="relative inline-flex text-xs bg-red-500 text-white rounded-full py-0.5 px-1.5">
@@ -145,7 +145,7 @@ const ExecutionProject = ({ userRole }) => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-gray-800 text-white p-6 rounded-md sm:[90%] md:w-[60%]">
+          <div className="bg-gray-800 text-white p-6 rounded-md w-[60%]">
             <div className="justify-end text-right mb-2">
               <button
                 className="px-3 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
@@ -161,7 +161,7 @@ const ExecutionProject = ({ userRole }) => {
                 {/* Left Form Section */}
                 <form className="space-y-4 w-full">
                   <div>
-                    <label className="text-xl block font-bold mb-2">Project Name : </label>
+                    <label className="text-xl block font-bold mb-">Project Name : </label>
                     <h2 className="text-sm">{selectedProduct?.name}</h2>
                   </div>
                   <div>
@@ -237,7 +237,7 @@ const ExecutionProject = ({ userRole }) => {
 
                 {/* Right Side */}
                 <div className="w-full flex flex-col">
-                  <select className="bg-gray-700 text-white p-2 rounded my-4">
+                  <select className="bg-gray-700 text-white p-2 rounded mt-4">
                     <option value="pending">Pending</option>
                     <option value="awarded">Awarded</option>
                     <option value="rejected">Rejected</option>
@@ -260,4 +260,4 @@ const ExecutionProject = ({ userRole }) => {
   );
 };
 
-export default ExecutionProject;
+export default FreelanceProject;

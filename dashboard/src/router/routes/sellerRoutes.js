@@ -1,17 +1,17 @@
 import { lazy } from "react";
 import UploadBlog from "../../views/seller/UploadBlog";
-import Category from "../../views/admin/Category";
-import Coupon from "../../views/seller/Coupon";
+import Category from "../../views/admin/AddSector";
+import Coupon from "../../views/seller/FreelanceProjects";
 import Uploadbanner from "../../views/seller/Uploadbanner";
-import GiftProduct from "../../views/seller/GiftProduct";
-import AllGift from "../../views/seller/AllGift";
+import GiftProduct from "../../views/seller/AllConsultants";
+import AllGift from "../../views/seller/AllEnterprises";
 const SellerDashboard = lazy(() =>
-  import("../../views/seller/SellerDashboard")
+  import("../../views/seller/MainDashboard")
 );
-const AddProduct = lazy(() => import("../../views/seller/AddProduct"));
-const Products = lazy(() => import("../../views/seller/Products"));
+const AddProduct = lazy(() => import("../../views/seller/AddProject"));
+const Products = lazy(() => import("../../views/seller/AllProject"));
 const DiscountProducts = lazy(() =>
-  import("../../views/seller/DiscountProducts")
+  import("../../views/seller/ExecutionProject")
 );
 const Orders = lazy(() => import("../../views/seller/Orders"));
 const Payments = lazy(() => import("../../views/seller/Payments"));

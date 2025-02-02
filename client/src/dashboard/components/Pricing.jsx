@@ -26,8 +26,8 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-10">
-      <h1 className="text-4xl font-bold text-center mb-10">Pricing Details</h1>
+    <div className="min-h-screen bg-gray-900 text-white sm:p-0 md:p-10">
+      <h1 className="sm:text-2xl md:text-4xl font-bold text-center mb-10">Pricing Details</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {pricingPlans.map((plan, index) => (
           <div

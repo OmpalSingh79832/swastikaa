@@ -4,7 +4,7 @@ const DeactiveSellers = lazy(() => import("../../views/admin/DeactiveSellers"));
 const SellerRequest = lazy(() => import("../../views/admin/SellerRequest"));
 const AdminDashboard = lazy(() => import("../../views/admin/AdminDashboard"));
 const Orders = lazy(() => import("../../views/admin/Orders"));
-const Category = lazy(() => import("../../views/admin/Category"));
+const Category = lazy(() => import("../../views/admin/AddSector"));
 const Sellers = lazy(() => import("../../views/admin/Sellers"));
 const PaymentRequest = lazy(() => import("../../views/admin/PaymentRequest"));
 const ChatSeller = lazy(() => import("../../views/admin/ChatSeller"));
