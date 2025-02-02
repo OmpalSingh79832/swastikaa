@@ -128,13 +128,13 @@ export const allNav = [
     path: "/seller/dashboard/all-gift",
   },
 
-  // {
-  //   id: 14,
-  //   title: "Add Coupon",
-  //   icon: <RiCoupon2Fill />,
-  //   role: "seller",
-  //   path: "/seller/dashboard/add-coupon",
-  // },
+  {
+    id: 14,
+    title: "All User",
+    icon: <RiCoupon2Fill />,
+    role: "seller",
+    path: "/seller/dashboard/add-coupon",
+  },
   {
     id: 15,
     title: "Upload Blogs",
