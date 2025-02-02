@@ -12,7 +12,7 @@ export const createSubscription = async (req, res) => {
       price,
       features,
       time,
-      responseTime,
+      yearMonthTime,
       maxProject,
       status,
     } = req.body;
@@ -24,7 +24,7 @@ export const createSubscription = async (req, res) => {
       price,
       features,
       time,
-      responseTime,
+      yearMonthTime,
       maxProject,
       status,
     });

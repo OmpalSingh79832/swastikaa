@@ -9,6 +9,7 @@ import projectRoute from "./routes/dashboard/projecjRoute.js";
 import sectorRoute from "./routes/dashboard/sectorRoute.js";
 import applyprojectRoute from "./routes/applyprojectRoute.js";
 import createSubscriptionRoute from "./routes/dashboard/createSubscriptionRoute.js";
+import userSubscriptionRoute from "./routes/userSubscriptionRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -24,6 +25,7 @@ app.use("/api", projectRoute);
 app.use("/api", sectorRoute);
 app.use("/api", applyprojectRoute);
 app.use("/api", createSubscriptionRoute);
+app.use("/api", userSubscriptionRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
