@@ -1,6 +1,7 @@
 import UserSubscription from "../models/userSubscriptionModel.js";
 import Subscription from "../models/createSubscriptionModel.js";
 import User from "../models/userModel.js";
+import e from "express";
 
 // Buy a subscription plan (User Side)
 export const buySubscription = async (req, res) => {
@@ -64,5 +65,16 @@ export const buySubscription = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const updateUserSubscription = async (req, res) => {
+  const { id } = req.user;
+
+  try {
+    const userSubscription = await UserSubscription.find({ userId: id });
+    res.status(200).json(userSubscription);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };
