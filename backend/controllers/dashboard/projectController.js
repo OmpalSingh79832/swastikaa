@@ -1,4 +1,5 @@
 import Project from "../../models/projectModel.js";
+import UserSubscription from "../../models/userSubscriptionModel.js";
 import cloudinary from "cloudinary";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -19,6 +20,7 @@ cloudinary.config({
 export const createProject = async (req, res) => {
   const { file } = req;
   const { id } = req;
+  // console.log("id", id);
   const {
     title,
     sector,
@@ -30,6 +32,25 @@ export const createProject = async (req, res) => {
   } = req.body;
 
   try {
+    const userSubscription = await UserSubscription.findOne({
+      userId: id,
+      status: "active",
+      projectQue: { $gt: 0 }, // Ensures projectQue is greater than 0
+    });
+    if (!userSubscription) {
+      return res.status(400).json({
+        success: false,
+        message: "You need to subscribe to create a project",
+        error: "You need to subscribe to create a project",
+      });
+    }
+
+    // console.log("userSubscription", userSubscription);
+
+    const projectQue = userSubscription.projectQue - 1;
+
+    // console.log("projectQue", projectQue);
+
     const slug = title.split(" ").join("-");
     const sectorslug = sector.split(" ").join("-");
     const categoryslug = category.split(" ").join("-");
@@ -53,6 +74,12 @@ export const createProject = async (req, res) => {
         category,
         categoryslug: categoryslug,
       });
+
+      await UserSubscription.findOneAndUpdate(
+        { userId: id, status: "active" }, // Find by userId and active status
+        { $set: { projectQue: projectQue } }, // Update projectQue
+        { new: true } // Return updated document
+      );
 
       res
         .status(201)

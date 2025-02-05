@@ -1,5 +1,6 @@
 import ApplyProject from "../models/applyprojectModel.js";
 import userModel from "../models/userModel.js";
+import UserSubscription from "../models/userSubscriptionModel.js";
 import { fileURLToPath } from "url";
 import path from "path";
 import fs from "fs";
@@ -74,6 +75,22 @@ export const createAppliedProject = async (req, res) => {
   try {
     const userInfo = await userModel.findById(id);
     // Define the folder path where files will be saved
+
+    const userSubscription = await UserSubscription.findOne({
+      userId: id,
+      status: "active",
+      projectQue: { $gt: 0 }, // Ensures projectQue is greater than 0
+    });
+    if (!userSubscription) {
+      return res.status(400).json({
+        success: false,
+        message: "You need to subscribe to create a project",
+        error: "You need to subscribe to create a project",
+      });
+    }
+
+    const projectQue = userSubscription.projectQue - 1;
+
     const uploadFolder = path.join(__dirname, "../prepsole/agent");
 
     // Ensure the folder exists, create it if it doesn't
@@ -98,8 +115,14 @@ export const createAppliedProject = async (req, res) => {
       preposal: `/prepsole/agent/${uniqueFilename}`, // Save the relative path in the database
       status,
     });
-
     const savedAppliedProject = await newAppliedProject.save();
+
+    await UserSubscription.findOneAndUpdate(
+      { userId: id, status: "active" }, // Find by userId and active status
+      { $set: { projectQue: projectQue } }, // Update projectQue
+      { new: true } // Return updated document
+    );
+
     res.status(201).json(savedAppliedProject);
   } catch (error) {
     res.status(400).json({ message: error.message });
