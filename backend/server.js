@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import userRoute from "./routes/userRoute.js";
 import adminRoute from "./routes/dashboard/adminRoute.js";
@@ -15,8 +16,16 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://localhost:5173"],
+    credentials: true,
+  })
+);
 app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Routes
 app.use("/api", userRoute);
